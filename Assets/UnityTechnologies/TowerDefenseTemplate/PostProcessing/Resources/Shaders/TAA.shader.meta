@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: ec6c5af987867f54aa08fba81ee279bd
+timeCreated: 1472807140
+licenseType: Store
+ShaderImporter:
+  defaultTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 107692
+  packageName: Tower Defense Template
+  packageVersion: 1.4.1
+  assetPath: Assets/UnityTechnologies/TowerDefenseTemplate/PostProcessing/Resources/Shaders/TAA.shader
+  uploadId: 406584

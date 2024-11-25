@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 7d89469544dfa214eabdbf37fca76f40
+timeCreated: 1474297975
+licenseType: Store
+ShaderImporter:
+  defaultTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 107692
+  packageName: Tower Defense Template
+  packageVersion: 1.4.1
+  assetPath: Assets/UnityTechnologies/TowerDefenseTemplate/PostProcessing/Resources/Shaders/Blit.shader
+  uploadId: 406584
