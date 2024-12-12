@@ -6,7 +6,7 @@ Projet dans le cadre du cours de méthodologie avancée, KHRNAM-TD est un jeu d�
 # Design Pattern identifiés pour ce projet
 
 | Design Pattern | Utilisation                                |
-|:--------------:| ------------------------------------------:|
+|:--------------:|:------------------------------------------:|
 | Factory        | Création des tours                         |
 | Factory        | Création des enemies                       |
 | Singleton      | Managers dans le code                      |
