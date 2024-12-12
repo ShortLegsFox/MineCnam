@@ -17,4 +17,9 @@ Projet dans le cadre du cours de méthodologie avancée, KHRNAM-TD est un jeu d�
 | Command        | Ouverture des menu, interactions ?         |
 | Prototype      | Gérer les multiples enemies dans une vague |
 
+# Diagramme de classe
+
+Voir ici le diagramme de classe récapitulant le fonctionnement et la structure du code :  
 https://drive.google.com/file/d/1H8_9zLFdlGgAXW9IdWxSzTzOEMuvTpRB/view?usp=sharing  
+
+# Organisation du repository
