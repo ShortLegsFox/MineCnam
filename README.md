@@ -23,3 +23,8 @@ Voir ici le diagramme de classe récapitulant le fonctionnement et la structure 
 https://drive.google.com/file/d/1H8_9zLFdlGgAXW9IdWxSzTzOEMuvTpRB/view?usp=sharing  
 
 # Organisation du repository
+
+- KHRNAM-TD : Dossier contenant le code source du projet
+- docs : Dossier contenant les éléments documentant le projet (diagrammes, pdf, etc.)
+- .gitignore
+- README.md
