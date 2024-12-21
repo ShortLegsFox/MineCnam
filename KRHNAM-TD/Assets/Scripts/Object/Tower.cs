@@ -1,7 +1,6 @@
-using UnityEngine;
-
-[CreateAssetMenu(fileName = "Tower", menuName = "Scriptable Objects/Tower")]
-public class Tower : ScriptableObject
+public class Tower : Entity
 {
-    
+    void Start()
+    {
+    }
 }
