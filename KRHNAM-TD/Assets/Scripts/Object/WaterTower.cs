@@ -2,7 +2,7 @@ using System;
 using Interface;
 using UnityEngine;
 
-namespace Object
+namespace TDObject
 {
     public class WaterTower : MonoBehaviour, I_Tower
     {

@@ -3,7 +3,7 @@ using Interface;
 using TMPro;
 using UnityEngine;
 
-namespace Object
+namespace TDObject
 {
     public class FireTower : MonoBehaviour, I_Tower
     {

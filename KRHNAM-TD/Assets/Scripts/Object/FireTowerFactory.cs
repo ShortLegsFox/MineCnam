@@ -1,7 +1,7 @@
 using Interface;
 using UnityEngine;
 
-namespace Object
+namespace TDObject
 {
     public class FireTowerFactory : MonoBehaviour, I_TowerFactory
     {

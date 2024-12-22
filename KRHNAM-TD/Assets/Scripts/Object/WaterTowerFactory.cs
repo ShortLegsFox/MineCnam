@@ -1,7 +1,7 @@
 using Interface;
 using UnityEngine;
 
-namespace Object
+namespace TDObject
 {
     public class WaterTowerFactory : MonoBehaviour, I_TowerFactory
     {
