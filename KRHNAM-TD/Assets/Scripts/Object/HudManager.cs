@@ -1,3 +1,4 @@
+using Interface;
 using UnityEngine;
 
 public class HudManager : MonoBehaviour
@@ -25,7 +26,7 @@ public class HudManager : MonoBehaviour
         DisplayCursor();
     }
 
-    public void SelectEntity(Entity entity)
+    public void SelectEntity(I_Tower entity)
     {
         EditorManager.Instance.selectedEntityPrefab = entity;
         ErrorManager.DebugLog($"Entity {EditorManager.Instance.selectedEntityPrefab.name} selected for placement.");

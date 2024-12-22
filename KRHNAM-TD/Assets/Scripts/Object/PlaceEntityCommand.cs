@@ -1,18 +1,19 @@
+using Interface;
 using UnityEngine;
 
 public class PlaceEntityCommand : I_Command
 {
-    private Entity entityPrefab;  // L’entité à poser
+    private I_Tower entityPrefab;  // Lï¿½entitï¿½ ï¿½ poser
     private Case Case;
-    private Entity placedEntity;
+    private I_Tower placedEntity;
 
-    public PlaceEntityCommand(Entity entityPrefab, Case _case)
+    public PlaceEntityCommand(I_Tower entityPrefab, Case _case)
     {
         this.entityPrefab = entityPrefab;
         this.Case = _case;
     }
 
-    public PlaceEntityCommand(Entity entityPrefab, Vector3 worldPosition)
+    public PlaceEntityCommand(I_Tower entityPrefab, Vector3 worldPosition)
     {
         this.entityPrefab = entityPrefab;
         this.Case = Grid.Instance.CaseFromWorldPoint(worldPosition);

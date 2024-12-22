@@ -1,3 +1,4 @@
+using Interface;
 using UnityEngine;
 
 public class EditorManager : MonoBehaviour
@@ -5,7 +6,7 @@ public class EditorManager : MonoBehaviour
     private static EditorManager instance = null;
     public static EditorManager Instance => instance;
 
-    public Entity selectedEntityPrefab;
+    public I_Tower selectedEntityPrefab;
     public bool IsEntitySelected => selectedEntityPrefab != null;
 
 
