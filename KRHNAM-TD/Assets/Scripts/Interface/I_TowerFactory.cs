@@ -1,6 +1,10 @@
 using UnityEngine;
 
-public class I_TourFactory
+namespace Interface
 {
+    public interface I_TowerFactory
+    {
+        public abstract GameObject CreateTower(Vector3 position);
     
+    }
 }
