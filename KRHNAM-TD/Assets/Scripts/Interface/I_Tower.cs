@@ -1,6 +1,9 @@
 using UnityEngine;
-
-public class I_Tour
-{
     
+namespace Interface
+{
+    public interface I_Tower
+    {
+    
+    }
 }
