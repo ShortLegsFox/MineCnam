@@ -1,6 +1,4 @@
-using UnityEngine;
-
-public class I_Entity
+public interface I_Entity
 {
-    
+    Case Position { get; set; }
 }
