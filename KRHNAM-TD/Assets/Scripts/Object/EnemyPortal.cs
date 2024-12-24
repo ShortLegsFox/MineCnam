@@ -17,9 +17,10 @@ public class NewMonoBehaviourScript : MonoBehaviour
     void Update()
     {
         timeUntilSpawn -= Time.deltaTime;
-        if ( timeUntilSpawn <= 0)
+        if (timeUntilSpawn <= 0)
         {
-            Instantiate(enemyPrefab,transform.position , Quaternion.identity);
+            Debug.Log("Spawning enemy at " + transform.position);
+            Instantiate(enemyPrefab, transform.position, Quaternion.identity);
             SetTimeUntilSpawn();
         }
     }

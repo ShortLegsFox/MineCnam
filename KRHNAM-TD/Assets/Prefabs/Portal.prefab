@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 2065292775844778104}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -121,3 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0e53015be54b3b4e8f6dd07c120b3d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyPrefab: {fileID: 0}
+  minimumSpawnTime: 0
+  maximumSpawnTime: 0
+  timeUntilSpawn: 0
