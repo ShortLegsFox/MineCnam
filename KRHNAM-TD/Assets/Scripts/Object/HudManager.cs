@@ -22,7 +22,8 @@ public class HudManager : MonoBehaviour
 
     private void Update()
     {
-        PlaceEntity();
+        //PlaceEntity();
+        PlaceTower();
         DisplayCursor();
     }
 
@@ -32,6 +33,11 @@ public class HudManager : MonoBehaviour
         ErrorManager.DebugLog($"Entity {EditorManager.Instance.selectedEntityPrefab.name} selected for placement.");
     }
 
+    public void SelectTower(I_TowerFactory towerFactory)
+    {
+        EditorManager.Instance.selectedTowerFactory = towerFactory;
+        ErrorManager.DebugLog($"Entity {EditorManager.Instance.selectedTowerFactory} selected for placement.");
+    }
 
     public void PlaceEntity()
     {
@@ -45,9 +51,22 @@ public class HudManager : MonoBehaviour
         }
     }
 
+    public void PlaceTower()
+    {
+        if (Input.GetMouseButtonDown(0) && EditorManager.Instance.IsTowerSelected)
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out RaycastHit hit))
+            {
+                //EditorManager.Instance.selectedTowerFactory.CreateTower(hit.point);
+                EditorManager.Instance.PlaceTower(hit.point);
+            }
+        }
+    }
+
     public void DisplayCursor()
     {
-        if (EditorManager.Instance.IsEntitySelected)
+        if (EditorManager.Instance.IsTowerSelected)
             DisplayBuildCursor();
         else
             DisplayNormalCursor();

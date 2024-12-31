@@ -3,16 +3,13 @@ using UnityEngine;
 
 namespace TDObject
 {
-    public class WaterTowerFactory : MonoBehaviour, I_TowerFactory
+    public class WaterTowerFactory : I_TowerFactory
     {
-        private WaterTower waterTowerPrefab;
+        private WaterTower _waterTowerPrefab;
 
-        public GameObject CreateTower(Vector3 position)
+        public override I_Tower CreateTower()
         {
-            GameObject towerSpawned;
-            towerSpawned = Instantiate(waterTowerPrefab.gameObject, position, Quaternion.identity);
-
-            return towerSpawned;
+            return _waterTowerPrefab;
         }
     }
 }

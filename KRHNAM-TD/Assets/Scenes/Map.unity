@@ -344,7 +344,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 507938739}
-  - component: {fileID: 507938738}
+  - component: {fileID: 507938740}
   m_Layer: 0
   m_Name: HUDManager
   m_TagString: Untagged
@@ -352,19 +352,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &507938738
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 507938737}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd129ed7931f56743afae64d0503a18c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  plusCursor: {fileID: 0}
 --- !u!4 &507938739
 Transform:
   m_ObjectHideFlags: 0
@@ -380,6 +367,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1117538884}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &507938740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 507938737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd129ed7931f56743afae64d0503a18c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plusCursor: {fileID: 2800000, guid: 410d1db200f883940833bf7857e6d2da, type: 3}
 --- !u!1 &569070646
 GameObject:
   m_ObjectHideFlags: 0
@@ -821,8 +821,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 507938739}
   - {fileID: 1187826878}
+  - {fileID: 507938739}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1143387515
@@ -908,13 +908,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 507938738}
+      - m_Target: {fileID: 507938740}
         m_TargetAssemblyTypeName: HudManager, Assembly-CSharp
-        m_MethodName: SelectEntity
+        m_MethodName: SelectTower
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 7443448369073697253, guid: de7b18c8367e8a54b861e38eb4ee9695, type: 3}
-          m_ObjectArgumentAssemblyTypeName: Entity, Assembly-CSharp
+          m_ObjectArgument: {fileID: 1428914212}
+          m_ObjectArgumentAssemblyTypeName: Interface.I_TowerFactory, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -983,7 +983,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1187826877}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1003,6 +1003,52 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectedEntityPrefab: {fileID: 0}
+  selectedTowerFactory: {fileID: 0}
+--- !u!1 &1428914211
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1428914213}
+  - component: {fileID: 1428914212}
+  m_Layer: 0
+  m_Name: FireTowerFactory
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1428914212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1428914211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dee5747498c4cfaad7c5162811c2e20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireTowerPrefab: {fileID: -8852926699863717031, guid: de7b18c8367e8a54b861e38eb4ee9695, type: 3}
+--- !u!4 &1428914213
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1428914211}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1513775267
 GameObject:
   m_ObjectHideFlags: 0
@@ -1111,3 +1157,4 @@ SceneRoots:
   - {fileID: 462242784}
   - {fileID: 898378418}
   - {fileID: 595084735}
+  - {fileID: 1428914213}

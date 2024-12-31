@@ -1,18 +1,16 @@
+using System;
 using Interface;
 using UnityEngine;
 
 namespace TDObject
 {
-    public class FireTowerFactory : MonoBehaviour, I_TowerFactory
+    public class FireTowerFactory : I_TowerFactory
     {
-        public FireTower fireTowerPrefab;
+        public FireTower _fireTowerPrefab;
 
-        public GameObject CreateTower(Vector3 position)
+        public override I_Tower CreateTower()
         {
-            GameObject towerSpawned;
-            towerSpawned = Instantiate(fireTowerPrefab.gameObject, position, Quaternion.identity);
-
-            return towerSpawned;
+            return _fireTowerPrefab;
         }
     }
 }

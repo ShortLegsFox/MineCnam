@@ -7,8 +7,10 @@ public class EditorManager : MonoBehaviour
     public static EditorManager Instance => instance;
 
     public I_Tower selectedEntityPrefab;
+    
+    public I_TowerFactory selectedTowerFactory;
     public bool IsEntitySelected => selectedEntityPrefab != null;
-
+    public bool IsTowerSelected => selectedTowerFactory != null;
 
     private void Awake()
     {
@@ -22,8 +24,7 @@ public class EditorManager : MonoBehaviour
 
         DontDestroyOnLoad(this.gameObject);
     }
-
-
+    
     public void PlaceEntity(Vector3 position)
     {
         if (selectedEntityPrefab != null)
@@ -35,6 +36,16 @@ public class EditorManager : MonoBehaviour
         else
             ErrorManager.DebugLog("No entity selected for placement.");
     }
-
-
+    
+    public void PlaceTower(Vector3 position)
+    {
+        if (selectedTowerFactory != null)
+        {
+            ErrorManager.DebugLog($"Placing entity at {position}");
+            var command = new PlaceEntityCommand(selectedTowerFactory.CreateTower(), position);
+            command.Execute();
+        }
+        else
+            ErrorManager.DebugLog("No entity selected for placement.");
+    }
 }

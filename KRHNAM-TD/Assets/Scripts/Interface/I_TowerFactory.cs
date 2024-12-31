@@ -2,9 +2,12 @@ using UnityEngine;
 
 namespace Interface
 {
-    public interface I_TowerFactory
+    public abstract class I_TowerFactory : MonoBehaviour
     {
-        public abstract GameObject CreateTower(Vector3 position);
-    
+        public virtual I_Tower CreateTower()
+        {
+            return null;
+        }
+
     }
 }
