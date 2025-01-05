@@ -226,7 +226,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8772926705380069055}
   - component: {fileID: 2723739421155689525}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BasicWaterTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -270,7 +270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a85824e3201312b409c4b5a24ed82bdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entityData: {fileID: 11400000, guid: 8a8cbebfa1703414e97275c739c19d2f, type: 2}
+  isPlaced: 0
   towerData: {fileID: 11400000, guid: 6f9698085319ebb43807f22ced83fc5e, type: 2}
 --- !u!1 &1359563416041018006
 GameObject:

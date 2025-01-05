@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Element: 1
   Level: 1
-  Prefab: {fileID: 1256814250574689019, guid: 8ff5e1e8b9286924d98dfe65dd843921, type: 3}
+  Prefab: {fileID: 1256814250574689019, guid: 5919796342252a344a6e8dfecd2d75ff, type: 3}
   MaxHp: 100
   Damage: 10
-  Range: 7
+  Range: 15
   AttackSpeed: 1

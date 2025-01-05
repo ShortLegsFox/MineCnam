@@ -10,7 +10,7 @@ public class Grid : MonoBehaviour
 
     float nodeDiameter;
     int gridSizeX, gridSizeY;
-    private Case selectedCase;
+    public Case selectedCase;
 
     private void Awake()
     {
