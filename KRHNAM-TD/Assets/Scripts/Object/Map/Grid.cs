@@ -44,7 +44,10 @@ public class Grid : MonoBehaviour
     {
         if (EditorManager.Instance.IsEntitySelected)
         {
-            EditorManager.Instance.selectedEntity.OnPlace(selectedCase.worldPosition);
+            if (selectedCase != null)
+                EditorManager.Instance.selectedEntity.OnPlace(selectedCase.worldPosition);
+            else
+                EditorManager.Instance.selectedEntity.OnPlace(new Vector3(0, -100, 0));
         }
     }
 

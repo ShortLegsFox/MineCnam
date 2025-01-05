@@ -35,7 +35,6 @@ public class HudManager : MonoBehaviour
         I_TowerFactory towerFactory = TowerFactory.GetTowerFactory(towerData.Element);
         Entity tower = towerFactory.CreateTower(towerData.Level);
         EditorManager.Instance.selectedEntity = tower;
-        SetTowerTransparent((Tower)tower);
 
         ErrorManager.DebugLog($"Entity selected for placement.");
     }
@@ -45,11 +44,8 @@ public class HudManager : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && EditorManager.Instance.IsEntitySelected && !EditorManager.Instance.selectedEntity.isPlaced)
         {
             Debug.Log("Placing entity");
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out RaycastHit hit))
-            {
-                EditorManager.Instance.PlaceEntity(Grid.Instance.CaseFromWorldPoint(hit.point));
-            }
+
+            EditorManager.Instance.PlaceEntity(Grid.Instance.selectedCase);
         }
     }
 
@@ -99,22 +95,6 @@ public class HudManager : MonoBehaviour
             selectedEntity = null;
     }
 
-
-    private void SetTowerTransparent(Tower tower)
-    {
-        MeshRenderer[] meshRenderers = tower.towerData.Prefab.GetComponentsInChildren<MeshRenderer>();
-
-        foreach (MeshRenderer renderer in meshRenderers)
-        {
-            if (renderer != null)
-            {
-                Material material = renderer.material;
-                Color color = material.color;
-                color.a = 0.5f;
-                material.color = color;
-            }
-        }
-    }
 
 
 }

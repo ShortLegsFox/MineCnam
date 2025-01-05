@@ -23,9 +23,8 @@ public class EditorManager : MonoBehaviour
 
     public void PlaceEntity(Case selectedCell)
     {
-        if (selectedEntity != null)
+        if (selectedEntity != null && selectedCell != null)
         {
-            ErrorManager.DebugLog($"Placing entity {selectedEntity.name} at {selectedCell}");
             var command = new PlaceEntityCommand(selectedEntity, selectedCell);
             command.Execute();
         }
