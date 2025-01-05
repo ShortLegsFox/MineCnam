@@ -7,7 +7,6 @@ public class HudManager : MonoBehaviour
     private static HudManager instance = null;
     public static HudManager Instance => instance;
     public static Entity selectedEntity;
-    public Texture2D plusCursor;
 
     private void Awake()
     {
@@ -25,7 +24,6 @@ public class HudManager : MonoBehaviour
     private void Update()
     {
         PlaceEntity();
-        DisplayCursor();
         DrawScope();
         OnEntityHover();
     }
@@ -68,23 +66,7 @@ public class HudManager : MonoBehaviour
         }
     }
 
-    public void DisplayCursor()
-    {
-        if (EditorManager.Instance.IsEntitySelected && Grid.Instance.selectedCase != null && Grid.Instance.selectedCase.IsEmpty)
-            DisplayBuildCursor();
-        else
-            DisplayNormalCursor();
-    }
 
-    public void DisplayBuildCursor()
-    {
-        Cursor.SetCursor(plusCursor, Vector2.zero, CursorMode.Auto);
-    }
-
-    public void DisplayNormalCursor()
-    {
-        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
-    }
 
     public void OnEntityHover()
     {
