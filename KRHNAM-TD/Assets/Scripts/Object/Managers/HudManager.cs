@@ -70,7 +70,7 @@ public class HudManager : MonoBehaviour
 
     public void DisplayCursor()
     {
-        if (EditorManager.Instance.IsEntitySelected)
+        if (EditorManager.Instance.IsEntitySelected && Grid.Instance.selectedCase != null && Grid.Instance.selectedCase.IsEmpty)
             DisplayBuildCursor();
         else
             DisplayNormalCursor();

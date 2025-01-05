@@ -44,10 +44,10 @@ public class Grid : MonoBehaviour
     {
         if (EditorManager.Instance.IsEntitySelected)
         {
-            if (selectedCase != null)
+            if (selectedCase != null && selectedCase.IsEmpty)
                 EditorManager.Instance.selectedEntity.OnPlace(selectedCase.worldPosition);
             else
-                EditorManager.Instance.selectedEntity.OnPlace(new Vector3(0, -100, 0));
+                EditorManager.Instance.selectedEntity.OnPlace(new Vector3(-1000, -1000, -1000));
         }
     }
 
@@ -58,6 +58,7 @@ public class Grid : MonoBehaviour
         if (Physics.Raycast(ray, out RaycastHit hit))
         {
             selectedCase = CaseFromWorldPoint(hit.point);
+            //Debug.Log("Case bloquée : " + selectedCase.isBlocked);
             //Debug.Log($"[{selectedCase.GridX};{selectedCase.GridY}]");
         }
         else
@@ -76,6 +77,16 @@ public class Grid : MonoBehaviour
             {
                 Vector3 worldPoint = worldBottomLeft + Vector3.right * (x * nodeDiameter + nodeRadius) + Vector3.forward * (y * nodeDiameter + nodeRadius);
                 grid[x, y] = new Case(worldPoint, x, y);
+
+                Collider[] colliders = Physics.OverlapSphere(worldPoint, nodeRadius);
+                foreach (Collider collider in colliders)
+                {
+                    if (collider.CompareTag("Obstacle"))
+                    {
+                        grid[x, y].isBlocked = true;
+                        break;
+                    }
+                }
             }
         }
     }
