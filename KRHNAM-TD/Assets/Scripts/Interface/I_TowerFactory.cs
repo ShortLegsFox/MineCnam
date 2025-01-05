@@ -1,13 +1,10 @@
-using UnityEngine;
+using Abstract;
 
 namespace Interface
 {
-    public abstract class I_TowerFactory : MonoBehaviour
+    public interface I_TowerFactory
     {
-        public virtual I_Tower CreateTower()
-        {
-            return null;
-        }
 
+        public Tower CreateTower(TowerLevel level);
     }
 }

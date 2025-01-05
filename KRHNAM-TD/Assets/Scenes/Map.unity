@@ -910,11 +910,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 507938740}
         m_TargetAssemblyTypeName: HudManager, Assembly-CSharp
-        m_MethodName: SelectTower
-        m_Mode: 2
+        m_MethodName: SelectEntity
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 1428914212}
-          m_ObjectArgumentAssemblyTypeName: Interface.I_TowerFactory, Assembly-CSharp
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1002,9 +1002,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f6caf635b0bcef4f93718d957cdb61a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedEntityPrefab: {fileID: 0}
-  selectedTowerFactory: {fileID: 0}
---- !u!1 &1428914211
+  selectedEntity: {fileID: 0}
+--- !u!1 &1322408203
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1012,35 +1011,36 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1428914213}
-  - component: {fileID: 1428914212}
+  - component: {fileID: 1322408205}
+  - component: {fileID: 1322408204}
   m_Layer: 0
-  m_Name: FireTowerFactory
+  m_Name: TowerFactory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1428914212
+--- !u!114 &1322408204
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1428914211}
+  m_GameObject: {fileID: 1322408203}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9dee5747498c4cfaad7c5162811c2e20, type: 3}
+  m_Script: {fileID: 11500000, guid: 91373fae1638e054ab8e0210cf84b4cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireTowerPrefab: {fileID: -8852926699863717031, guid: de7b18c8367e8a54b861e38eb4ee9695, type: 3}
---- !u!4 &1428914213
+  towerDataList:
+  - {fileID: 11400000, guid: 6f9698085319ebb43807f22ced83fc5e, type: 2}
+--- !u!4 &1322408205
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1428914211}
+  m_GameObject: {fileID: 1322408203}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -1157,4 +1157,4 @@ SceneRoots:
   - {fileID: 462242784}
   - {fileID: 898378418}
   - {fileID: 595084735}
-  - {fileID: 1428914213}
+  - {fileID: 1322408205}
