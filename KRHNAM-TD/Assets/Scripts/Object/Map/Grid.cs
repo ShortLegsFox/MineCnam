@@ -44,11 +44,7 @@ public class Grid : MonoBehaviour
     {
         if (EditorManager.Instance.IsEntitySelected)
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out RaycastHit hit))
-            {
-                EditorManager.Instance.selectedEntity.OnPlace(hit.point);
-            }
+            EditorManager.Instance.selectedEntity.OnPlace(selectedCase.worldPosition);
         }
     }
 

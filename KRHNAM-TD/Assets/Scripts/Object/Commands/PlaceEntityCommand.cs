@@ -18,6 +18,7 @@ public class PlaceEntityCommand : I_Command
         {
             if (Case.IsEmpty)
             {
+                SoundManager.Instance.PlayEffect("Build");
                 Vector3 newObjectPosition = new Vector3(Case.worldPosition.x, Case.worldPosition.y + 1, Case.worldPosition.z);
                 Entity.OnPlace(newObjectPosition);
                 Entity.isPlaced = true;
