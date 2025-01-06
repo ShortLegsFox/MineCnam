@@ -1,7 +1,9 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "NewScriptableObjectScript", menuName = "Scriptable Objects/NewScriptableObjectScript")]
-public class NewScriptableObjectScript : ScriptableObject
+public abstract class Enemy : I_Entity
 {
-    
+    public int Hp {  get; set; }
+    public int Type { get; set; }
+    public int Element {  get; set; }
+    public int MoveSpeed { get; set; }
 }
