@@ -1,6 +1,10 @@
-using UnityEngine;
+using Abstract;
 
-public class I_TourFactory
+namespace Interface
 {
-    
+    public interface I_TowerFactory
+    {
+
+        public Tower CreateTower(TowerLevel level);
+    }
 }
