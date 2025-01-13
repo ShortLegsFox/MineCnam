@@ -276,7 +276,9 @@ MonoBehaviour:
   isPlaced: 0
   targetList: []
   currentTarget: {fileID: 0}
+  shootHeat: 1
   towerData: {fileID: 11400000, guid: caa39910a67ddc24e80a872202889b9d, type: 2}
+  projectilePrefab: {fileID: 1256814250574689019, guid: 5d7cf6143bbfcb74fab7014b6d79193e, type: 3}
 --- !u!208 &15284220483125396
 NavMeshObstacle:
   m_ObjectHideFlags: 0
