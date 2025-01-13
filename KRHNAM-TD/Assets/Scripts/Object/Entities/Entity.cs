@@ -17,14 +17,6 @@ public abstract class Entity : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        if (isPlaced)
-            SetEntityAsObstacle();
-        else
-            SetEntityAsNotObstacle();
-    }
-
     public virtual void OnPlace(Vector3 position)
     {
         transform.position = position;
@@ -35,20 +27,11 @@ public abstract class Entity : MonoBehaviour
         return instance.GetComponent<T>();
     }
 
-    private void SetEntityAsObstacle()
+    public void SetEntityAsObstacle()
     {
         if (this.GetComponent<NavMeshObstacle>() != null)
         {
             this.GetComponent<NavMeshObstacle>().enabled = true;
         }
     }
-
-    private void SetEntityAsNotObstacle()
-    {
-        if (this.GetComponent<NavMeshObstacle>() != null)
-        {
-            this.GetComponent<NavMeshObstacle>().enabled = false;
-        }
-    }
-
 }

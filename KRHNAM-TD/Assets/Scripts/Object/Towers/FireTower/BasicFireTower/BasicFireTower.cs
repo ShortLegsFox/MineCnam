@@ -6,4 +6,9 @@ public class BasicFireTower : Tower
     {
         throw new System.NotImplementedException();
     }
+
+    void Update()
+    {
+        Attack();
+    }
 }
