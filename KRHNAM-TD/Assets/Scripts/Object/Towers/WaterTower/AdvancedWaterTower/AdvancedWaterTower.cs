@@ -1,9 +1,13 @@
 using Abstract;
+using UnityEngine;
 
 public class AdvancedWaterTower : Tower
 {
     public override void Attack()
     {
-        throw new System.NotImplementedException();
+        if (isPlaced)
+        {
+            Debug.Log("ATTACK ADVANCED WATER");
+        }
     }
 }
