@@ -18,12 +18,19 @@ public class BasicWaterTower : Tower
             Debug.Log("ATTACK !!");
         }
     }
-    
+
+    private void Start()
+    {
+        SphereCollider sphereCollider = GetComponent<SphereCollider>();
+        sphereCollider.radius = towerData.Range;
+    }
+
     private void Update()
     {
         if (targetList.Count > 0 && currentTarget != null)
         {
             Debug.DrawLine(transform.position, currentTarget.transform.position, Color.red);
+            Debug.Log(towerData.Range);
         }
     }
 
