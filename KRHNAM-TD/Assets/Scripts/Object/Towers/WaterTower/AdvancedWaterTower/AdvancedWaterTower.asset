@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba94216fbe72b1d4ea39546c50ac3af9, type: 3}
   m_Name: AdvancedWaterTower
   m_EditorClassIdentifier: 
-  Element: 1
+  Element: 4
   Level: 1
   Prefab: {fileID: 1256814250574689019, guid: 5919796342252a344a6e8dfecd2d75ff, type: 3}
   MaxHp: 100

@@ -1,6 +1,7 @@
+using Abstract;
 using UnityEngine;
 
-public class I_EnemyFactory
+public interface I_EnemyFactory
 {
-    
+    public Enemy CreateEnemy(EnemyType type);
 }
