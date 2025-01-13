@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -12,6 +13,9 @@ public class GameManager : MonoBehaviour
     public TowerFactory TowerFactory => TowerFactory.Instance;
 
     [SerializeField] private Grid grid;
+
+    [SerializeField] private List<TowerData> towerDataList;
+    [SerializeField] private List<EnemyData> enemyDataList;
 
     public bool DebugMode { get; private set; } = false;
 
@@ -37,4 +41,15 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public TowerData GetTowerData(Element element, TowerLevel level)
+    {
+        foreach (var tower in towerDataList)
+        {
+            if (tower.Element == element && tower.Level == level)
+            {
+                return tower;
+            }
+        }
+        return null;
+    }
 }
