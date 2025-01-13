@@ -4,6 +4,7 @@ using UnityEngine.AI;
 public abstract class Entity : MonoBehaviour
 {
     public bool isPlaced = false;
+
     public Case Position
     {
         get

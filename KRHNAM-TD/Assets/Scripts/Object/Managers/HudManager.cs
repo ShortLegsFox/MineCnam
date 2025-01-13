@@ -1,5 +1,6 @@
 using Abstract;
 using Interface;
+using TMPro;
 using UnityEngine;
 
 public class HudManager : MonoBehaviour
@@ -7,6 +8,7 @@ public class HudManager : MonoBehaviour
     private static HudManager instance = null;
     public static HudManager Instance => instance;
     public static Entity selectedEntity;
+    public TextMeshProUGUI Money;
 
     private void Awake()
     {
@@ -26,6 +28,12 @@ public class HudManager : MonoBehaviour
         PlaceEntity();
         DrawScope();
         OnEntityHover();
+        UpdateMoneyText();
+    }
+
+    private void UpdateMoneyText()
+    {
+        Money.text = StoreManager.Instance.gold.ToString();
     }
 
     public void SelectTower(TowerData towerData)
