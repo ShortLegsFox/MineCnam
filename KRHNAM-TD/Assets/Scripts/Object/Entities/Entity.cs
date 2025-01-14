@@ -18,6 +18,11 @@ public abstract class Entity : MonoBehaviour
         }
     }
 
+    private void Awake()
+    {
+        isPlaced = false;
+    }
+
     private void Update()
     {
         if (isPlaced)

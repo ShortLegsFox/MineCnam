@@ -52,6 +52,11 @@ public class CursorManager : MonoBehaviour
         }
     }
 
+    public void SetBlockedCursor()
+    {
+        SetCursor("BlockedCursor");
+    }
+
     public void SetDefaultCursor()
     {
         Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);

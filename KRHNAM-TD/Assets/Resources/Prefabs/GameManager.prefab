@@ -378,8 +378,13 @@ MonoBehaviour:
   gold: 10
   IncrementGoldAmount: 1
   IncrementGoldInterval: 1
-  storeArticles:
+  StoreArticles:
   - {fileID: 11400000, guid: d3ce15491806ff44694cd3ea7b1d7e7d, type: 2}
+  - {fileID: 11400000, guid: 28c4bcad48e4ce744a30e491072d61e1, type: 2}
+  - {fileID: 11400000, guid: 56867a65b7b2fe94daaaf1b8829e0226, type: 2}
+  - {fileID: 11400000, guid: d3ce15491806ff44694cd3ea7b1d7e7d, type: 2}
+  - {fileID: 11400000, guid: 2abc60bb3c0035d4e9cf6fd4ff22c987, type: 2}
+  - {fileID: 11400000, guid: a24705455e9654242bd2eb0f40a0153a, type: 2}
 --- !u!1 &4539255608942823798
 GameObject:
   m_ObjectHideFlags: 0
@@ -426,6 +431,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Money: {fileID: 0}
+  StorePannel: {fileID: 0}
+  ItemListUI: {fileID: 0}
+  TabName: {fileID: 0}
 --- !u!1 &5749212420864945817
 GameObject:
   m_ObjectHideFlags: 0

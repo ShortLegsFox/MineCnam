@@ -1,3 +1,5 @@
+using Abstract;
+using Interface;
 using System.Collections;
 using UnityEngine;
 
@@ -8,7 +10,7 @@ public class StoreManager : MonoBehaviour
     public int gold = 0;
     public int IncrementGoldAmount = 1;
     public float IncrementGoldInterval = 1;
-    public StoreArticle[] storeArticles;
+    public StoreArticle[] StoreArticles;
 
     private void Awake()
     {
@@ -47,14 +49,27 @@ public class StoreManager : MonoBehaviour
         gold -= amount;
     }
 
-    public bool CanAfford(int amount)
+    public bool CanAfford(StoreArticle article)
     {
-        return gold >= amount;
+        return gold >= article.Price;
     }
 
-    public void Buy(StoreArticle article)
+    public bool Buy(StoreArticle article)
     {
+        if (CanAfford(article))
+        {
+            RemoveGold(article.Price);
+            I_TowerFactory towerFactory = TowerFactory.GetTowerFactory(article.Element);
+            Tower tower = towerFactory.CreateTower(article.Level);
+            EditorManager.Instance.selectedEntity = tower;
+            return true;
+        }
 
+        else
+        {
+            Debug.Log("Not enough gold to buy " + article.Name);
+            return false;
+        }
     }
 
 
