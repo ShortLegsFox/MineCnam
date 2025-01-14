@@ -16,4 +16,5 @@ MonoBehaviour:
   Name: Basic Water Tower
   Price: 10
   Image: {fileID: 21300000, guid: 288e3094843e1194c9d4d287053668ad, type: 3}
-  Element: 1
+  Element: 4
+  Level: 0
