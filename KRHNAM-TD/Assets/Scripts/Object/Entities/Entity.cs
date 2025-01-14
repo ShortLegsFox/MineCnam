@@ -4,6 +4,7 @@ using UnityEngine.AI;
 public abstract class Entity : MonoBehaviour
 {
     public bool isPlaced = false;
+
     public Case Position
     {
         get
@@ -15,6 +16,11 @@ public abstract class Entity : MonoBehaviour
             }
             return Grid.Instance.CaseFromWorldPoint(transform.position);
         }
+    }
+
+    private void Awake()
+    {
+        isPlaced = false;
     }
 
     private void Update()

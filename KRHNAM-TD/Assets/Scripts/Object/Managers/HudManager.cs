@@ -1,5 +1,6 @@
 using Abstract;
 using Interface;
+using TMPro;
 using UnityEngine;
 
 public class HudManager : MonoBehaviour
@@ -7,6 +8,10 @@ public class HudManager : MonoBehaviour
     private static HudManager instance = null;
     public static HudManager Instance => instance;
     public static Entity selectedEntity;
+    public TextMeshProUGUI Money;
+    public GameObject StorePannel;
+    public ItemListUI ItemListUI;
+    public TextMeshProUGUI TabName;
 
     private void Awake()
     {
@@ -26,6 +31,33 @@ public class HudManager : MonoBehaviour
         PlaceEntity();
         DrawScope();
         OnEntityHover();
+        UpdateMoneyText();
+    }
+
+    public void SelectTab(string element)
+    {
+        switch (element)
+        {
+            case "Fire":
+                ItemListUI.PopulateList(Element.Fire);
+                TabName.text = "Fire Towers";
+                break;
+            case "Water":
+                ItemListUI.PopulateList(Element.Water);
+                TabName.text = "Water Towers";
+                break;
+        }
+    }
+
+    public void ToggleStorePannel()
+    {
+        //ErrorManager.LogInfo("Toggling store pannel");
+        StorePannel.SetActive(!StorePannel.activeSelf);
+    }
+
+    private void UpdateMoneyText()
+    {
+        Money.text = StoreManager.Instance.gold.ToString();
     }
 
     public void SelectTower(TowerData towerData)
@@ -33,17 +65,20 @@ public class HudManager : MonoBehaviour
         I_TowerFactory towerFactory = TowerFactory.GetTowerFactory(towerData.Element);
         Entity tower = towerFactory.CreateTower(towerData.Level);
         EditorManager.Instance.selectedEntity = tower;
-
         ErrorManager.DebugLog($"Entity selected for placement.");
     }
 
     public void PlaceEntity()
     {
-        if (Input.GetMouseButtonDown(0) && EditorManager.Instance.IsEntitySelected && !EditorManager.Instance.selectedEntity.isPlaced)
+        if (Input.GetMouseButtonDown(0) && !StorePannel.activeSelf)
         {
-            Debug.Log("Placing entity");
+            if (EditorManager.Instance.IsEntitySelected && !EditorManager.Instance.selectedEntity.isPlaced)
+            {
+                Debug.Log("Entity not placed");
+                EditorManager.Instance.PlaceEntity(Grid.Instance.selectedCase);
+                Debug.Log("Placing entity");
 
-            EditorManager.Instance.PlaceEntity(Grid.Instance.selectedCase);
+            }
         }
     }
 
@@ -67,7 +102,6 @@ public class HudManager : MonoBehaviour
     }
 
 
-
     public void OnEntityHover()
     {
         Entity entity = Grid.Instance.selectedCase?.entity;
@@ -76,6 +110,9 @@ public class HudManager : MonoBehaviour
         else
             selectedEntity = null;
     }
+
+
+
 
 
 

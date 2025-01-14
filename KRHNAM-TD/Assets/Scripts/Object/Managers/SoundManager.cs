@@ -8,19 +8,8 @@ public class SoundManager : MonoBehaviour
 
     public AudioSource effectsSource;
     public AudioClip[] soundEffects;
-
-    private void Awake()
-    {
-        if (instance != null && instance != this)
-        {
-            Destroy(this.gameObject);
-            return;
-        }
-        else
-            instance = this;
-
-        DontDestroyOnLoad(this.gameObject);
-    }
+    public AudioSource musicSource;
+    public AudioClip[] musicClips;
 
     public void PlayEffect(string clipName)
     {
@@ -35,6 +24,34 @@ public class SoundManager : MonoBehaviour
         }
     }
 
+    public void PlayMusic(string clipName)
+    {
+        AudioClip clip = GetClipByName(clipName, musicClips);
+        if (clip != null)
+        {
+            musicSource.clip = clip;
+            musicSource.Play();
+        }
+        else
+        {
+            Debug.LogError($"La musique '{clipName}' n'a pas été trouvée!");
+        }
+    }
+
+    private void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
+        else
+            instance = this;
+
+        DontDestroyOnLoad(this.gameObject);
+    }
+
+
     private AudioClip GetClipByName(string clipName, AudioClip[] clips)
     {
         foreach (AudioClip clip in clips)
@@ -44,4 +61,5 @@ public class SoundManager : MonoBehaviour
         }
         return null;
     }
+
 }
