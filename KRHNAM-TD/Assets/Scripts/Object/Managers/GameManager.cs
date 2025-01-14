@@ -30,6 +30,11 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
+    public void Start()
+    {
+        SoundManager.PlayMusic("MC1");
+    }
+
     public void Update()
     {
         if (Input.GetKeyDown(KeyCode.F1))
