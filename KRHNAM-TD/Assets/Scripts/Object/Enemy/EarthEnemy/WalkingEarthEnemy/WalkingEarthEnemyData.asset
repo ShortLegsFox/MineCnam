@@ -9,13 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba94216fbe72b1d4ea39546c50ac3af9, type: 3}
-  m_Name: AdvancedWaterTower
+  m_Script: {fileID: 11500000, guid: 9f14ef1f447936b448a6f394a1045ff2, type: 3}
+  m_Name: WalkingEarthEnemyData
   m_EditorClassIdentifier: 
-  Element: 4
-  Level: 1
-  Prefab: {fileID: 1256814250574689019, guid: 5919796342252a344a6e8dfecd2d75ff, type: 3}
-  MaxHp: 100
-  Damage: 10
-  Range: 4
-  AttackSpeed: 0.5
+  Element: 0
+  Prefab: {fileID: 3987174384991102897, guid: a9b92bac740aaa54ea517758e8de0ab1, type: 3}
+  MaxHp: 5
+  Damage: 2
+  MoveSpeed: 5

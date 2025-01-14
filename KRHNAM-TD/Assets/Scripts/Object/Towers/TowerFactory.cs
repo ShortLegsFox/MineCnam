@@ -7,7 +7,6 @@ public class TowerFactory : MonoBehaviour
 {
     private static TowerFactory instance = null;
     public static TowerFactory Instance => instance;
-    [SerializeField] private List<TowerData> towerDataList;
 
     private void Awake()
     {
@@ -20,18 +19,6 @@ public class TowerFactory : MonoBehaviour
             instance = this;
 
         DontDestroyOnLoad(this.gameObject);
-    }
-
-    public TowerData GetTowerData(Element element, TowerLevel level)
-    {
-        foreach (var tower in towerDataList)
-        {
-            if (tower.Element == element && tower.Level == level)
-            {
-                return tower;
-            }
-        }
-        return null;
     }
 
     public static I_TowerFactory GetTowerFactory(Element element)
