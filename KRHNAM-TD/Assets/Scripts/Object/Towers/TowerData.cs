@@ -9,5 +9,5 @@ public class TowerData : ScriptableObject
     public int MaxHp;
     public int Damage;
     public int Range;
-    public int AttackSpeed;
+    public float AttackSpeed;
 }

@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public HudManager HudManager => HudManager.Instance;
     public WaveManager WaveManager => WaveManager.Instance;
     public SoundManager SoundManager => SoundManager.Instance;
+    public StoreManager StoreManager => StoreManager.Instance;
     public Grid Grid => Grid.Instance;
     public TowerFactory TowerFactory => TowerFactory.Instance;
 
@@ -33,11 +34,20 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
+    public void Start()
+    {
+        SoundManager.PlayMusic("MC1");
+    }
+
     public void Update()
     {
         if (Input.GetKeyDown(KeyCode.F1))
         {
             DebugMode = !DebugMode;
+        }
+        if (Input.GetKeyDown(KeyCode.F2))
+        {
+            HudManager.ToggleStorePannel();
         }
     }
 
