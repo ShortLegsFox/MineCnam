@@ -227,6 +227,8 @@ GameObject:
   - component: {fileID: 8772926705380069055}
   - component: {fileID: 2723739421155689525}
   - component: {fileID: 34062080012696098}
+  - component: {fileID: 8052336289732923280}
+  - component: {fileID: 398884638746616137}
   m_Layer: 6
   m_Name: BasicWaterTower
   m_TagString: Untagged
@@ -271,8 +273,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a85824e3201312b409c4b5a24ed82bdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPlaced: 1
+  isPlaced: 0
+  targetList: []
+  currentTarget: {fileID: 0}
   towerData: {fileID: 11400000, guid: 6f9698085319ebb43807f22ced83fc5e, type: 2}
+  projectilePrefab: {fileID: 1256814250574689019, guid: 5d7cf6143bbfcb74fab7014b6d79193e, type: 3}
 --- !u!208 &34062080012696098
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -289,6 +294,54 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!135 &8052336289732923280
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1256814250574689019}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 2
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &398884638746616137
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1256814250574689019}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1359563416041018006
 GameObject:
   m_ObjectHideFlags: 0

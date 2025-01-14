@@ -1,9 +1,16 @@
 using Abstract;
+using UnityEngine;
 
 public class AdvancedFireTower : Tower
 {
-    public override void Attack()
+    public GameObject projectilePrefab;
+
+    public override void Attack(Collider co)
     {
-        throw new System.NotImplementedException();
+        if (isPlaced)
+        {
+            GameObject g = (GameObject)Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+            g.GetComponent<MoveProjectile>().target = co.transform;
+        }
     }
 }
