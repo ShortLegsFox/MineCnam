@@ -1541,6 +1541,42 @@ PrefabInstance:
       propertyPath: grid
       value: 
       objectReference: {fileID: 112393620}
+    - target: {fileID: 4989986010924723499, guid: 65ea7828802ffdf478218ed57b98583e, type: 3}
+      propertyPath: enemyDataList.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4989986010924723499, guid: 65ea7828802ffdf478218ed57b98583e, type: 3}
+      propertyPath: towerDataList.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4989986010924723499, guid: 65ea7828802ffdf478218ed57b98583e, type: 3}
+      propertyPath: 'towerDataList.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 9117b73ee8ea55d4f80c52b8cb144025, type: 2}
+    - target: {fileID: 4989986010924723499, guid: 65ea7828802ffdf478218ed57b98583e, type: 3}
+      propertyPath: 'towerDataList.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: caa39910a67ddc24e80a872202889b9d, type: 2}
+    - target: {fileID: 4989986010924723499, guid: 65ea7828802ffdf478218ed57b98583e, type: 3}
+      propertyPath: 'towerDataList.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 474ba7183555f094187a300525ba7fee, type: 2}
+    - target: {fileID: 4989986010924723499, guid: 65ea7828802ffdf478218ed57b98583e, type: 3}
+      propertyPath: 'towerDataList.Array.data[3]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 6f9698085319ebb43807f22ced83fc5e, type: 2}
+    - target: {fileID: 4989986010924723499, guid: 65ea7828802ffdf478218ed57b98583e, type: 3}
+      propertyPath: 'towerDataList.Array.data[4]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 31f52c03c7d59f347a75d05cc2bea177, type: 2}
+    - target: {fileID: 4989986010924723499, guid: 65ea7828802ffdf478218ed57b98583e, type: 3}
+      propertyPath: 'towerDataList.Array.data[5]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 507925228e7bc8448b26547204d0135c, type: 2}
+    - target: {fileID: 4989986010924723499, guid: 65ea7828802ffdf478218ed57b98583e, type: 3}
+      propertyPath: 'towerDataList.Array.data[6]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 9117b73ee8ea55d4f80c52b8cb144025, type: 2}
     - target: {fileID: 7624181238174045057, guid: 65ea7828802ffdf478218ed57b98583e, type: 3}
       propertyPath: m_Name
       value: GameManager
