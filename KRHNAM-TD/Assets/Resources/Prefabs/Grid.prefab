@@ -45,4 +45,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gridWorldSize: {x: 50, y: 50}
-  nodeRadius: 0.5
+  nodeRadius: 1
