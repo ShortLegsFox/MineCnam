@@ -1,12 +1,14 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class NewMonoBehaviourScript : MonoBehaviour
 {
-    [SerializeField] private GameObject enemyPrefab;
+    [SerializeField] private List<GameObject> enemyPrefabList;
 
     [SerializeField] private float minimumSpawnTime;
     [SerializeField] private float maximumSpawnTime;
     [SerializeField] private float timeUntilSpawn;
+    private int listIndex=0;
 
     void Awake()
     {
@@ -20,8 +22,9 @@ public class NewMonoBehaviourScript : MonoBehaviour
         if (timeUntilSpawn <= 0)
         {
             //Debug.Log("Spawning enemy at " + transform.position);
-            Instantiate(enemyPrefab, transform.position, Quaternion.identity);
+            Instantiate(enemyPrefabList[listIndex], transform.position, Quaternion.identity);
             SetTimeUntilSpawn();
+            listIndex = (listIndex + 1) % 5;
         }
     }
 
