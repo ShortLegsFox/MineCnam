@@ -1,13 +1,13 @@
 using Abstract;
 using UnityEngine;
 
-public class FireEnemyFactory : I_EnemyFactory
+public class EarthEnemyFactory : I_EnemyFactory
 {
     public GameObject portal;
     public Enemy CreateEnemy(EnemyType type)
     {
         portal = GameObject.Find("Portal");
-        GameObject prefab = GameManager.Instance.GetEnemyData(Element.Fire, type).Prefab;
+        GameObject prefab = GameManager.Instance.GetEnemyData(Element.Earth, type).Prefab;
         GameObject instance = Object.Instantiate(prefab, portal.transform.position, Quaternion.identity);
         instance.transform.parent = Grid.Instance.transform;
         return instance.GetComponent<Enemy>();    
