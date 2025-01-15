@@ -14,8 +14,10 @@ GameObject:
   - component: {fileID: 6932079665980737569}
   - component: {fileID: 3442034123625353172}
   - component: {fileID: 2044040032209266073}
+  - component: {fileID: -4991993056031974262}
+  - component: {fileID: -4776866577589407070}
   m_Layer: 9
-  m_Name: WalkingWoodEnemy
+  m_Name: WalkingWaterEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -67,7 +69,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 84af42b2b7379e840a150c279dc1d51d, type: 2}
+  - {fileID: 2100000, guid: d91b401ea34911e4387beb9b99a608c4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -122,7 +124,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66e7c6bdcc7185941bbcaf78a8305bb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
 --- !u!195 &2044040032209266073
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -145,3 +146,30 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 3
   m_ObstacleAvoidanceType: 4
+--- !u!114 &-4991993056031974262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3987174384991102897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66e7c6bdcc7185941bbcaf78a8305bb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-4776866577589407070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3987174384991102897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c30f325973176642a7a68f79acbdb69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlaced: 0
+  enemyData: {fileID: 11400000, guid: c151fb1b8e57d2c4281e8836d1708a07, type: 2}
+  element: 4

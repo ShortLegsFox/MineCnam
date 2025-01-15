@@ -64,4 +64,16 @@ public class GameManager : MonoBehaviour
         }
         return null;
     }
+
+    public EnemyData GetEnemyData(Element element, EnemyType type)
+    {
+        foreach (var enemyData in enemyDataList)
+        {
+            if (enemyData.element == element && enemyData.type == type)
+            {
+                return enemyData;
+            }
+        }
+        return null;
+    }
 }

@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 6932079665980737569}
   - component: {fileID: 3442034123625353172}
   - component: {fileID: 2044040032209266073}
+  - component: {fileID: 7692816443830317934}
   m_Layer: 9
-  m_Name: WalkingFireEnemy
-  m_TagString: Enemy
+  m_Name: WalkingWoodEnemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -67,7 +68,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 92480a2b6ffb0454eb102e58b76587fb, type: 2}
+  - {fileID: 2100000, guid: 84af42b2b7379e840a150c279dc1d51d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -122,7 +123,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66e7c6bdcc7185941bbcaf78a8305bb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
 --- !u!195 &2044040032209266073
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -136,7 +136,7 @@ NavMeshAgent:
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 1200000
+  m_AngularSpeed: 120
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 0
@@ -145,3 +145,18 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 3
   m_ObstacleAvoidanceType: 4
+--- !u!114 &7692816443830317934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3987174384991102897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fcd0d149db5b03428c3744e9dad8a58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlaced: 0
+  enemyData: {fileID: 11400000, guid: c151fb1b8e57d2c4281e8836d1708a07, type: 2}
+  element: 2

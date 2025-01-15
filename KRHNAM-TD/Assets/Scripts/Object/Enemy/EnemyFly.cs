@@ -1,20 +1,15 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyBulk : MonoBehaviour
+public class EnemyFly : EnemyTypeAbs
 {
-    private GameObject castle;
-    public float speed;
-    private NavMeshAgent agent;
-
-    void Start()
+    new public void Start()
     {
-        castle = GameObject.Find("Castle");
-        agent = GetComponent<NavMeshAgent>();
-        agent.speed = speed;
+        base.Start();
     }
 
-    void Update()
+    // REmove with FLy behaviour
+    public override void Update()
     {
         if (castle != null)
         {

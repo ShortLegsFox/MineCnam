@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f14ef1f447936b448a6f394a1045ff2, type: 3}
   m_Name: WalkingEnemyData
   m_EditorClassIdentifier: 
-  Element: 0
   Prefab: {fileID: 0}
-  MaxHp: 0
-  Damage: 0
-  MoveSpeed: 0
+  MaxHp: 5
+  Damage: 5
+  MoveSpeed: 5
