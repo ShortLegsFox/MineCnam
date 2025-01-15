@@ -1709,6 +1709,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 001cba11a3b38f5439556c2c5f2e1280, type: 3}
+    - target: {fileID: 1877684275146827845, guid: ca0632c7fe9684f43bf0b8d5c5ab4033, type: 3}
+      propertyPath: ArticlePannel
+      value: 
+      objectReference: {fileID: 7048060113596952078, guid: fd1d1d3dc271e474185177fa89173ab6, type: 3}
     - target: {fileID: 2333147029745087317, guid: ca0632c7fe9684f43bf0b8d5c5ab4033, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -8.116455
