@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public class NewMonoBehaviourScript : MonoBehaviour
+public class EnemyPortal : MonoBehaviour
 {
     [SerializeField] private List<GameObject> enemyPrefabList;
 
@@ -10,8 +10,16 @@ public class NewMonoBehaviourScript : MonoBehaviour
     [SerializeField] private float timeUntilSpawn;
     private int listIndex=0;
 
+    public List<I_EnemyFactory> enemyFactoryList = new List<I_EnemyFactory>();
+
+
     void Awake()
     {
+        enemyFactoryList.Add(new FireEnemyFactory());
+        enemyFactoryList.Add(new WaterEnemyFactory());
+        enemyFactoryList.Add(new MetalEnemyFactory());
+        enemyFactoryList.Add(new WoodEnemyFactory());
+        enemyFactoryList.Add(new EarthEnemyFactory());
         SetTimeUntilSpawn();
     }
 
@@ -22,7 +30,8 @@ public class NewMonoBehaviourScript : MonoBehaviour
         if (timeUntilSpawn <= 0)
         {
             //Debug.Log("Spawning enemy at " + transform.position);
-            Instantiate(enemyPrefabList[listIndex], transform.position, Quaternion.identity);
+            //Instantiate(enemyFactoryList[listIndex].CreateEnemy(EnemyType.Walking), transform.position, Quaternion.identity);
+            enemyFactoryList[listIndex].CreateEnemy(EnemyType.Walking);
             SetTimeUntilSpawn();
             listIndex = (listIndex + 1) % 5;
         }
