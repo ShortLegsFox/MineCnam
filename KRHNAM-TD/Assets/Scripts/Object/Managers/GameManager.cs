@@ -13,8 +13,6 @@ public class GameManager : MonoBehaviour
     public Grid Grid => Grid.Instance;
     public TowerFactory TowerFactory => TowerFactory.Instance;
 
-    [SerializeField] private Grid grid;
-
     [SerializeField] private List<TowerData> towerDataList;
     [SerializeField] private List<EnemyData> enemyDataList;
 
@@ -48,6 +46,10 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F2))
         {
             HudManager.ToggleStorePannel();
+        }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            HudManager.TogglePauseMenu();
         }
     }
 
