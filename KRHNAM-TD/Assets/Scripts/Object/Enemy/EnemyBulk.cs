@@ -1,24 +1,19 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyFly : MonoBehaviour
+public class EnemyBulk : EnemyTypeAbs
 {
-    private GameObject castle;
-    public float speed;
-    private NavMeshAgent agent;
-
-    void Start()
+    new public void Start()
     {
-        castle = GameObject.Find("Castle");
-        agent = GetComponent<NavMeshAgent>();
-        agent.speed = speed;
+        base.Start();
     }
 
-    void Update()
+    // REmove with Bulk behaviour
+    public override void Update()
     {
         if (castle != null)
         {
             agent.SetDestination(castle.transform.position);
         }
     }
-}
+}   

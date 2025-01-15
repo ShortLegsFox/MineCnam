@@ -1,8 +1,11 @@
+using System;
+using UnityEngine;
+
 public abstract class Enemy : Entity
 {
     public GetElementInfos ElementInfos;
     public EnemyData enemyData;
-
+    
     public Element element;
     public float Hp { get; set; }
 

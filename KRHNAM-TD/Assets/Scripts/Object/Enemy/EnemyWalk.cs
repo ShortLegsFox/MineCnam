@@ -1,20 +1,14 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyWalk : MonoBehaviour
+public class EnemyWalk : EnemyTypeAbs
 {
-    private GameObject castle;
-    public float speed;
-    private NavMeshAgent agent;
-
-    void Start()
+    new public void Start()
     {
-        castle = GameObject.Find("Castle");
-        agent = GetComponent<NavMeshAgent>();
-        agent.speed = speed;
+        base.Start();
     }
 
-    void Update()
+    public override void Update()
     {
         if (castle != null)
         {

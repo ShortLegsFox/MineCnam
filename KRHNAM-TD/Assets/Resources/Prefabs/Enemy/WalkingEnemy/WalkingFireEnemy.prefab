@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 2409010770313789179}
   - component: {fileID: 4697935151672077139}
   - component: {fileID: 6932079665980737569}
-  - component: {fileID: 3442034123625353172}
   - component: {fileID: 2044040032209266073}
+  - component: {fileID: 1645968770462229855}
+  - component: {fileID: -2287169368552905956}
   m_Layer: 9
   m_Name: WalkingFireEnemy
   m_TagString: Enemy
@@ -110,19 +111,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3442034123625353172
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3987174384991102897}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66e7c6bdcc7185941bbcaf78a8305bb5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
 --- !u!195 &2044040032209266073
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -145,3 +133,30 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 3
   m_ObstacleAvoidanceType: 4
+--- !u!114 &1645968770462229855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3987174384991102897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f8241848fd8ac142a557f22d1c622f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlaced: 0
+  enemyData: {fileID: 11400000, guid: c151fb1b8e57d2c4281e8836d1708a07, type: 2}
+  element: 0
+--- !u!114 &-2287169368552905956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3987174384991102897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66e7c6bdcc7185941bbcaf78a8305bb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

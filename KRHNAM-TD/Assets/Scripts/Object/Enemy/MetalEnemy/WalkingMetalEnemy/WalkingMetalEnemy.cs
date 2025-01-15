@@ -1,7 +1,7 @@
 using Abstract;
 using UnityEngine;
 
-public class WalkingFireEnemy : Enemy 
+public class WalkingMetalEnemy : Enemy 
 {
     
 }
