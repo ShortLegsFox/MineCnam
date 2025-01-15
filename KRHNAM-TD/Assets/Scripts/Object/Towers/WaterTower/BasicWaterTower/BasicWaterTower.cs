@@ -11,6 +11,7 @@ public class BasicWaterTower : Tower
         {
             GameObject g = (GameObject)Instantiate(projectilePrefab, transform.position, Quaternion.identity);
             g.GetComponent<MoveProjectile>().target = co.transform;
+            g.GetComponent<MoveProjectile>().SetTower(this);
         }
     }
 }

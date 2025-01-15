@@ -49,6 +49,14 @@ namespace Abstract
             
             currentTarget = targetList.First();
         }
+
+        public void OnEnemyDead(EnemyWalk enemy) {
+            if (enemy != null)
+            {
+                targetList.Remove(enemy);
+                GetCurrentTarget();
+            }
+        }
     
         private void OnTriggerEnter(Collider other)
         {

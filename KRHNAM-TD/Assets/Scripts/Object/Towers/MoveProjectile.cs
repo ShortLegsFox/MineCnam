@@ -1,9 +1,11 @@
+using Abstract;
 using UnityEngine;
 
 public class MoveProjectile : MonoBehaviour
 {
     public float speed = 10;
-    public Transform target; 
+    public Transform target;
+    public Tower tower;
     
 
     // Update is called once per frame
@@ -19,12 +21,19 @@ public class MoveProjectile : MonoBehaviour
             Destroy (gameObject);
         }
     }
+
+    public void SetTower(Tower towerToSet)
+    {
+        tower = towerToSet;
+    }
     
     void OnTriggerEnter(Collider co) {
         Debug.Log("Trigger projectile on entity");
         if (co.GetComponent<EnemyWalk>()) {
             Debug.Log("Trigger projectile on entity ENEMY");
             Destroy(gameObject);
+            tower.OnEnemyDead(co.GetComponent<EnemyWalk>());
+            Destroy(co.gameObject);
         }
     }
 }
