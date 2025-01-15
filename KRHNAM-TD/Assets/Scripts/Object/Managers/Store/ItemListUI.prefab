@@ -48,5 +48,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9067fb715a23be54f864d7410f0b632a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ArticlePannel: {fileID: 6220757657925921916, guid: 030f7a715dab1ae4db4b29fcc0d7a5f3, type: 3}
-  contentPanel: {fileID: 0}
+  ArticlePannel: {fileID: 7048060113596952078, guid: fd1d1d3dc271e474185177fa89173ab6, type: 3}

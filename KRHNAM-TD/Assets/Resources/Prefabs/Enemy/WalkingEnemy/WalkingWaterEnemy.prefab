@@ -14,11 +14,11 @@ GameObject:
   - component: {fileID: 6932079665980737569}
   - component: {fileID: 3442034123625353172}
   - component: {fileID: 2044040032209266073}
-  - component: {fileID: -4991993056031974262}
   - component: {fileID: -4776866577589407070}
+  - component: {fileID: -4991993056031974262}
   m_Layer: 9
   m_Name: WalkingWaterEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -146,18 +146,6 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 3
   m_ObstacleAvoidanceType: 4
---- !u!114 &-4991993056031974262
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3987174384991102897}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66e7c6bdcc7185941bbcaf78a8305bb5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &-4776866577589407070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,3 +161,15 @@ MonoBehaviour:
   isPlaced: 0
   enemyData: {fileID: 11400000, guid: c151fb1b8e57d2c4281e8836d1708a07, type: 2}
   element: 4
+--- !u!114 &-4991993056031974262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3987174384991102897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66e7c6bdcc7185941bbcaf78a8305bb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

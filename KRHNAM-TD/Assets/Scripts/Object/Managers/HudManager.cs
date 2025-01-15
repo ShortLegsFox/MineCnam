@@ -12,6 +12,7 @@ public class HudManager : MonoBehaviour
     public GameObject StorePannel;
     public ItemListUI ItemListUI;
     public TextMeshProUGUI TabName;
+    public GameObject PauseMenu;
 
     private void Awake()
     {
@@ -53,6 +54,13 @@ public class HudManager : MonoBehaviour
     {
         //ErrorManager.LogInfo("Toggling store pannel");
         StorePannel.SetActive(!StorePannel.activeSelf);
+    }
+
+
+    public void TogglePauseMenu()
+    {
+        PauseMenu.SetActive(!PauseMenu.activeSelf);
+        Time.timeScale = PauseMenu.activeSelf ? 0 : 1;
     }
 
     private void UpdateMoneyText()
