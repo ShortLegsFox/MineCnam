@@ -24,6 +24,7 @@ public abstract class Entity : MonoBehaviour
     }
     public virtual void OnPlace(Vector3 position)
     {
+        position.y = 1;
         transform.position = position;
     }
     public static T InstantiateEntity<T>(GameObject prefab, Vector3 position, Quaternion rotation) where T : Entity

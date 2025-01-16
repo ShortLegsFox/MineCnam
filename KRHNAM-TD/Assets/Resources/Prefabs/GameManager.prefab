@@ -463,9 +463,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 31f52c03c7d59f347a75d05cc2bea177, type: 2}
   - {fileID: 11400000, guid: 507925228e7bc8448b26547204d0135c, type: 2}
   enemyDataList:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 40119b4c755ab4c48867d8af6584924a, type: 2}
+  - {fileID: 11400000, guid: 386d13b40eb42114785d7c7eea064cd7, type: 2}
+  - {fileID: 11400000, guid: ba9f9aae0a6790d42845ace6a4fd1fd2, type: 2}
+  - {fileID: 11400000, guid: 3bd060f4774987a4e8f9fd9cfff65192, type: 2}
+  - {fileID: 11400000, guid: f490c2522c5699f4ba40197c4b307e53, type: 2}
 --- !u!1 &7764696186191658538
 GameObject:
   m_ObjectHideFlags: 0
