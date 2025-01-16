@@ -158,5 +158,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlaced: 0
-  enemyData: {fileID: 0}
-  element: 0
+  enemyData: {fileID: 11400000, guid: 5de7c0ddd2a43cb479b4a06ffd58c7a1, type: 2}
+  element: 1
