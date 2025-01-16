@@ -16,5 +16,5 @@ MonoBehaviour:
   MaxHp: 1
   Damage: 1
   MoveSpeed: 15
-  element: 3
+  element: 2
   type: 1
