@@ -1705,7 +1705,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4989986010924723499, guid: 65ea7828802ffdf478218ed57b98583e, type: 3}
       propertyPath: enemyDataList.Array.size
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4989986010924723499, guid: 65ea7828802ffdf478218ed57b98583e, type: 3}
       propertyPath: towerDataList.Array.size
@@ -1779,6 +1779,26 @@ PrefabInstance:
       propertyPath: 'towerDataList.Array.data[6]'
       value: 
       objectReference: {fileID: 11400000, guid: 9117b73ee8ea55d4f80c52b8cb144025, type: 2}
+    - target: {fileID: 4989986010924723499, guid: 65ea7828802ffdf478218ed57b98583e, type: 3}
+      propertyPath: 'enemyDataList.Array.data[10]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 34eee35df1b39e04ea3bbc8ab636d58e, type: 2}
+    - target: {fileID: 4989986010924723499, guid: 65ea7828802ffdf478218ed57b98583e, type: 3}
+      propertyPath: 'enemyDataList.Array.data[11]'
+      value: 
+      objectReference: {fileID: 11400000, guid: a158f302a0c143e4090b42fb1c6dba12, type: 2}
+    - target: {fileID: 4989986010924723499, guid: 65ea7828802ffdf478218ed57b98583e, type: 3}
+      propertyPath: 'enemyDataList.Array.data[12]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 1430573212a30a44fb962b68177d65de, type: 2}
+    - target: {fileID: 4989986010924723499, guid: 65ea7828802ffdf478218ed57b98583e, type: 3}
+      propertyPath: 'enemyDataList.Array.data[13]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 999c62ff768f41d4eb0364d8c00a52b8, type: 2}
+    - target: {fileID: 4989986010924723499, guid: 65ea7828802ffdf478218ed57b98583e, type: 3}
+      propertyPath: 'enemyDataList.Array.data[14]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 378eda9a3808bb04fad19774c8c1a14d, type: 2}
     - target: {fileID: 7624181238174045057, guid: 65ea7828802ffdf478218ed57b98583e, type: 3}
       propertyPath: m_Name
       value: GameManager
