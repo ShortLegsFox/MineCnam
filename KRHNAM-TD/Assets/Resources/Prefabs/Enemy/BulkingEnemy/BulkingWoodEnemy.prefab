@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 6932079665980737569}
   - component: {fileID: 2044040032209266073}
   - component: {fileID: -135197629553642368}
-  - component: {fileID: -2629401607626896955}
+  - component: {fileID: 7720553685863995432}
   m_Layer: 9
-  m_Name: BulkingFireEnemy
+  m_Name: BulkingWoodEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68,7 +68,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 92480a2b6ffb0454eb102e58b76587fb, type: 2}
+  - {fileID: 2100000, guid: 84af42b2b7379e840a150c279dc1d51d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 553af59c158a89c48a25c49ae8f166a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-2629401607626896955
+--- !u!114 &7720553685863995432
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -154,9 +154,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 3987174384991102897}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef2339ce493b45840b170c998f73f10b, type: 3}
+  m_Script: {fileID: 11500000, guid: 82cc3bf8ed23e1f458217ee2f2643683, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isPlaced: 0
-  enemyData: {fileID: 11400000, guid: 5de7c0ddd2a43cb479b4a06ffd58c7a1, type: 2}
+  enemyData: {fileID: 0}
   element: 0
