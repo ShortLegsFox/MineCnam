@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2958615276458273340}
   - component: {fileID: 4384516657909599569}
   - component: {fileID: 4883506945091282687}
+  - component: {fileID: 7336175304625251878}
   m_Layer: 0
   m_Name: Castle
   m_TagString: Untagged
@@ -108,3 +109,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!208 &7336175304625251878
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3782147653185187665}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5

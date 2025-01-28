@@ -54,17 +54,21 @@ public class Grid : MonoBehaviour
 
     void UpdateSelectedCase()
     {
+        Plane gridPlane = new Plane(Vector3.up, Vector3.zero); // Plan horizontal (XZ)
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out RaycastHit hit))
+
+        if (gridPlane.Raycast(ray, out float enter))
         {
-            selectedCase = CaseFromWorldPoint(hit.point);
-            //Debug.Log("Case bloquée : " + selectedCase.isBlocked);
-            //Debug.Log($"[{selectedCase.GridX};{selectedCase.GridY}]");
+            Vector3 hitPoint = ray.GetPoint(enter);
+            selectedCase = CaseFromWorldPoint(hitPoint);
+            // Debug.Log($"Case sélectionnée : [{selectedCase.GridX}; {selectedCase.GridY}]");
         }
         else
+        {
             selectedCase = null;
-
+        }
     }
+
 
     void CreateGrid()
     {
@@ -96,13 +100,16 @@ public class Grid : MonoBehaviour
     {
         float percentX = (worldPosition.x + gridWorldSize.x / 2) / gridWorldSize.x;
         float percentY = (worldPosition.z + gridWorldSize.y / 2) / gridWorldSize.y;
+
         percentX = Mathf.Clamp01(percentX);
         percentY = Mathf.Clamp01(percentY);
 
-        int x = Mathf.RoundToInt((gridSizeX - 1) * percentX);
-        int y = Mathf.RoundToInt((gridSizeY - 1) * percentY);
-        return grid[x, y];
+        int x = Mathf.FloorToInt((gridSizeX) * percentX); // Utilisez FloorToInt pour éviter les chevauchements
+        int y = Mathf.FloorToInt((gridSizeY) * percentY);
+
+        return grid[Mathf.Clamp(x, 0, gridSizeX - 1), Mathf.Clamp(y, 0, gridSizeY - 1)];
     }
+
 
     private void OnDrawGizmos()
     {
