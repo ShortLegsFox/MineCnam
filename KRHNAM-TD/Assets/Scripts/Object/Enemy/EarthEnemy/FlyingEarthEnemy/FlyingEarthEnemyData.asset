@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: FlyingEarthEnemyData
   m_EditorClassIdentifier: 
   Prefab: {fileID: 3987174384991102897, guid: 5e1d96d1d9d106445b3a00b83c0b6d7c, type: 3}
-  MaxHp: 1
+  MaxHp: 30
   Damage: 1
   MoveSpeed: 15
   element: 3

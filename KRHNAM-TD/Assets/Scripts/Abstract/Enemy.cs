@@ -1,33 +1,45 @@
-using System;
+
 using UnityEngine;
 
 public abstract class Enemy : Entity
 {
-    public GetElementInfos ElementInfos;
+
     public EnemyData enemyData;
-    
+
     public Element element;
+    private HealthBar healthBar;
     public float Hp { get; set; }
 
-    public void TakeDamage(Element AttackElement, float AttackDamage)
+    public void Start()
     {
+        healthBar = transform.Find("HealthbarCanva").Find("Healthbar").GetComponent<HealthBar>();
+        healthBar.SetMaxHealth(enemyData.MaxHp);
+        Hp = enemyData.MaxHp;
+    }
+
+    public bool TakeDamage(Element AttackElement, float AttackDamage)
+    {
+        Debug.Log("TakeDamage");
         // If tower is strong VS enemy
-        if (AttackElement == ElementInfos.GetWeakness(element))
+        if (AttackElement == GetElementInfos.GetWeakness(element))
         {
-            AttackDamage = ElementInfos.AddStrongDamage(AttackDamage);
+            AttackDamage = GetElementInfos.AddStrongDamage(AttackDamage);
         }
 
         // If tower is weak vs enemy
-        if (AttackElement == ElementInfos.GetStrength(element))
+        if (AttackElement == GetElementInfos.GetStrength(element))
         {
-            AttackDamage = ElementInfos.RemoveWeakDamage(AttackDamage);
+            AttackDamage = GetElementInfos.RemoveWeakDamage(AttackDamage);
         }
 
         this.Hp -= AttackDamage;
+        healthBar.TakeDamage(AttackDamage);
 
-        if(Hp <= 0) 
+        if (Hp <= 0)
         {
-            Destroy(this);
+            Destroy(this.gameObject);
+            return true;
         }
+        return false;
     }
 }

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: FlyingWoodEnemyData
   m_EditorClassIdentifier: 
   Prefab: {fileID: 3987174384991102897, guid: 59357ff29b52d3f4c8281151012b29b9, type: 3}
-  MaxHp: 1
+  MaxHp: 30
   Damage: 1
   MoveSpeed: 15
   element: 2

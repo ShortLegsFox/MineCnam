@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BulkingWaterEnemyData
   m_EditorClassIdentifier: 
   Prefab: {fileID: 3987174384991102897, guid: 47d51dfbc428d9040a1697e0dbe5ae10, type: 3}
-  MaxHp: 50
+  MaxHp: 300
   Damage: 10
   MoveSpeed: 2
   element: 4

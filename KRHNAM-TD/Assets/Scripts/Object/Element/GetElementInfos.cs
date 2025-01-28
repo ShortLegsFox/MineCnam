@@ -1,6 +1,6 @@
-public class GetElementInfos
+public static class GetElementInfos
 {
-    public Element GetWeakness(Element element)
+    public static Element GetWeakness(Element element)
     {
         int strength;
 
@@ -9,7 +9,7 @@ public class GetElementInfos
         return (Element)strength;
     }
 
-    public Element GetStrength(Element element)
+    public static Element GetStrength(Element element)
     {
         int strength;
 
@@ -18,12 +18,12 @@ public class GetElementInfos
         return (Element)strength;
     }
 
-    public float AddStrongDamage(float damage)
+    public static float AddStrongDamage(float damage)
     {
-        return 1.2f*damage;
+        return 1.2f * damage;
     }
 
-    public float RemoveWeakDamage(float damage)
+    public static float RemoveWeakDamage(float damage)
     {
         return 0.8f * damage;
     }

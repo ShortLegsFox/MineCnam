@@ -1,5 +1,6 @@
-using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 
 public class EnemyPortal : MonoBehaviour
 {
@@ -7,11 +8,9 @@ public class EnemyPortal : MonoBehaviour
 
     [SerializeField] private float minimumSpawnTime;
     [SerializeField] private float maximumSpawnTime;
-    [SerializeField] private float timeUntilSpawn;
-    private int listIndex=0;
+    private int listIndex = 0;
 
     public List<I_EnemyFactory> enemyFactoryList = new List<I_EnemyFactory>();
-
 
     void Awake()
     {
@@ -20,27 +19,22 @@ public class EnemyPortal : MonoBehaviour
         enemyFactoryList.Add(new MetalEnemyFactory());
         enemyFactoryList.Add(new WoodEnemyFactory());
         enemyFactoryList.Add(new EarthEnemyFactory());
-        SetTimeUntilSpawn();
+
+        StartCoroutine(SpawnEnemies());
     }
 
-    // Update is called once per frame
-    void Update()
+    private IEnumerator SpawnEnemies()
     {
-        timeUntilSpawn -= Time.deltaTime;
-        if (timeUntilSpawn <= 0)
+        while (true)
         {
-            //Debug.Log("Spawning enemy at " + transform.position);
-            //Instantiate(enemyFactoryList[listIndex].CreateEnemy(EnemyType.Walking), transform.position, Quaternion.identity);
+            float timeUntilSpawn = Random.Range(minimumSpawnTime, maximumSpawnTime);
+            yield return new WaitForSeconds(timeUntilSpawn);
+
             enemyFactoryList[listIndex].CreateEnemy(EnemyType.Flying);
             enemyFactoryList[listIndex].CreateEnemy(EnemyType.Walking);
             enemyFactoryList[listIndex].CreateEnemy(EnemyType.Bulking);
-            SetTimeUntilSpawn();
-            listIndex = (listIndex + 1) % 5;
-        }
-    }
 
-    private void SetTimeUntilSpawn()
-    {
-        timeUntilSpawn = Random.Range(minimumSpawnTime, maximumSpawnTime);
+            listIndex = (listIndex + 1) % enemyFactoryList.Count;
+        }
     }
 }

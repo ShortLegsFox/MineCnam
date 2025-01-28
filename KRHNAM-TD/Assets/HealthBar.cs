@@ -3,42 +3,42 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
-    private Slider slider;
-    private int currentHealth;
-    public int maxHealth;
+    private Slider slidersss;
+    private float currentHealth;
+    public float maxHealth = 100;
     public Gradient gradient;
     public Image fill;
 
 
-    void Start()
+    public void Awake()
     {
-        slider = GetComponent<Slider>();
-        currentHealth = maxHealth;
-        SetMaxHealth(maxHealth);
+        slidersss = GetComponent<Slider>();
     }
 
-    void Update()
+    public void SetMaxHealth(float health)
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (slidersss != null)
         {
-            TakeDamage(10);
+            maxHealth = health;
+            currentHealth = maxHealth;
+            Debug.Log("slidersss is not null");
+            slidersss.maxValue = health;
+            slidersss.value = health;
+            fill.color = gradient.Evaluate(1f);
+        }
+        else
+        {
+            throw new System.Exception("Slider is null");
         }
     }
 
-    public void SetMaxHealth(int health)
+    public void SetHealth(float health)
     {
-        slider.maxValue = health;
-        slider.value = health;
-        fill.color = gradient.Evaluate(1f);
+        slidersss.value = health;
+        fill.color = gradient.Evaluate(slidersss.normalizedValue);
     }
 
-    public void SetHealth(int health)
-    {
-        slider.value = health;
-        fill.color = gradient.Evaluate(slider.normalizedValue);
-    }
-
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         currentHealth -= damage;
         SetHealth(currentHealth);

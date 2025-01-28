@@ -1,6 +1,3 @@
-using UnityEngine;
-using UnityEngine.AI;
-
 public class EnemyBulk : EnemyTypeAbs
 {
     new public void Start()
@@ -16,4 +13,4 @@ public class EnemyBulk : EnemyTypeAbs
             agent.SetDestination(castle.transform.position);
         }
     }
-}   
+}

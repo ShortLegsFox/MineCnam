@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 4.2201, z: 4.259}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -129,4 +129,3 @@ MonoBehaviour:
   - {fileID: 3987174384991102897, guid: 53ab889b52e6d7b478b24d4b05af4d87, type: 3}
   minimumSpawnTime: 5
   maximumSpawnTime: 10
-  timeUntilSpawn: 20000

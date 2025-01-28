@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BulkingEarthEnemyData
   m_EditorClassIdentifier: 
   Prefab: {fileID: 3987174384991102897, guid: 74216e13421b8d641a2376f55b81f33e, type: 3}
-  MaxHp: 50
+  MaxHp: 300
   Damage: 10
   MoveSpeed: 2
   element: 3

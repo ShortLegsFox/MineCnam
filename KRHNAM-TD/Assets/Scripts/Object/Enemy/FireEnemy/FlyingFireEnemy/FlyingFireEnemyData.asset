@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: FlyingFireEnemyData
   m_EditorClassIdentifier: 
   Prefab: {fileID: 3987174384991102897, guid: c840bb0d4070c0b46a61cdd6dab6ef36, type: 3}
-  MaxHp: 1
+  MaxHp: 30
   Damage: 1
   MoveSpeed: 15
   element: 0

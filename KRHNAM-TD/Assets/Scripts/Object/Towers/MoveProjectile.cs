@@ -6,19 +6,20 @@ public class MoveProjectile : MonoBehaviour
     public float speed = 10;
     public Transform target;
     public Tower tower;
-    
+
 
     // Update is called once per frame
     void FixedUpdate()
     {
         //go to target
-        if (target) {
+        if (target)
+        {
             Vector3 dir = target.position - transform.position;
-            GetComponent<Rigidbody> ().linearVelocity = dir.normalized * speed;
+            GetComponent<Rigidbody>().linearVelocity = dir.normalized * speed;
         }
         else
         {
-            Destroy (gameObject);
+            Destroy(gameObject);
         }
     }
 
@@ -26,14 +27,23 @@ public class MoveProjectile : MonoBehaviour
     {
         tower = towerToSet;
     }
-    
-    void OnTriggerEnter(Collider co) {
+
+    void OnTriggerEnter(Collider co)
+    {
         Debug.Log("Trigger projectile on entity");
-        if (co.GetComponent<EnemyWalk>()) {
+        if (co.GetComponent<Enemy>())
+        {
             Debug.Log("Trigger projectile on entity ENEMY");
             Destroy(gameObject);
-            tower.OnEnemyDead(co.GetComponent<EnemyWalk>());
-            Destroy(co.gameObject);
+            Enemy enemy = co.GetComponent<Enemy>();
+            if (enemy != null)
+            {
+                bool killed = enemy.TakeDamage(tower.towerData.Element, tower.towerData.Damage);
+                if (killed)
+                    tower.OnEnemyDead(enemy);
+            }
+            else
+                throw new System.Exception("Enemy is null");
         }
     }
 }

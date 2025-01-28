@@ -18,10 +18,6 @@ public abstract class Entity : MonoBehaviour
         }
     }
 
-    private void Awake()
-    {
-        isPlaced = false;
-    }
     public virtual void OnPlace(Vector3 position)
     {
         position.y = 1;
