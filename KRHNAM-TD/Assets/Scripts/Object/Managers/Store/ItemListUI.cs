@@ -31,7 +31,7 @@ public class ItemListUI : MonoBehaviour
             Button button = newArticle.GetComponent<Button>();
             button.onClick.AddListener(() => BuyItem(item));
 
-            // Ajout d'une gestion des événements pour changer le curseur
+            // Ajout d'une gestion des Ã©vÃ©nements pour changer le curseur
             AddCursorChangeHandler(newArticle, item);
             DisplayButton dpBtn = newArticle.GetComponent<DisplayButton>();
             dpBtn.Item = item;
@@ -54,7 +54,7 @@ public class ItemListUI : MonoBehaviour
     {
         EventTrigger trigger = article.AddComponent<EventTrigger>();
 
-        // Événement OnPointerEnter
+        // Ã‰vÃ©nement OnPointerEnter
         EventTrigger.Entry pointerEnter = new EventTrigger.Entry
         {
             eventID = EventTriggerType.PointerEnter
@@ -62,7 +62,7 @@ public class ItemListUI : MonoBehaviour
         pointerEnter.callback.AddListener((data) => OnPointerEnter(item));
         trigger.triggers.Add(pointerEnter);
 
-        // Événement OnPointerExit
+        // Ã‰vÃ©nement OnPointerExit
         EventTrigger.Entry pointerExit = new EventTrigger.Entry
         {
             eventID = EventTriggerType.PointerExit
