@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f14ef1f447936b448a6f394a1045ff2, type: 3}
   m_Name: FlyingFireEnemyData
   m_EditorClassIdentifier: 
-  Element: 0
-  Prefab: {fileID: 0}
+  Prefab: {fileID: 3987174384991102897, guid: c840bb0d4070c0b46a61cdd6dab6ef36, type: 3}
   MaxHp: 1
   Damage: 1
   MoveSpeed: 15
+  element: 0
+  type: 1

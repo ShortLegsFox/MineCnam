@@ -31,7 +31,9 @@ public class EnemyPortal : MonoBehaviour
         {
             //Debug.Log("Spawning enemy at " + transform.position);
             //Instantiate(enemyFactoryList[listIndex].CreateEnemy(EnemyType.Walking), transform.position, Quaternion.identity);
+            enemyFactoryList[listIndex].CreateEnemy(EnemyType.Flying);
             enemyFactoryList[listIndex].CreateEnemy(EnemyType.Walking);
+            enemyFactoryList[listIndex].CreateEnemy(EnemyType.Bulking);
             SetTimeUntilSpawn();
             listIndex = (listIndex + 1) % 5;
         }
