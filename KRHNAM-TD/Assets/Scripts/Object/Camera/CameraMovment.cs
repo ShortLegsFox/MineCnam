@@ -4,8 +4,11 @@ public class CameraMovment : MonoBehaviour
 {
     public float speed = 10f;
     public float edgeThreshold = 10f;
-    public int minDistance = 3;
-    public int maxDistance = 20;
+    public float zoomSpeed = 2;
+    public int limitXMin = -25;
+    public int limitXMax = 25;
+    public int limitZMin = -25;
+    public int limitZMax = 25;
 
 
     void Update()
@@ -35,19 +38,20 @@ public class CameraMovment : MonoBehaviour
             transform.Translate(new Vector3(0, 0, 1) * Time.deltaTime * speed, Space.World);
         }
 
-        if (Input.GetAxis("Mouse ScrollWheel") > 0)
+        Vector3 newPosition = transform.position;
+        newPosition.x = Mathf.Clamp(newPosition.x, limitXMin, limitXMax);
+        newPosition.z = Mathf.Clamp(newPosition.z, limitZMin, limitZMax);
+
+        // Appliquer la position corrigée
+        transform.position = newPosition;
+
+
+        float scroll = Input.GetAxis("Mouse ScrollWheel");
+        if (scroll != 0f)
         {
-            if (Camera.main.orthographicSize > minDistance)
-            {
-                Camera.main.orthographicSize -= 1;
-            }
+            Camera.main.fieldOfView = Mathf.Clamp(Camera.main.fieldOfView - scroll * zoomSpeed, 5, 80);
         }
 
-        if (Input.GetAxis("Mouse ScrollWheel") < 0)
-        {
-            if (Camera.main.orthographicSize < maxDistance)
-                Camera.main.orthographicSize += 1;
-        }
     }
 
 

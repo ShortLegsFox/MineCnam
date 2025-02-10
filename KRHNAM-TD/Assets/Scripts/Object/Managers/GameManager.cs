@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -8,10 +9,12 @@ public class GameManager : MonoBehaviour
     public HudManager HudManager => HudManager.Instance;
     public WaveManager WaveManager => WaveManager.Instance;
     public SoundManager SoundManager => SoundManager.Instance;
+    public StoreManager StoreManager => StoreManager.Instance;
     public Grid Grid => Grid.Instance;
     public TowerFactory TowerFactory => TowerFactory.Instance;
 
-    [SerializeField] private Grid grid;
+    [SerializeField] private List<TowerData> towerDataList;
+    [SerializeField] private List<EnemyData> enemyDataList;
 
     public bool DebugMode { get; private set; } = false;
 
@@ -29,12 +32,28 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
-    public void Update()
+
+    public TowerData GetTowerData(Element element, TowerLevel level)
     {
-        if (Input.GetKeyDown(KeyCode.F1))
+        foreach (var tower in towerDataList)
         {
-            DebugMode = !DebugMode;
+            if (tower.Element == element && tower.Level == level)
+            {
+                return tower;
+            }
         }
+        return null;
     }
 
+    public EnemyData GetEnemyData(Element element, EnemyType type)
+    {
+        foreach (var enemyData in enemyDataList)
+        {
+            if (enemyData.element == element && enemyData.type == type)
+            {
+                return enemyData;
+            }
+        }
+        return null;
+    }
 }

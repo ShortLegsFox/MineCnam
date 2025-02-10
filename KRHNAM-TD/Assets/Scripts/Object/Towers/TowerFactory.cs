@@ -1,5 +1,4 @@
 using Interface;
-using System.Collections.Generic;
 using TDObject;
 using UnityEngine;
 
@@ -7,7 +6,6 @@ public class TowerFactory : MonoBehaviour
 {
     private static TowerFactory instance = null;
     public static TowerFactory Instance => instance;
-    [SerializeField] private List<TowerData> towerDataList;
 
     private void Awake()
     {
@@ -22,18 +20,6 @@ public class TowerFactory : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
-    public TowerData GetTowerData(Element element, TowerLevel level)
-    {
-        foreach (var tower in towerDataList)
-        {
-            if (tower.Element == element && tower.Level == level)
-            {
-                return tower;
-            }
-        }
-        return null;
-    }
-
     public static I_TowerFactory GetTowerFactory(Element element)
     {
         switch (element)
@@ -42,8 +28,14 @@ public class TowerFactory : MonoBehaviour
                 return new FireTowerFactory();
             case Element.Water:
                 return new WaterTowerFactory();
+            case Element.Wood:
+                return new WoodTowerFactory();
+            case Element.Metal:
+                return new IronTowerFactory();
+            case Element.Earth:
+                return new EarthTowerFactory();
             default:
-                return null;
+                throw new System.Exception("Tower factory not implemented");
         }
     }
 }

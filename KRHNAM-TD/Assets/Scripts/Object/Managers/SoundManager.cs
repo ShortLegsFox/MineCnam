@@ -8,6 +8,8 @@ public class SoundManager : MonoBehaviour
 
     public AudioSource effectsSource;
     public AudioClip[] soundEffects;
+    public AudioSource musicSource;
+    public AudioClip[] musicClips;
 
     private void Awake()
     {
@@ -20,6 +22,12 @@ public class SoundManager : MonoBehaviour
             instance = this;
 
         DontDestroyOnLoad(this.gameObject);
+    }
+
+
+    public void Start()
+    {
+        PlayMusic("MC1");
     }
 
     public void PlayEffect(string clipName)
@@ -35,6 +43,20 @@ public class SoundManager : MonoBehaviour
         }
     }
 
+    public void PlayMusic(string clipName)
+    {
+        AudioClip clip = GetClipByName(clipName, musicClips);
+        if (clip != null)
+        {
+            musicSource.clip = clip;
+            musicSource.Play();
+        }
+        else
+        {
+            Debug.LogError($"La musique '{clipName}' n'a pas été trouvée!");
+        }
+    }
+
     private AudioClip GetClipByName(string clipName, AudioClip[] clips)
     {
         foreach (AudioClip clip in clips)
@@ -44,4 +66,25 @@ public class SoundManager : MonoBehaviour
         }
         return null;
     }
+
+    public void SetMusicVolumeTo(float volume)
+    {
+        musicSource.volume = volume;
+    }
+
+    public float GetMusicVolume()
+    {
+        return musicSource.volume;
+    }
+
+    public void SetEffectsVolumeTo(float volume)
+    {
+        effectsSource.volume = volume;
+    }
+
+    public float GetEffectsVolume()
+    {
+        return effectsSource.volume;
+    }
+
 }

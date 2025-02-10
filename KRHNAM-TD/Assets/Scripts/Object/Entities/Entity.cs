@@ -4,6 +4,7 @@ using UnityEngine.AI;
 public abstract class Entity : MonoBehaviour
 {
     public bool isPlaced = false;
+
     public Case Position
     {
         get
@@ -17,16 +18,9 @@ public abstract class Entity : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        if (isPlaced)
-            SetEntityAsObstacle();
-        else
-            SetEntityAsNotObstacle();
-    }
-
     public virtual void OnPlace(Vector3 position)
     {
+        position.y = 1;
         transform.position = position;
     }
     public static T InstantiateEntity<T>(GameObject prefab, Vector3 position, Quaternion rotation) where T : Entity
@@ -35,20 +29,11 @@ public abstract class Entity : MonoBehaviour
         return instance.GetComponent<T>();
     }
 
-    private void SetEntityAsObstacle()
+    public void SetEntityAsObstacle()
     {
         if (this.GetComponent<NavMeshObstacle>() != null)
         {
             this.GetComponent<NavMeshObstacle>().enabled = true;
         }
     }
-
-    private void SetEntityAsNotObstacle()
-    {
-        if (this.GetComponent<NavMeshObstacle>() != null)
-        {
-            this.GetComponent<NavMeshObstacle>().enabled = false;
-        }
-    }
-
 }

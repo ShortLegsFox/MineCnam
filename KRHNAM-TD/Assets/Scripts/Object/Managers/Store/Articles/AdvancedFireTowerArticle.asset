@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f39a467eb9ac74a4d8ba515687a9d3ef, type: 3}
+  m_Name: AdvancedFireTowerArticle
+  m_EditorClassIdentifier: 
+  Article: {fileID: -4365204331581727010, guid: c6f010dd3ad654b4eae6ce64d97da4a6, type: 3}
+  Name: Advanced Fire Tower
+  Price: 30
+  Image: {fileID: 21300000, guid: e60e0b9301ae3da47ba592c6c2ae4916, type: 3}
+  Element: 0
+  Level: 1

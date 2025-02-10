@@ -21,14 +21,16 @@ public class EditorManager : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
+
+    public void SelectTower(TowerData towerData)
+    {
+        I_Command selectTowerCommand = new SelectTowerCommand(towerData);
+        selectTowerCommand.Execute();
+    }
+
     public void PlaceEntity(Case selectedCell)
     {
-        if (selectedEntity != null && selectedCell != null)
-        {
-            var command = new PlaceEntityCommand(selectedEntity, selectedCell);
-            command.Execute();
-        }
-        else
-            ErrorManager.DebugLog("No entity selected for placement.");
+        var command = new PlaceEntityCommand(selectedEntity, selectedCell);
+        command.Execute();
     }
 }

@@ -1,5 +1,5 @@
 using Abstract;
-using Interface;
+using TMPro;
 using UnityEngine;
 
 public class HudManager : MonoBehaviour
@@ -7,6 +7,14 @@ public class HudManager : MonoBehaviour
     private static HudManager instance = null;
     public static HudManager Instance => instance;
     public static Entity selectedEntity;
+    public TextMeshProUGUI Money;
+
+    public GameObject StorePannel;
+    public GameObject PauseMenu;
+
+
+    private I_Command storeCommand;
+    private I_Command pauseCommand;
 
     private void Awake()
     {
@@ -21,30 +29,39 @@ public class HudManager : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
+    private void Start()
+    {
+        storeCommand = new StoreCommand();
+        pauseCommand = new PauseCommand();
+    }
+
     private void Update()
     {
-        PlaceEntity();
         DrawScope();
         OnEntityHover();
+        UpdateMoneyText();
+    }
+
+
+
+    public void TogglePauseMenu()
+    {
+        pauseCommand.Execute();
+    }
+
+    public void ToggleStorePannel()
+    {
+        storeCommand.Execute();
+    }
+
+    private void UpdateMoneyText()
+    {
+        Money.text = StoreManager.Instance.gold.ToString();
     }
 
     public void SelectTower(TowerData towerData)
     {
-        I_TowerFactory towerFactory = TowerFactory.GetTowerFactory(towerData.Element);
-        Entity tower = towerFactory.CreateTower(towerData.Level);
-        EditorManager.Instance.selectedEntity = tower;
-
-        ErrorManager.DebugLog($"Entity selected for placement.");
-    }
-
-    public void PlaceEntity()
-    {
-        if (Input.GetMouseButtonDown(0) && EditorManager.Instance.IsEntitySelected && !EditorManager.Instance.selectedEntity.isPlaced)
-        {
-            Debug.Log("Placing entity");
-
-            EditorManager.Instance.PlaceEntity(Grid.Instance.selectedCase);
-        }
+        EditorManager.Instance.SelectTower(towerData);
     }
 
     public void DrawScope()
@@ -67,7 +84,6 @@ public class HudManager : MonoBehaviour
     }
 
 
-
     public void OnEntityHover()
     {
         Entity entity = Grid.Instance.selectedCase?.entity;
@@ -76,7 +92,5 @@ public class HudManager : MonoBehaviour
         else
             selectedEntity = null;
     }
-
-
 
 }

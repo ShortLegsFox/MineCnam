@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba94216fbe72b1d4ea39546c50ac3af9, type: 3}
   m_Name: UltimateWaterTower
   m_EditorClassIdentifier: 
-  Element: 1
+  Element: 4
   Level: 2
-  Prefab: {fileID: 1256814250574689019, guid: 8ff5e1e8b9286924d98dfe65dd843921, type: 3}
+  Prefab: {fileID: 1256814250574689019, guid: a3fab9602045da34eb7e76e5bd799d2b, type: 3}
   MaxHp: 100
-  Damage: 10
-  Range: 7
-  AttackSpeed: 1
+  Damage: 15
+  Range: 10
+  AttackSpeed: 0.2
