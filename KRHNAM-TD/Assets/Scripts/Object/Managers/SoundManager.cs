@@ -11,6 +11,25 @@ public class SoundManager : MonoBehaviour
     public AudioSource musicSource;
     public AudioClip[] musicClips;
 
+    private void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
+        else
+            instance = this;
+
+        DontDestroyOnLoad(this.gameObject);
+    }
+
+
+    public void Start()
+    {
+        PlayMusic("MC1");
+    }
+
     public void PlayEffect(string clipName)
     {
         AudioClip clip = GetClipByName(clipName, soundEffects);
@@ -38,20 +57,6 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    private void Awake()
-    {
-        if (instance != null && instance != this)
-        {
-            Destroy(this.gameObject);
-            return;
-        }
-        else
-            instance = this;
-
-        DontDestroyOnLoad(this.gameObject);
-    }
-
-
     private AudioClip GetClipByName(string clipName, AudioClip[] clips)
     {
         foreach (AudioClip clip in clips)
@@ -60,6 +65,26 @@ public class SoundManager : MonoBehaviour
                 return clip;
         }
         return null;
+    }
+
+    public void SetMusicVolumeTo(float volume)
+    {
+        musicSource.volume = volume;
+    }
+
+    public float GetMusicVolume()
+    {
+        return musicSource.volume;
+    }
+
+    public void SetEffectsVolumeTo(float volume)
+    {
+        effectsSource.volume = volume;
+    }
+
+    public float GetEffectsVolume()
+    {
+        return effectsSource.volume;
     }
 
 }

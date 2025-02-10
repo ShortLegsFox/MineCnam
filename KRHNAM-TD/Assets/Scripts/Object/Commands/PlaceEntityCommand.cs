@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.AI;
 
 public class PlaceEntityCommand : I_Command
 {
@@ -8,9 +7,8 @@ public class PlaceEntityCommand : I_Command
 
     public PlaceEntityCommand(Entity entity, Case _case)
     {
-        this.Entity = entity;
+        EditorManager.Instance.selectedEntity = entity;
         this.Case = _case;
-
     }
 
     public void Execute()
@@ -19,14 +17,17 @@ public class PlaceEntityCommand : I_Command
         {
             if (Case.IsEmpty)
             {
-                SoundManager.Instance.PlayEffect("Build");
-                Vector3 newObjectPosition = new Vector3(Case.worldPosition.x, Case.worldPosition.y + 1, Case.worldPosition.z);
-                Entity.OnPlace(newObjectPosition);
-                Entity.isPlaced = true;
-                Entity.SetEntityAsObstacle();
-                Case.entity = Entity;
-                EditorManager.Instance.selectedEntity = null;
-                ErrorManager.DebugLog($"Entity placed at [{Case.GridX};{Case.GridY}");
+                if (EditorManager.Instance.IsEntitySelected && !EditorManager.Instance.selectedEntity.isPlaced)
+                {
+                    SoundManager.Instance.PlayEffect("Build");
+                    Vector3 newObjectPosition = new Vector3(Case.worldPosition.x, Case.worldPosition.y + 1, Case.worldPosition.z);
+                    EditorManager.Instance.selectedEntity.OnPlace(newObjectPosition);
+                    EditorManager.Instance.selectedEntity.isPlaced = true;
+                    EditorManager.Instance.selectedEntity.SetEntityAsObstacle();
+                    Case.entity = Entity;
+                    EditorManager.Instance.selectedEntity = null;
+                    ErrorManager.DebugLog($"Entity placed at [{Case.GridX};{Case.GridY}");
+                }
             }
             else
                 ErrorManager.DebugLog("Case is not empty.");
