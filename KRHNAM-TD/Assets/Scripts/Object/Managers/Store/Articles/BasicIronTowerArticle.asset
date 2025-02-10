@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f39a467eb9ac74a4d8ba515687a9d3ef, type: 3}
-  m_Name: BasicMetalTowerArticle
+  m_Name: BasicIronTowerArticle
   m_EditorClassIdentifier: 
-  Article: {fileID: 2944814160957290392, guid: 8ff5e1e8b9286924d98dfe65dd843921, type: 3}
-  Name: Basic Metal Tower
+  Article: {fileID: 968279051287318494, guid: e45faa91127f15c4e85f82e5d8591a10, type: 3}
+  Name: Basic Iron Tower
   Price: 10
   Image: {fileID: 21300000, guid: 288e3094843e1194c9d4d287053668ad, type: 3}
   Element: 1

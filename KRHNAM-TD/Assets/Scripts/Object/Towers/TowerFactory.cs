@@ -31,7 +31,7 @@ public class TowerFactory : MonoBehaviour
             case Element.Wood:
                 return new WoodTowerFactory();
             case Element.Metal:
-                return new MetalTowerFactory();
+                return new IronTowerFactory();
             case Element.Earth:
                 return new EarthTowerFactory();
             default:

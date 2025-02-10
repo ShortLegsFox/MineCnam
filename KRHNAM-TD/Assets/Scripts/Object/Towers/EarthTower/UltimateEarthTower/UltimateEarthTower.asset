@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba94216fbe72b1d4ea39546c50ac3af9, type: 3}
   m_Name: UltimateEarthTower
   m_EditorClassIdentifier: 
-  Element: 4
+  Element: 3
   Level: 2
-  Prefab: {fileID: 1256814250574689019, guid: a3fab9602045da34eb7e76e5bd799d2b, type: 3}
+  Prefab: {fileID: 1256814250574689019, guid: c3bd51021676f4246b66ceb5089a41aa, type: 3}
   MaxHp: 100
   Damage: 15
   Range: 10

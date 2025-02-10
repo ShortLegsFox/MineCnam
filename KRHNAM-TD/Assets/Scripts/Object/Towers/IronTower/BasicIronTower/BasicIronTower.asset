@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba94216fbe72b1d4ea39546c50ac3af9, type: 3}
   m_Name: BasicIronTower
   m_EditorClassIdentifier: 
-  Element: 4
+  Element: 1
   Level: 0
-  Prefab: {fileID: 1256814250574689019, guid: d4004a74a3bbcb24cb5a90ab957ffe54, type: 3}
+  Prefab: {fileID: 1256814250574689019, guid: e45faa91127f15c4e85f82e5d8591a10, type: 3}
   MaxHp: 100
   Damage: 10
   Range: 7
