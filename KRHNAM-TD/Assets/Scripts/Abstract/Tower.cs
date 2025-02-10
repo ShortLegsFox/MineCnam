@@ -65,12 +65,13 @@ namespace Abstract
         {
             if (other.CompareTag("Enemy"))
             {
+                Debug.Log("Enemy spotted");
                 var enemy = other.GetComponent<Enemy>();
                 if (enemy != null)
                 {
                     targetList.Add(enemy);
                     GetCurrentTarget();
-                    Debug.Log("Enemy spotted");
+                    //Debug.Log("Enemy spotted");
                 }
             }
         }
@@ -79,6 +80,7 @@ namespace Abstract
         {
             if (other.CompareTag("Enemy"))
             {
+                Debug.Log("Enemy left");
                 var enemy = other.GetComponent<Enemy>();
                 if (enemy != null)
                 {
