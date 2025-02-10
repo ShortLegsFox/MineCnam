@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private List<TowerData> towerDataList;
     [SerializeField] private List<EnemyData> enemyDataList;
+    public GameObject castle;
 
     public bool DebugMode { get; private set; } = false;
 

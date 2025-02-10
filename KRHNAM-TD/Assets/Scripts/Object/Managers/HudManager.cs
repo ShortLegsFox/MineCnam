@@ -12,7 +12,9 @@ public class HudManager : MonoBehaviour
     public GameObject StorePannel;
     public ItemListUI ItemListUI;
     public TextMeshProUGUI TabName;
+    public TextMeshProUGUI hpText;
     public GameObject PauseMenu;
+    public GameObject GameOverMenu;
 
     private void Awake()
     {
@@ -50,6 +52,12 @@ public class HudManager : MonoBehaviour
         }
     }
 
+    public void GameOver()
+    {
+        GameOverMenu.SetActive(true);
+        Time.timeScale = 0;
+    }
+
     public void ToggleStorePannel()
     {
         //ErrorManager.LogInfo("Toggling store pannel");
@@ -80,7 +88,7 @@ public class HudManager : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && !StorePannel.activeSelf)
         {
-            if (EditorManager.Instance.IsEntitySelected && !EditorManager.Instance.selectedEntity.isPlaced)
+            if (EditorManager.Instance.IsEntitySelected && !EditorManager.Instance.selectedEntity.IsPlaced)
             {
                 Debug.Log("Entity not placed");
                 EditorManager.Instance.PlaceEntity(Grid.Instance.selectedCase);

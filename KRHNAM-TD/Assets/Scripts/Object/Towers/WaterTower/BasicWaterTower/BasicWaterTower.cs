@@ -7,7 +7,7 @@ public class BasicWaterTower : Tower
 
     public override void Attack(Collider co)
     {
-        if (isPlaced)
+        if (IsPlaced)
         {
             Vector3 position = transform.position;
             position.y += 3f;

@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.AI;
 
 public class PlaceEntityCommand : I_Command
 {
@@ -22,7 +21,7 @@ public class PlaceEntityCommand : I_Command
                 SoundManager.Instance.PlayEffect("Build");
                 Vector3 newObjectPosition = new Vector3(Case.worldPosition.x, Case.worldPosition.y + 1, Case.worldPosition.z);
                 Entity.OnPlace(newObjectPosition);
-                Entity.isPlaced = true;
+                Entity.SetEntityPlaced(true);
                 Entity.SetEntityAsObstacle();
                 Case.entity = Entity;
                 EditorManager.Instance.selectedEntity = null;

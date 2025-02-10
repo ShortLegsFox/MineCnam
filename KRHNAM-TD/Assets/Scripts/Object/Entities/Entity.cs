@@ -3,7 +3,7 @@ using UnityEngine.AI;
 
 public abstract class Entity : MonoBehaviour
 {
-    public bool isPlaced = false;
+    public bool IsPlaced { get; private set; } = false;
 
     public Case Position
     {
@@ -36,4 +36,11 @@ public abstract class Entity : MonoBehaviour
             this.GetComponent<NavMeshObstacle>().enabled = true;
         }
     }
+
+    public void SetEntityPlaced(bool isPlaced)
+    {
+        this.IsPlaced = isPlaced;
+    }
+
+
 }
