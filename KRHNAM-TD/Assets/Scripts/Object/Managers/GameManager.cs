@@ -32,10 +32,6 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
-    public void Start()
-    {
-        SoundManager.PlayMusic("MC1");
-    }
 
     public TowerData GetTowerData(Element element, TowerLevel level)
     {

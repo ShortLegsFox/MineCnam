@@ -11,6 +11,25 @@ public class SoundManager : MonoBehaviour
     public AudioSource musicSource;
     public AudioClip[] musicClips;
 
+    private void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
+        else
+            instance = this;
+
+        DontDestroyOnLoad(this.gameObject);
+    }
+
+
+    public void Start()
+    {
+        PlayMusic("MC1");
+    }
+
     public void PlayEffect(string clipName)
     {
         AudioClip clip = GetClipByName(clipName, soundEffects);
@@ -37,20 +56,6 @@ public class SoundManager : MonoBehaviour
             Debug.LogError($"La musique '{clipName}' n'a pas été trouvée!");
         }
     }
-
-    private void Awake()
-    {
-        if (instance != null && instance != this)
-        {
-            Destroy(this.gameObject);
-            return;
-        }
-        else
-            instance = this;
-
-        DontDestroyOnLoad(this.gameObject);
-    }
-
 
     private AudioClip GetClipByName(string clipName, AudioClip[] clips)
     {
