@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: WalkingFireEnemyData
   m_EditorClassIdentifier: 
   Prefab: {fileID: 5644183756705422448, guid: 40b477d876a49284a8fd7bd5bd0b7b5b, type: 3}
-  MaxHp: 5
+  MaxHp: 50
   Damage: 2
   MoveSpeed: 5
   element: 0

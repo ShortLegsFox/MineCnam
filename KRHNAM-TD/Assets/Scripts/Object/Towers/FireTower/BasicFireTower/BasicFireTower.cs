@@ -3,8 +3,16 @@ using UnityEngine;
 
 public class BasicFireTower : Tower
 {
+    public GameObject projectilePrefab;
     public override void Attack(Collider co)
     {
-        throw new System.NotImplementedException();
+        if (isPlaced)
+        {
+            Vector3 position = transform.position;
+            position.y += 3f;
+            GameObject g = (GameObject)Instantiate(projectilePrefab, position, Quaternion.identity);
+            g.GetComponent<MoveProjectile>().target = co.transform;
+            g.GetComponent<MoveProjectile>().SetTower(this);
+        }
     }
 }

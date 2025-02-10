@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: FlyingWaterEnemyData
   m_EditorClassIdentifier: 
   Prefab: {fileID: 62291764275771364, guid: c79ac55ea202c8d4f8e22f11e14b60d1, type: 3}
-  MaxHp: 1
+  MaxHp: 30
   Damage: 1
   MoveSpeed: 15
   element: 4

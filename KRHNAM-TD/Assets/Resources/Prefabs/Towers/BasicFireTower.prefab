@@ -53,6 +53,7 @@ MonoBehaviour:
   currentTarget: {fileID: 0}
   shootHeat: 1
   towerData: {fileID: 11400000, guid: 474ba7183555f094187a300525ba7fee, type: 2}
+  projectilePrefab: {fileID: 1256814250574689019, guid: 5d7cf6143bbfcb74fab7014b6d79193e, type: 3}
 --- !u!208 &4294721708506459208
 NavMeshObstacle:
   m_ObjectHideFlags: 0

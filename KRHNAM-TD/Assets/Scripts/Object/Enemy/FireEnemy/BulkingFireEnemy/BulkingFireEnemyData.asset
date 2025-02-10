@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BulkingFireEnemyData
   m_EditorClassIdentifier: 
   Prefab: {fileID: 4446306119501481743, guid: 330051e7ede3d85479b603294eee7fe1, type: 3}
-  MaxHp: 50
+  MaxHp: 300
   Damage: 10
   MoveSpeed: 2
   element: 0

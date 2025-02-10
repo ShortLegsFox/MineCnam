@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: FlyingMetalEnemyData
   m_EditorClassIdentifier: 
   Prefab: {fileID: 6631486118033725791, guid: 0b346f56ec8560a48b5703c733cfcf7a, type: 3}
-  MaxHp: 1
+  MaxHp: 30
   Damage: 1
   MoveSpeed: 15
   element: 1
