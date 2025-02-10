@@ -8,10 +8,6 @@ public class ItemListUI : MonoBehaviour
 {
     public GameObject ArticlePannel;
 
-    void Start()
-    {
-        PopulateList();
-    }
 
     public void PopulateList(Element targetElement = Element.Water)
     {

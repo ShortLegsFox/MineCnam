@@ -8,10 +8,11 @@ public class HudManager : MonoBehaviour
     public static HudManager Instance => instance;
     public static Entity selectedEntity;
     public TextMeshProUGUI Money;
+
     public GameObject StorePannel;
-    public ItemListUI ItemListUI;
-    public TextMeshProUGUI TabName;
     public GameObject PauseMenu;
+
+
     private I_Command storeCommand;
     private I_Command pauseCommand;
 
@@ -41,20 +42,7 @@ public class HudManager : MonoBehaviour
         UpdateMoneyText();
     }
 
-    public void SelectTab(string element)
-    {
-        switch (element)
-        {
-            case "Fire":
-                ItemListUI.PopulateList(Element.Fire);
-                TabName.text = "Fire Towers";
-                break;
-            case "Water":
-                ItemListUI.PopulateList(Element.Water);
-                TabName.text = "Water Towers";
-                break;
-        }
-    }
+
 
     public void TogglePauseMenu()
     {
@@ -104,10 +92,5 @@ public class HudManager : MonoBehaviour
         else
             selectedEntity = null;
     }
-
-
-
-
-
 
 }

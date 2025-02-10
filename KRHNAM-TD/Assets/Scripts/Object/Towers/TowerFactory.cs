@@ -1,5 +1,4 @@
 using Interface;
-using System.Collections.Generic;
 using TDObject;
 using UnityEngine;
 
@@ -29,8 +28,14 @@ public class TowerFactory : MonoBehaviour
                 return new FireTowerFactory();
             case Element.Water:
                 return new WaterTowerFactory();
+            case Element.Wood:
+                return new WoodTowerFactory();
+            case Element.Metal:
+                return new MetalTowerFactory();
+            case Element.Earth:
+                return new EarthTowerFactory();
             default:
-                return null;
+                throw new System.Exception("Tower factory not implemented");
         }
     }
 }

@@ -21,7 +21,6 @@ public class HealthBar : MonoBehaviour
         {
             maxHealth = health;
             currentHealth = maxHealth;
-            Debug.Log("slidersss is not null");
             slidersss.maxValue = health;
             slidersss.value = health;
             fill.color = gradient.Evaluate(1f);
