@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f14ef1f447936b448a6f394a1045ff2, type: 3}
   m_Name: BulkingMetalEnemyData
   m_EditorClassIdentifier: 
-  Prefab: {fileID: 3987174384991102897, guid: 038d97c2c7c040f43933a5333eaa0656, type: 3}
+  Prefab: {fileID: 7945166485059303283, guid: 68f8f6e0cde3f0049b037df50eec90fa, type: 3}
   MaxHp: 300
   Damage: 10
   MoveSpeed: 2

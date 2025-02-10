@@ -18,4 +18,4 @@ MonoBehaviour:
   MaxHp: 100
   Damage: 10
   Range: 7
-  AttackSpeed: 1
+  AttackSpeed: 0.2

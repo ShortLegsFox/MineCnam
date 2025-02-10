@@ -54,19 +54,19 @@ MonoBehaviour:
   towerDataList:
   - {fileID: 11400000, guid: 9117b73ee8ea55d4f80c52b8cb144025, type: 2}
   - {fileID: 11400000, guid: caa39910a67ddc24e80a872202889b9d, type: 2}
+  - {fileID: 11400000, guid: ae134235386a33745a0e8db8455b92c4, type: 2}
+  - {fileID: 11400000, guid: 68f7b4aa4a4fae9488dd39618630b144, type: 2}
+  - {fileID: 11400000, guid: de9c62ba408e0f548983b9f40dfcaa5e, type: 2}
   - {fileID: 11400000, guid: 474ba7183555f094187a300525ba7fee, type: 2}
   - {fileID: 11400000, guid: 6f9698085319ebb43807f22ced83fc5e, type: 2}
+  - {fileID: 11400000, guid: b2fa19122f3f9f44cbeccb4095b3ebd5, type: 2}
+  - {fileID: 11400000, guid: bb6b7d1216c32bf488fca84cf369dee2, type: 2}
+  - {fileID: 11400000, guid: 982f2ba33357b2642a818e1592bbc01d, type: 2}
   - {fileID: 11400000, guid: 31f52c03c7d59f347a75d05cc2bea177, type: 2}
   - {fileID: 11400000, guid: 507925228e7bc8448b26547204d0135c, type: 2}
-  - {fileID: 11400000, guid: b2fa19122f3f9f44cbeccb4095b3ebd5, type: 2}
-  - {fileID: 11400000, guid: ae134235386a33745a0e8db8455b92c4, type: 2}
   - {fileID: 11400000, guid: f8fdc3ffede92d34497d085aae3ead10, type: 2}
-  - {fileID: 11400000, guid: 982f2ba33357b2642a818e1592bbc01d, type: 2}
-  - {fileID: 11400000, guid: de9c62ba408e0f548983b9f40dfcaa5e, type: 2}
-  - {fileID: 11400000, guid: 13b106502aa5686469ed04e758592865, type: 2}
-  - {fileID: 11400000, guid: bb6b7d1216c32bf488fca84cf369dee2, type: 2}
-  - {fileID: 11400000, guid: 68f7b4aa4a4fae9488dd39618630b144, type: 2}
   - {fileID: 11400000, guid: 9ed74df8553bef54ab2ff2621bc4287a, type: 2}
+  - {fileID: 11400000, guid: 13b106502aa5686469ed04e758592865, type: 2}
   enemyDataList:
   - {fileID: 11400000, guid: 40119b4c755ab4c48867d8af6584924a, type: 2}
   - {fileID: 11400000, guid: 386d13b40eb42114785d7c7eea064cd7, type: 2}
