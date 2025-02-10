@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f14ef1f447936b448a6f394a1045ff2, type: 3}
   m_Name: WalkingEarthEnemyData
   m_EditorClassIdentifier: 
-  Prefab: {fileID: 3987174384991102897, guid: 8e8a7965f02996b4489b9daa636953a7, type: 3}
-  MaxHp: 100
+  Prefab: {fileID: 2315837681590389153, guid: 2541f63bae1816b4e8359a007e710537, type: 3}
+  MaxHp: 5
   Damage: 2
   MoveSpeed: 5
   element: 3

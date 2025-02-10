@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f14ef1f447936b448a6f394a1045ff2, type: 3}
   m_Name: WalkingMetalEnemyData
   m_EditorClassIdentifier: 
-  Prefab: {fileID: 3987174384991102897, guid: 5b6eabbd450329a41bfa4b8c50a13d94, type: 3}
-  MaxHp: 100
+  Prefab: {fileID: 3186881813749786448, guid: 1bd07157fa14d954ca6080c62a3511b4, type: 3}
+  MaxHp: 5
   Damage: 2
   MoveSpeed: 5
   element: 1
