@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f14ef1f447936b448a6f394a1045ff2, type: 3}
   m_Name: BulkingWoodEnemyData
   m_EditorClassIdentifier: 
-  Prefab: {fileID: 3987174384991102897, guid: ebcfff5e81284f149989c58ec9af598d, type: 3}
+  Prefab: {fileID: 774005828542956245, guid: caa397c00bf24764eafd9ee39b5f7f68, type: 3}
   MaxHp: 50
   Damage: 10
   MoveSpeed: 2

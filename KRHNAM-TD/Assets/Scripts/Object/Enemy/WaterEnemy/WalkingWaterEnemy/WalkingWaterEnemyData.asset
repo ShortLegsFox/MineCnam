@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f14ef1f447936b448a6f394a1045ff2, type: 3}
   m_Name: WalkingWaterEnemyData
   m_EditorClassIdentifier: 
-  Prefab: {fileID: 3987174384991102897, guid: 0a4c53c794adbb34caabcf192e109d99, type: 3}
+  Prefab: {fileID: 6042827550217726177, guid: de0d2ab2923cee540b260fcdeeefef5c, type: 3}
   MaxHp: 5
   Damage: 2
   MoveSpeed: 5

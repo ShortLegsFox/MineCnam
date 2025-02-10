@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f14ef1f447936b448a6f394a1045ff2, type: 3}
   m_Name: FlyingWoodEnemyData
   m_EditorClassIdentifier: 
-  Prefab: {fileID: 3987174384991102897, guid: 59357ff29b52d3f4c8281151012b29b9, type: 3}
+  Prefab: {fileID: 5624265689439354387, guid: 7a80b306539434d45a5217be25aeb655, type: 3}
   MaxHp: 1
   Damage: 1
   MoveSpeed: 15

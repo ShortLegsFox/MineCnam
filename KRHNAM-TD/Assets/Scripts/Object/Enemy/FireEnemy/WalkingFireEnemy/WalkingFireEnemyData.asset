@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f14ef1f447936b448a6f394a1045ff2, type: 3}
   m_Name: WalkingFireEnemyData
   m_EditorClassIdentifier: 
-  Element: 0
-  Prefab: {fileID: 3987174384991102897, guid: a9b92bac740aaa54ea517758e8de0ab1, type: 3}
+  Prefab: {fileID: 5644183756705422448, guid: 40b477d876a49284a8fd7bd5bd0b7b5b, type: 3}
   MaxHp: 5
   Damage: 2
   MoveSpeed: 5
+  element: 0
+  type: 0
