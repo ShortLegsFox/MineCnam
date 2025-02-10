@@ -40,6 +40,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BulkingWaterEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 8128668236925612103, guid: b3bc47da9feb64e4fb816faae2dbaf46, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 8897093224900880590, guid: b3bc47da9feb64e4fb816faae2dbaf46, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.43
@@ -96,6 +100,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8128668236925612103, guid: b3bc47da9feb64e4fb816faae2dbaf46, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6046741281688631060}
+    - targetCorrespondingSourceObject: {fileID: 8128668236925612103, guid: b3bc47da9feb64e4fb816faae2dbaf46, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4299736090522327571}
   m_SourcePrefab: {fileID: -5645937942226959685, guid: b3bc47da9feb64e4fb816faae2dbaf46, type: 3}
 --- !u!4 &5179328518088539177 stripped
 Transform:
@@ -156,6 +163,27 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!65 &4299736090522327571
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5500773450626917536}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 3, z: 1}
+  m_Center: {x: 0, y: 1.3, z: 0}
 --- !u!1001 &4979111017374642594
 PrefabInstance:
   m_ObjectHideFlags: 0

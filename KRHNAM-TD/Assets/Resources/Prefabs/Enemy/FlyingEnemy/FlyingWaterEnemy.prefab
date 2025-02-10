@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlyingWaterEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: -6689036041284674117, guid: 6d47ee2fd19dee440a6f48c758e1a662, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 2774220344278030320, guid: 6d47ee2fd19dee440a6f48c758e1a662, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10.87
@@ -26,11 +30,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2774220344278030320, guid: 6d47ee2fd19dee440a6f48c758e1a662, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2774220344278030320, guid: 6d47ee2fd19dee440a6f48c758e1a662, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.7071068
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2774220344278030320, guid: 6d47ee2fd19dee440a6f48c758e1a662, type: 3}
       propertyPath: m_LocalRotation.y
@@ -96,6 +100,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -6689036041284674117, guid: 6d47ee2fd19dee440a6f48c758e1a662, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2279439645048456685}
+    - targetCorrespondingSourceObject: {fileID: -6689036041284674117, guid: 6d47ee2fd19dee440a6f48c758e1a662, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6797167209329498702}
   m_SourcePrefab: {fileID: -5645937942226959685, guid: 6d47ee2fd19dee440a6f48c758e1a662, type: 3}
 --- !u!1 &62291764275771364 stripped
 GameObject:
@@ -151,6 +158,27 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!65 &6797167209329498702
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 62291764275771364}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 0.96, z: 1}
+  m_Center: {x: 0, y: 0.35, z: 0}
 --- !u!4 &393653315755146671 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2774220344278030320, guid: 6d47ee2fd19dee440a6f48c758e1a662, type: 3}

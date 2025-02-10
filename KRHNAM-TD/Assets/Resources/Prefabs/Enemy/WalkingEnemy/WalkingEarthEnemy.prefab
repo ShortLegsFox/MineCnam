@@ -226,6 +226,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8128668236925612103, guid: c2457e02cac0f724babeed5a8f52919f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8152922754809792663}
+    - targetCorrespondingSourceObject: {fileID: 8128668236925612103, guid: c2457e02cac0f724babeed5a8f52919f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3348600949358349943}
   m_SourcePrefab: {fileID: -5645937942226959685, guid: c2457e02cac0f724babeed5a8f52919f, type: 3}
 --- !u!1 &2315837681590389153 stripped
 GameObject:
@@ -281,6 +284,27 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!65 &3348600949358349943
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2315837681590389153}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 3.5, z: 1}
+  m_Center: {x: 0, y: 1.62, z: 0}
 --- !u!4 &3140563158307639592 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8897093224900880590, guid: c2457e02cac0f724babeed5a8f52919f, type: 3}

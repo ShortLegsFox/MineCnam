@@ -150,6 +150,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BulkingWoodEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 8128668236925612103, guid: b3bc47da9feb64e4fb816faae2dbaf46, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 8897093224900880590, guid: b3bc47da9feb64e4fb816faae2dbaf46, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.1
@@ -206,6 +210,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8128668236925612103, guid: b3bc47da9feb64e4fb816faae2dbaf46, type: 3}
       insertIndex: -1
       addedObject: {fileID: -940159931836349765}
+    - targetCorrespondingSourceObject: {fileID: 8128668236925612103, guid: b3bc47da9feb64e4fb816faae2dbaf46, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 848459849002625023}
   m_SourcePrefab: {fileID: -5645937942226959685, guid: b3bc47da9feb64e4fb816faae2dbaf46, type: 3}
 --- !u!4 &75388722711976540 stripped
 Transform:
@@ -266,3 +273,24 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!65 &848459849002625023
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 774005828542956245}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 3, z: 1}
+  m_Center: {x: 0, y: 1.3, z: 0}
