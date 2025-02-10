@@ -37,22 +37,6 @@ public class GameManager : MonoBehaviour
         SoundManager.PlayMusic("MC1");
     }
 
-    public void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.F1))
-        {
-            DebugMode = !DebugMode;
-        }
-        if (Input.GetKeyDown(KeyCode.F2))
-        {
-            HudManager.ToggleStorePannel();
-        }
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            HudManager.TogglePauseMenu();
-        }
-    }
-
     public TowerData GetTowerData(Element element, TowerLevel level)
     {
         foreach (var tower in towerDataList)

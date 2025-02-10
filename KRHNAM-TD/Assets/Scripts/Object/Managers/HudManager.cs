@@ -1,5 +1,4 @@
 using Abstract;
-using Interface;
 using TMPro;
 using UnityEngine;
 
@@ -13,6 +12,8 @@ public class HudManager : MonoBehaviour
     public ItemListUI ItemListUI;
     public TextMeshProUGUI TabName;
     public GameObject PauseMenu;
+    private I_Command storeCommand;
+    private I_Command pauseCommand;
 
     private void Awake()
     {
@@ -27,9 +28,14 @@ public class HudManager : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
+    private void Start()
+    {
+        storeCommand = new StoreCommand();
+        pauseCommand = new PauseCommand();
+    }
+
     private void Update()
     {
-        PlaceEntity();
         DrawScope();
         OnEntityHover();
         UpdateMoneyText();
@@ -50,17 +56,14 @@ public class HudManager : MonoBehaviour
         }
     }
 
-    public void ToggleStorePannel()
-    {
-        //ErrorManager.LogInfo("Toggling store pannel");
-        StorePannel.SetActive(!StorePannel.activeSelf);
-    }
-
-
     public void TogglePauseMenu()
     {
-        PauseMenu.SetActive(!PauseMenu.activeSelf);
-        Time.timeScale = PauseMenu.activeSelf ? 0 : 1;
+        pauseCommand.Execute();
+    }
+
+    public void ToggleStorePannel()
+    {
+        storeCommand.Execute();
     }
 
     private void UpdateMoneyText()
@@ -70,24 +73,7 @@ public class HudManager : MonoBehaviour
 
     public void SelectTower(TowerData towerData)
     {
-        I_TowerFactory towerFactory = TowerFactory.GetTowerFactory(towerData.Element);
-        Entity tower = towerFactory.CreateTower(towerData.Level);
-        EditorManager.Instance.selectedEntity = tower;
-        ErrorManager.DebugLog($"Entity selected for placement.");
-    }
-
-    public void PlaceEntity()
-    {
-        if (Input.GetMouseButtonDown(0) && !StorePannel.activeSelf)
-        {
-            if (EditorManager.Instance.IsEntitySelected && !EditorManager.Instance.selectedEntity.isPlaced)
-            {
-                Debug.Log("Entity not placed");
-                EditorManager.Instance.PlaceEntity(Grid.Instance.selectedCase);
-                Debug.Log("Placing entity");
-
-            }
-        }
+        EditorManager.Instance.SelectTower(towerData);
     }
 
     public void DrawScope()
