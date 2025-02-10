@@ -62,4 +62,24 @@ public class SoundManager : MonoBehaviour
         return null;
     }
 
+    public void SetMusicVolumeTo(float volume)
+    {
+        musicSource.volume = volume;
+    }
+
+    public float GetMusicVolume()
+    {
+        return musicSource.volume;
+    }
+
+    public void SetEffectsVolumeTo(float volume)
+    {
+        effectsSource.volume = volume;
+    }
+
+    public float GetEffectsVolume()
+    {
+        return effectsSource.volume;
+    }
+
 }
