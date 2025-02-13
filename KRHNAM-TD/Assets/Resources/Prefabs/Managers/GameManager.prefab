@@ -83,6 +83,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1430573212a30a44fb962b68177d65de, type: 2}
   - {fileID: 11400000, guid: 999c62ff768f41d4eb0364d8c00a52b8, type: 2}
   - {fileID: 11400000, guid: 378eda9a3808bb04fad19774c8c1a14d, type: 2}
+  CastlePrefab: {fileID: 3782147653185187665, guid: 706e89d22861a8543bec2467be34f26b, type: 3}
+  casteSpawn: {fileID: 0}
 --- !u!1001 &1086641771949104356
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -153,21 +155,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1843998773558082466}
     m_Modifications:
-    - target: {fileID: 491198963311246118, guid: f2a60d358ef398040903cc1ae7aaffea, type: 3}
-      propertyPath: m_AnchorMax.y
+    - target: {fileID: 3127227948940719228, guid: f2a60d358ef398040903cc1ae7aaffea, type: 3}
+      propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1357670852002471684, guid: f2a60d358ef398040903cc1ae7aaffea, type: 3}
+    - target: {fileID: 3127227948940719228, guid: f2a60d358ef398040903cc1ae7aaffea, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3362038900045069505, guid: f2a60d358ef398040903cc1ae7aaffea, type: 3}
       propertyPath: m_Name
       value: HUDManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 3598108937323268270, guid: f2a60d358ef398040903cc1ae7aaffea, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3755376264617591369, guid: f2a60d358ef398040903cc1ae7aaffea, type: 3}
       propertyPath: m_LocalPosition.x
@@ -209,18 +207,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3838716565733640913, guid: f2a60d358ef398040903cc1ae7aaffea, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
+    - target: {fileID: 3779654050376947797, guid: f2a60d358ef398040903cc1ae7aaffea, type: 3}
+      propertyPath: GameOverMenu
+      value: 
+      objectReference: {fileID: 5914972641614718183}
+    - target: {fileID: 3779654050376947797, guid: f2a60d358ef398040903cc1ae7aaffea, type: 3}
+      propertyPath: CastleHealthbar
+      value: 
+      objectReference: {fileID: 810614752104624645}
+    - target: {fileID: 4197526741122000885, guid: f2a60d358ef398040903cc1ae7aaffea, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4989986010924723499}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2a60d358ef398040903cc1ae7aaffea, type: 3}
+--- !u!114 &810614752104624645 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1975129351831979954, guid: f2a60d358ef398040903cc1ae7aaffea, type: 3}
+  m_PrefabInstance: {fileID: 1177392768868660663}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86a328cb93572a842b1394aec8657474, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &2615244125006510078 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3755376264617591369, guid: f2a60d358ef398040903cc1ae7aaffea, type: 3}
+  m_PrefabInstance: {fileID: 1177392768868660663}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5914972641614718183 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4774031364341027152, guid: f2a60d358ef398040903cc1ae7aaffea, type: 3}
   m_PrefabInstance: {fileID: 1177392768868660663}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3812980014270368094
@@ -397,7 +419,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6262546506975764758, guid: 5141d6044baad0e45b4113d57f712348, type: 3}
       propertyPath: gold
-      value: 100000
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7259434930612607231, guid: 5141d6044baad0e45b4113d57f712348, type: 3}
       propertyPath: m_Name

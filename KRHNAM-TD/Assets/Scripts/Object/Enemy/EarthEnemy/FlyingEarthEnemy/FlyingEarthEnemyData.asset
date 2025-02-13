@@ -16,5 +16,7 @@ MonoBehaviour:
   MaxHp: 30
   Damage: 1
   MoveSpeed: 15
+  Range: 5
+  TimeBetweenAttacks: 3
   element: 3
   type: 1
