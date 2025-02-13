@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Prefab: {fileID: 62291764275771364, guid: c79ac55ea202c8d4f8e22f11e14b60d1, type: 3}
   MaxHp: 30
-  Damage: 1
+  Damage: 5
   MoveSpeed: 15
   Range: 5
-  TimeBetweenAttacks: 3
+  TimeBetweenAttacks: 2
   element: 4
   type: 1

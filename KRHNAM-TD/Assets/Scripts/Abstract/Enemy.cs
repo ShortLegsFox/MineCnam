@@ -72,6 +72,7 @@ public abstract class Enemy : Entity
     {
         if (canAttack && GetDistanceFromTarget() < enemyData.Range)
         {
+            canAttack = false;
             animator.SetTrigger("Attack");
         }
     }
