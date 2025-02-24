@@ -36,6 +36,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180
       objectReference: {fileID: 0}
+    - target: {fileID: -5644133064174452605, guid: b3bc47da9feb64e4fb816faae2dbaf46, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 6a85a2ba0038b5e4591cf7ff2d96b207, type: 2}
     - target: {fileID: 8128668236925612103, guid: b3bc47da9feb64e4fb816faae2dbaf46, type: 3}
       propertyPath: m_Name
       value: BulkingWaterEnemy

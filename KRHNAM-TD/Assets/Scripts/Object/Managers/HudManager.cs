@@ -8,13 +8,16 @@ public class HudManager : MonoBehaviour
     public static HudManager Instance => instance;
     public static Entity selectedEntity;
     public TextMeshProUGUI Money;
+    public HealthBar CastleHealthbar;
 
     public GameObject StorePannel;
     public GameObject PauseMenu;
+    public GameObject GameOverMenu;
 
 
     private I_Command storeCommand;
     private I_Command pauseCommand;
+    private I_Command gameOverCommand;
 
     private void Awake()
     {
@@ -33,6 +36,8 @@ public class HudManager : MonoBehaviour
     {
         storeCommand = new StoreCommand();
         pauseCommand = new PauseCommand();
+        gameOverCommand = new GameOverCommand();
+
     }
 
     private void Update()
@@ -42,8 +47,6 @@ public class HudManager : MonoBehaviour
         UpdateMoneyText();
     }
 
-
-
     public void TogglePauseMenu()
     {
         pauseCommand.Execute();
@@ -52,6 +55,11 @@ public class HudManager : MonoBehaviour
     public void ToggleStorePannel()
     {
         storeCommand.Execute();
+    }
+
+    public void ToggleGameOverMenu()
+    {
+        gameOverCommand.Execute();
     }
 
     private void UpdateMoneyText()

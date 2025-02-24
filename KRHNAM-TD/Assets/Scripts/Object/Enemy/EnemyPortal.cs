@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyPortal : MonoBehaviour
 {
-    [SerializeField] private List<GameObject> enemyPrefabList;
+    private List<GameObject> enemyPrefabList;
 
     [SerializeField] private float minimumSpawnTime;
     [SerializeField] private float maximumSpawnTime;
