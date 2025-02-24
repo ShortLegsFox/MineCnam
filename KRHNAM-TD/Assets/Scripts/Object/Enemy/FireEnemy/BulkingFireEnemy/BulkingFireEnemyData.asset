@@ -15,7 +15,7 @@ MonoBehaviour:
   Prefab: {fileID: 4446306119501481743, guid: 330051e7ede3d85479b603294eee7fe1, type: 3}
   MaxHp: 300
   Damage: 30
-  MoveSpeed: 2
+  MoveSpeed: 1
   Range: 2
   TimeBetweenAttacks: 3
   element: 0

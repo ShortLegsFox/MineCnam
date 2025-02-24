@@ -146,6 +146,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180
       objectReference: {fileID: 0}
+    - target: {fileID: -5644133064174452605, guid: c2457e02cac0f724babeed5a8f52919f, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: c7f42b48590324c449c3023930150241, type: 2}
     - target: {fileID: 8128668236925612103, guid: c2457e02cac0f724babeed5a8f52919f, type: 3}
       propertyPath: m_Name
       value: WalkingEarthEnemy
