@@ -17,7 +17,6 @@ public class EnemyBulk : EnemyTypeAbs
         if (castle != null)
         {
             agent.SetDestination(castle.transform.position);
-            Debug.Log(agent.velocity.magnitude);
 
             if (agent.velocity.magnitude > 0.5f) // Si l'ennemi bouge
             {
