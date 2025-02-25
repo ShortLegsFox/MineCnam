@@ -30,7 +30,7 @@ public abstract class Enemy : Entity
 
     public bool TakeDamage(Element AttackElement, float AttackDamage)
     {
-        Debug.Log("TakeDamage");
+        //Debug.Log("TakeDamage");
         // If tower is strong VS enemy
         if (AttackElement == GetElementInfos.GetWeakness(element))
         {

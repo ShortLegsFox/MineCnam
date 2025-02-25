@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 15284220483125396}
   - component: {fileID: 9205470912906896021}
   - component: {fileID: 2896572826653365365}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: AdvancedWaterTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,14 +178,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7501888344303216246, guid: 53bce224017afbe49930f7c69da08e7d, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: -6708221698337662721, guid: 53bce224017afbe49930f7c69da08e7d, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 8e8e9066476847d4eab62d30d67d3d67, type: 2}
+    - target: {fileID: -6426727581987444677, guid: 53bce224017afbe49930f7c69da08e7d, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: -6211228443153296301, guid: 53bce224017afbe49930f7c69da08e7d, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 8e8e9066476847d4eab62d30d67d3d67, type: 2}
+    - target: {fileID: -6106619193768003611, guid: 53bce224017afbe49930f7c69da08e7d, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -6019679308074869713, guid: 53bce224017afbe49930f7c69da08e7d, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: -5839744459419090009, guid: 53bce224017afbe49930f7c69da08e7d, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -194,10 +210,26 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 8e8e9066476847d4eab62d30d67d3d67, type: 2}
+    - target: {fileID: -2973820865280170066, guid: 53bce224017afbe49930f7c69da08e7d, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: -2756868285169794292, guid: 53bce224017afbe49930f7c69da08e7d, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 8e8e9066476847d4eab62d30d67d3d67, type: 2}
+    - target: {fileID: -2664669195635501840, guid: 53bce224017afbe49930f7c69da08e7d, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -1812836749825366885, guid: 53bce224017afbe49930f7c69da08e7d, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -875896150946737178, guid: 53bce224017afbe49930f7c69da08e7d, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: -302736238102332845, guid: 53bce224017afbe49930f7c69da08e7d, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -205,6 +237,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 53bce224017afbe49930f7c69da08e7d, type: 3}
       propertyPath: m_Name
       value: Advanced Water Tower
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 53bce224017afbe49930f7c69da08e7d, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1837751345665310476, guid: 53bce224017afbe49930f7c69da08e7d, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -214,6 +250,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 8e8e9066476847d4eab62d30d67d3d67, type: 2}
+    - target: {fileID: 2280026691923796046, guid: 53bce224017afbe49930f7c69da08e7d, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2896546719236592663, guid: 53bce224017afbe49930f7c69da08e7d, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -222,6 +262,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 8e8e9066476847d4eab62d30d67d3d67, type: 2}
+    - target: {fileID: 7051507842152624002, guid: 53bce224017afbe49930f7c69da08e7d, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

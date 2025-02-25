@@ -18,6 +18,12 @@ public abstract class Entity : MonoBehaviour
         }
     }
 
+    public void Awake()
+    {
+        DisableEntityAsObstacle();
+    }
+
+
     public virtual void OnPlace(Vector3 position)
     {
         position.y = 1;
@@ -31,9 +37,20 @@ public abstract class Entity : MonoBehaviour
 
     public void SetEntityAsObstacle()
     {
+        Debug.Log("SetEntityAsObstacle");
         if (this.GetComponent<NavMeshObstacle>() != null)
         {
+            Debug.Log("SetEntityAsObstacle != null");
             this.GetComponent<NavMeshObstacle>().enabled = true;
+        }
+    }
+
+
+    public void DisableEntityAsObstacle()
+    {
+        if (this.GetComponent<NavMeshObstacle>() != null)
+        {
+            this.GetComponent<NavMeshObstacle>().enabled = false;
         }
     }
 }
