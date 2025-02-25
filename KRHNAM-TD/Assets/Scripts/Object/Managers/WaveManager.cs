@@ -15,6 +15,5 @@ public class WaveManager : MonoBehaviour
         else
             instance = this;
 
-        DontDestroyOnLoad(this.gameObject);
     }
 }

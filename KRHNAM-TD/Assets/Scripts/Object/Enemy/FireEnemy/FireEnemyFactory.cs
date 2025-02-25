@@ -8,7 +8,7 @@ public class FireEnemyFactory : I_EnemyFactory
         portal = GameObject.Find("Portal");
         EnemyData enemyData = GameManager.Instance.GetEnemyData(Element.Fire, type);
         GameObject prefab = enemyData.Prefab;
-        GameObject instance = Object.Instantiate(prefab, portal.transform.position, Quaternion.identity);
+        GameObject instance = Object.Instantiate(prefab, portal.transform.position, Quaternion.Euler(0, 90, 0));
         instance.transform.parent = Grid.Instance.transform;
         return instance.GetComponent<Enemy>();
     }

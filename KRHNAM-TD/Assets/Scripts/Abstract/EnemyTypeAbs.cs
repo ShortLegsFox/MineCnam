@@ -5,17 +5,17 @@ public abstract class EnemyTypeAbs : MonoBehaviour
 {
     protected GameObject castle;
     protected float speed;
-    protected NavMeshAgent agent ;
+    protected NavMeshAgent agent;
 
     public void Start()
     {
-        castle = GameObject.Find("Castle");
+        castle = GameManager.Instance.Castle;
         agent = GetComponent<NavMeshAgent>();
         agent.speed = this.GetComponent<Enemy>().enemyData.MoveSpeed;
     }
 
     public virtual void Update()
     {
-        
+
     }
 }

@@ -1,4 +1,3 @@
-using Abstract;
 using UnityEngine;
 
 public class WoodEnemyFactory : I_EnemyFactory
@@ -8,8 +7,8 @@ public class WoodEnemyFactory : I_EnemyFactory
     {
         portal = GameObject.Find("Portal");
         GameObject prefab = GameManager.Instance.GetEnemyData(Element.Wood, type).Prefab;
-        GameObject instance = Object.Instantiate(prefab, portal.transform.position, Quaternion.identity);
+        GameObject instance = Object.Instantiate(prefab, portal.transform.position, Quaternion.Euler(0, 90, 0));
         instance.transform.parent = Grid.Instance.transform;
-        return instance.GetComponent<Enemy>();    
+        return instance.GetComponent<Enemy>();
     }
 }

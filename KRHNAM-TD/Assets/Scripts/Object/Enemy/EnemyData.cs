@@ -7,6 +7,8 @@ public class EnemyData : ScriptableObject
     public int MaxHp;
     public int Damage;
     public int MoveSpeed;
+    public int Range;
+    public int TimeBetweenAttacks;
     public Element element;
     public EnemyType type;
 }

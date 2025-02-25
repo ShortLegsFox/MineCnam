@@ -8,6 +8,7 @@ public class StoreManager : MonoBehaviour
     private static StoreManager instance = null;
     public static StoreManager Instance => instance;
     public int gold = 0;
+    public int DefaultGoldAmount = 100;
     public int IncrementGoldAmount = 1;
     public float IncrementGoldInterval = 1;
     public StoreArticle[] StoreArticles;
@@ -22,7 +23,7 @@ public class StoreManager : MonoBehaviour
         else
             instance = this;
 
-        DontDestroyOnLoad(this.gameObject);
+        SetDefaultGold();
     }
 
     private void Start()
@@ -70,6 +71,12 @@ public class StoreManager : MonoBehaviour
             Debug.Log("Not enough gold to buy " + article.Name);
             return false;
         }
+    }
+
+
+    public void SetDefaultGold()
+    {
+        gold = DefaultGoldAmount;
     }
 
 

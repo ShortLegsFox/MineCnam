@@ -16,6 +16,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private List<TowerData> towerDataList;
     [SerializeField] private List<EnemyData> enemyDataList;
 
+    public GameObject Castle { get; private set; }
+    public GameObject CastlePrefab;
+    public GameObject casteSpawn;
+
     public bool DebugMode { get; private set; } = false;
 
 
@@ -29,9 +33,58 @@ public class GameManager : MonoBehaviour
         else
             instance = this;
 
-        DontDestroyOnLoad(this.gameObject);
+        StartGame();
     }
 
+    public void StartGame()
+    {
+        SpawnCastle();
+        StoreManager.SetDefaultGold();
+        Time.timeScale = 1;
+    }
+
+    public void RestartGame()
+    {
+        if (HudManager.Instance.GameOverMenu.activeSelf)
+            HudManager.Instance.ToggleGameOverMenu();
+        if (HudManager.Instance.PauseMenu.activeSelf)
+            HudManager.Instance.TogglePauseMenu();
+
+        KillAllEnemies();
+        KillAllTowers();
+        Destroy(Castle);
+        StartGame();
+    }
+
+    public void GameOver()
+    {
+        HudManager.Instance.ToggleGameOverMenu();
+    }
+
+    private void SpawnCastle()
+    {
+        Castle = Instantiate(CastlePrefab, casteSpawn.transform.position, Quaternion.identity);
+        Castle castle = Castle.GetComponent<Castle>();
+        castle.Hp = 300;
+    }
+
+    private void KillAllEnemies()
+    {
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach (var enemy in enemies)
+        {
+            Destroy(enemy);
+        }
+    }
+
+    private void KillAllTowers()
+    {
+        GameObject[] towers = GameObject.FindGameObjectsWithTag("Tower");
+        foreach (var tower in towers)
+        {
+            Destroy(tower);
+        }
+    }
 
     public TowerData GetTowerData(Element element, TowerLevel level)
     {
@@ -57,3 +110,5 @@ public class GameManager : MonoBehaviour
         return null;
     }
 }
+
+

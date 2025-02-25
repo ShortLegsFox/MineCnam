@@ -18,8 +18,6 @@ public class CursorManager : MonoBehaviour
         }
         else
             instance = this;
-
-        DontDestroyOnLoad(this.gameObject);
     }
 
     public void Update()
