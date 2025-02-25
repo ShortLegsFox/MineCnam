@@ -51,6 +51,7 @@ MonoBehaviour:
   isPlaced: 0
   targetList: []
   currentTarget: {fileID: 0}
+  targetingStrategy: {fileID: 11400000, guid: e7cb1b0d01b21df4aa178cbe9feae4e9, type: 2}
   shootHeat: 1
   towerData: {fileID: 11400000, guid: de9c62ba408e0f548983b9f40dfcaa5e, type: 2}
   projectilePrefab: {fileID: 1256814250574689019, guid: 5d7cf6143bbfcb74fab7014b6d79193e, type: 3}
