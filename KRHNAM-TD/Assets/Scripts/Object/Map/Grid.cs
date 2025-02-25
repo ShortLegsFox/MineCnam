@@ -61,7 +61,7 @@ public class Grid : MonoBehaviour
         {
             Vector3 hitPoint = ray.GetPoint(enter);
             selectedCase = CaseFromWorldPoint(hitPoint);
-            // Debug.Log($"Case sélectionnée : [{selectedCase.GridX}; {selectedCase.GridY}]");
+            Debug.Log($"Case sélectionnée : [{selectedCase.GridX}; {selectedCase.GridY}] : {selectedCase.IsEmpty} - {selectedCase.entity != null}");
         }
         else
         {

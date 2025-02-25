@@ -5,7 +5,7 @@ public class Case
     public Vector3 worldPosition;
     public int GridX;
     public int GridY;
-    public Entity entity;
+    public Entity entity { get; private set; }
     public bool isBlocked;
     public bool IsEmpty => entity == null && isBlocked == false;
 
@@ -14,5 +14,11 @@ public class Case
         worldPosition = _worldPos;
         GridX = gridX;
         GridY = gridY;
+    }
+
+
+    public void PlaceEntity(Entity entity)
+    {
+        this.entity = entity;
     }
 }

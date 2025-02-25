@@ -61,7 +61,6 @@ public abstract class Enemy : Entity
         if (target != null)
         {
             float distance = Vector3.Distance(target.transform.position, transform.position);
-            Debug.Log(distance);
             return distance;
         }
         return 1000;
