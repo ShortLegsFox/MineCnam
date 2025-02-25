@@ -37,4 +37,5 @@ public class EnemyPortal : MonoBehaviour
             listIndex = (listIndex + 1) % enemyFactoryList.Count;
         }
     }
+
 }

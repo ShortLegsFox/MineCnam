@@ -33,7 +33,6 @@ public class GameManager : MonoBehaviour
         else
             instance = this;
 
-        DontDestroyOnLoad(this.gameObject);
         StartGame();
     }
 
@@ -41,11 +40,16 @@ public class GameManager : MonoBehaviour
     {
         SpawnCastle();
         StoreManager.SetDefaultGold();
+        Time.timeScale = 1;
     }
 
     public void RestartGame()
     {
-        HudManager.Instance.ToggleGameOverMenu();
+        if (HudManager.Instance.GameOverMenu.activeSelf)
+            HudManager.Instance.ToggleGameOverMenu();
+        if (HudManager.Instance.PauseMenu.activeSelf)
+            HudManager.Instance.TogglePauseMenu();
+
         KillAllEnemies();
         KillAllTowers();
         Destroy(Castle);

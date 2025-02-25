@@ -317,6 +317,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c5ba4e8f7e183a409d1af93afec885f, type: 3}
+--- !u!1 &1253216061 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2065292775844778104, guid: 8c5ba4e8f7e183a409d1af93afec885f, type: 3}
+  m_PrefabInstance: {fileID: 1096949006}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1513775267
 GameObject:
   m_ObjectHideFlags: 0
@@ -588,6 +593,10 @@ PrefabInstance:
       propertyPath: casteSpawn
       value: 
       objectReference: {fileID: 464242044}
+    - target: {fileID: 4989986010924723499, guid: 65ea7828802ffdf478218ed57b98583e, type: 3}
+      propertyPath: PortalSpawn
+      value: 
+      objectReference: {fileID: 1253216061}
     - target: {fileID: 7624181238174045057, guid: 65ea7828802ffdf478218ed57b98583e, type: 3}
       propertyPath: m_Name
       value: GameManager

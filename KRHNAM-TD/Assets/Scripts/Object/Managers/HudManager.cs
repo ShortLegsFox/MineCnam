@@ -18,6 +18,7 @@ public class HudManager : MonoBehaviour
     private I_Command storeCommand;
     private I_Command pauseCommand;
     private I_Command gameOverCommand;
+    private I_Command quitCommand;
 
     private void Awake()
     {
@@ -29,7 +30,6 @@ public class HudManager : MonoBehaviour
         else
             instance = this;
 
-        DontDestroyOnLoad(this.gameObject);
     }
 
     private void Start()
@@ -37,6 +37,7 @@ public class HudManager : MonoBehaviour
         storeCommand = new StoreCommand();
         pauseCommand = new PauseCommand();
         gameOverCommand = new GameOverCommand();
+        quitCommand = new QuitToTitileCommand();
 
     }
 
@@ -60,6 +61,11 @@ public class HudManager : MonoBehaviour
     public void ToggleGameOverMenu()
     {
         gameOverCommand.Execute();
+    }
+
+    public void QuitToTitle()
+    {
+        quitCommand.Execute();
     }
 
     private void UpdateMoneyText()
