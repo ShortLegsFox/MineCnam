@@ -30,7 +30,7 @@ public abstract class Enemy : Entity
 
     public bool TakeDamage(Element AttackElement, float AttackDamage)
     {
-        Debug.Log("TakeDamage");
+        //Debug.Log("TakeDamage");
         // If tower is strong VS enemy
         if (AttackElement == GetElementInfos.GetWeakness(element))
         {
@@ -61,7 +61,6 @@ public abstract class Enemy : Entity
         if (target != null)
         {
             float distance = Vector3.Distance(target.transform.position, transform.position);
-            Debug.Log(distance);
             return distance;
         }
         return 1000;

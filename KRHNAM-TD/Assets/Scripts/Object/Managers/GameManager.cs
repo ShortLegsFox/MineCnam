@@ -47,6 +47,7 @@ public class GameManager : MonoBehaviour
     {
         HudManager.Instance.ToggleGameOverMenu();
         KillAllEnemies();
+        KillAllTowers();
         Destroy(Castle);
         StartGame();
     }
@@ -71,6 +72,16 @@ public class GameManager : MonoBehaviour
             Destroy(enemy);
         }
     }
+
+    private void KillAllTowers()
+    {
+        GameObject[] towers = GameObject.FindGameObjectsWithTag("Tower");
+        foreach (var tower in towers)
+        {
+            Destroy(tower);
+        }
+    }
+
     public TowerData GetTowerData(Element element, TowerLevel level)
     {
         foreach (var tower in towerDataList)

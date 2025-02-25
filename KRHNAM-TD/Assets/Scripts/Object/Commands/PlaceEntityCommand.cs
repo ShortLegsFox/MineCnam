@@ -24,7 +24,7 @@ public class PlaceEntityCommand : I_Command
                     EditorManager.Instance.selectedEntity.OnPlace(newObjectPosition);
                     EditorManager.Instance.selectedEntity.isPlaced = true;
                     EditorManager.Instance.selectedEntity.SetEntityAsObstacle();
-                    Case.entity = Entity;
+                    Case.PlaceEntity(EditorManager.Instance.selectedEntity);
                     EditorManager.Instance.selectedEntity = null;
                     ErrorManager.DebugLog($"Entity placed at [{Case.GridX};{Case.GridY}");
                 }

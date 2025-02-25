@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 2726685075700801523}
   - component: {fileID: 969222642761224115}
   - component: {fileID: 4267813720327691190}
+  - component: {fileID: 8902928051755534244}
   m_Layer: 0
   m_Name: Castle
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63,6 +64,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Hp: 300
+--- !u!65 &8902928051755534244
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8271710905211315146}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 4.8, y: 0.78, z: 7.03}
+  m_Center: {x: 0.12, y: 0, z: 0.29}
 --- !u!1001 &2146333320263346312
 PrefabInstance:
   m_ObjectHideFlags: 0

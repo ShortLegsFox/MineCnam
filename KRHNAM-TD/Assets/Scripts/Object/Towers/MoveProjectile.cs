@@ -30,10 +30,10 @@ public class MoveProjectile : MonoBehaviour
 
     void OnTriggerEnter(Collider co)
     {
-        Debug.Log("Trigger projectile on entity");
+        //Debug.Log("Trigger projectile on entity");
         if (co.GetComponent<Enemy>())
         {
-            Debug.Log("Trigger projectile on entity ENEMY");
+            //Debug.Log("Trigger projectile on entity ENEMY");
             Destroy(gameObject);
             Enemy enemy = co.GetComponent<Enemy>();
             if (enemy != null)

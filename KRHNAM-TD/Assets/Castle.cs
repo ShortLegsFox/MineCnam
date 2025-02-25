@@ -16,7 +16,7 @@ public class Castle : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        Debug.Log("Castle take damage");
+        //Debug.Log("Castle take damage");
         RemoveHeartPoint(damage);
         healthBar.TakeDamage(damage);
 
