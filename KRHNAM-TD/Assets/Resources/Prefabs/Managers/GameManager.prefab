@@ -83,7 +83,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1430573212a30a44fb962b68177d65de, type: 2}
   - {fileID: 11400000, guid: 999c62ff768f41d4eb0364d8c00a52b8, type: 2}
   - {fileID: 11400000, guid: 378eda9a3808bb04fad19774c8c1a14d, type: 2}
-  CastlePrefab: {fileID: 3782147653185187665, guid: 706e89d22861a8543bec2467be34f26b, type: 3}
+  CastlePrefab: {fileID: 8271710905211315146, guid: e308d4313dbda664589a1c88d7fe65e8, type: 3}
   casteSpawn: {fileID: 0}
 --- !u!1001 &1086641771949104356
 PrefabInstance:
