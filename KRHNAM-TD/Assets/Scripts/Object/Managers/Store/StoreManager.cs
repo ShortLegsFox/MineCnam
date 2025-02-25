@@ -23,7 +23,6 @@ public class StoreManager : MonoBehaviour
         else
             instance = this;
 
-        DontDestroyOnLoad(this.gameObject);
         SetDefaultGold();
     }
 

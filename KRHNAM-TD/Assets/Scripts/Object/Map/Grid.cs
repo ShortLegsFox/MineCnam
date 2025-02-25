@@ -21,8 +21,6 @@ public class Grid : MonoBehaviour
         }
         else
             instance = this;
-
-        DontDestroyOnLoad(this.gameObject);
     }
 
     void Start()

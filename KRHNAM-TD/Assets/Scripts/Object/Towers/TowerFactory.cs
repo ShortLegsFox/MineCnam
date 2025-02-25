@@ -16,8 +16,6 @@ public class TowerFactory : MonoBehaviour
         }
         else
             instance = this;
-
-        DontDestroyOnLoad(this.gameObject);
     }
 
     public static I_TowerFactory GetTowerFactory(Element element)
