@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b4180f916d42074ea68e7393c578abe, type: 3}
   m_Name: LowestHealthStrategySO 1
   m_EditorClassIdentifier: 
+  strategySprite: {fileID: 21300000, guid: 8cbb1790ba483224d815480e69a68616, type: 3}

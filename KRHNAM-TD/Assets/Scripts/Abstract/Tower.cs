@@ -1,3 +1,4 @@
+using Interface;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -8,7 +9,8 @@ namespace Abstract
     {
         [SerializeField] protected List<Enemy> targetList = new();
         [SerializeField] protected Enemy currentTarget;
-        [SerializeField] private TargetingStrategySO targetingStrategy;
+        [SerializeField] public TargetingStrategySO targetingStrategy;
+        private List<I_Observer> subscribersChangeStrategy = new List<I_Observer>();
 
         public float shootHeat = 1f;
 
@@ -78,6 +80,30 @@ namespace Abstract
                     targetList.Remove(enemy);
                 }
             }
+        }
+
+        public void SetStrategy(TargetingStrategySO strategy)
+        {
+            targetingStrategy = strategy;
+            Notify();
+        }
+
+        private void Notify()
+        {
+            foreach (var observer in subscribersChangeStrategy)
+            {
+                observer.UpdateNotify();
+            }
+        }
+
+        public void Subscribe(I_Observer observer)
+        {
+            subscribersChangeStrategy.Add(observer);
+        }
+
+        public void Unsubscribe(I_Observer observer)
+        {
+            subscribersChangeStrategy.Remove(observer);
         }
 
     }

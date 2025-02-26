@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75a2bb2fa4eadd14c94fcfaa819bd79b, type: 3}
   m_Name: FirstEnemyStrategySO
   m_EditorClassIdentifier: 
+  strategySprite: {fileID: 21300000, guid: 8a7edd58c386e5f4aa73bcd1b0f8affd, type: 3}

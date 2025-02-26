@@ -1,3 +1,4 @@
+using Abstract;
 using UnityEngine;
 
 public class InputHandler : MonoBehaviour
@@ -13,6 +14,7 @@ public class InputHandler : MonoBehaviour
 
     void Update()
     {
+
         //Keyboard Inputs
         if (Input.GetKeyDown(KeyCode.Escape))
             pauseCommand.Execute();
@@ -25,6 +27,16 @@ public class InputHandler : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && !HudManager.Instance.StorePannel.activeSelf)
         {
             PlaceEntity();
+        }
+
+        if (Input.GetMouseButtonDown(1) && !HudManager.Instance.StorePannel.activeSelf && Grid.Instance.selectedCase.entity is Tower selectTower)
+        {
+            EditorManager.Instance.SetContextualTower(selectTower);
+        }
+
+        else if (Input.GetMouseButtonDown(1) && Grid.Instance.selectedCase.entity == null)
+        {
+            EditorManager.Instance.ClearContextualTower();
         }
 
 
