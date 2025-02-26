@@ -1,3 +1,4 @@
+using Interface;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -8,6 +9,8 @@ namespace Abstract
     {
         [SerializeField] protected List<Enemy> targetList = new();
         [SerializeField] protected Enemy currentTarget;
+        [SerializeField] public TargetingStrategySO targetingStrategy;
+        private List<I_Observer> subscribersChangeStrategy = new List<I_Observer>();
 
         public float shootHeat = 1f;
 
@@ -22,34 +25,27 @@ namespace Abstract
         {
             SphereCollider sphereCollider = GetComponent<SphereCollider>();
             sphereCollider.radius = towerData.Range;
+            if (targetingStrategy == null)
+                targetingStrategy = ScriptableObject.CreateInstance<FirstEnemyStrategySO>();
         }
 
         private void Update()
         {
             if (shootHeat > 0)
-            {
                 shootHeat -= Time.deltaTime;
-            }
 
-            targetList = targetList.Where(enemy => enemy != null).ToList();
+            targetList = targetList.Where(e => e != null).ToList();
 
-            if (targetList.Count > 0 && currentTarget != null && shootHeat <= 0f)
+            if (targetList.Count > 0)
+                currentTarget = targetingStrategy.SelectTarget(targetList, transform);
+            else
+                currentTarget = null;
+
+            if (currentTarget != null && shootHeat <= 0f)
             {
-                Debug.DrawLine(transform.position, currentTarget.transform.position, Color.red);
                 Attack(currentTarget.GetComponent<Collider>());
                 shootHeat = towerData.AttackSpeed;
             }
-        }
-
-        private void GetCurrentTarget()
-        {
-            if (targetList.Count <= 0)
-            {
-                currentTarget = null;
-                return;
-            }
-
-            currentTarget = targetList.First();
         }
 
         public void OnEnemyDead(Enemy enemy)
@@ -57,7 +53,6 @@ namespace Abstract
             if (enemy != null)
             {
                 targetList.Remove(enemy);
-                GetCurrentTarget();
             }
         }
 
@@ -65,13 +60,11 @@ namespace Abstract
         {
             if (other.CompareTag("Enemy"))
             {
-                Debug.Log("Enemy spotted");
+                //Debug.Log("Enemy spotted");
                 var enemy = other.GetComponent<Enemy>();
                 if (enemy != null)
                 {
                     targetList.Add(enemy);
-                    GetCurrentTarget();
-                    //Debug.Log("Enemy spotted");
                 }
             }
         }
@@ -80,14 +73,37 @@ namespace Abstract
         {
             if (other.CompareTag("Enemy"))
             {
-                Debug.Log("Enemy left");
+                //Debug.Log("Enemy left");
                 var enemy = other.GetComponent<Enemy>();
                 if (enemy != null)
                 {
                     targetList.Remove(enemy);
-                    GetCurrentTarget();
                 }
             }
+        }
+
+        public void SetStrategy(TargetingStrategySO strategy)
+        {
+            targetingStrategy = strategy;
+            Notify();
+        }
+
+        private void Notify()
+        {
+            foreach (var observer in subscribersChangeStrategy)
+            {
+                observer.UpdateNotify();
+            }
+        }
+
+        public void Subscribe(I_Observer observer)
+        {
+            subscribersChangeStrategy.Add(observer);
+        }
+
+        public void Unsubscribe(I_Observer observer)
+        {
+            subscribersChangeStrategy.Remove(observer);
         }
 
     }

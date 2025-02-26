@@ -45,3 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectedEntity: {fileID: 0}
+  contextualTower: {fileID: 0}
+  firstStrategy: {fileID: 11400000, guid: e7cb1b0d01b21df4aa178cbe9feae4e9, type: 2}
+  nearestStrategy: {fileID: 11400000, guid: 137c55d419e65d74284a2844e89532d9, type: 2}
+  lowestStrategy: {fileID: 11400000, guid: 66ff528c49b22f540803abb1e51a0fae, type: 2}
