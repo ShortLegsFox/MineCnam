@@ -1,9 +1,33 @@
+using System;
 using UnityEngine;
+using UnityEngine.AI;
 
-public class Slow : I_Effect
+public class Slow : Effect
 {
-    public void Apply(Enemy enemy)
+    public Slow(float duration) : base(duration)
     {
-        enemy.enemyData.MoveSpeed = (enemy.enemyData.MoveSpeed / 2);
+        this.duration = duration;
+    }
+    
+    public override bool Apply(Enemy enemy)
+    {
+        elapsedTime += Time.deltaTime;
+        if (elapsedTime >= duration)
+        {
+            RemoveEffect(enemy);
+            return false;
+        }
+        
+        NavMeshAgent agent = enemy.GetComponent<NavMeshAgent>();
+
+        agent.speed = (enemy.enemyData.MoveSpeed * 0.5f);
+
+        return true;
+    }
+
+    public void RemoveEffect(Enemy enemy)
+    {
+        NavMeshAgent agent = enemy.GetComponent<NavMeshAgent>();
+        agent.speed = enemy.enemyData.MoveSpeed;
     }
 }

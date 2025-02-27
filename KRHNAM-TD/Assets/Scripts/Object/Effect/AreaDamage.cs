@@ -1,9 +1,14 @@
 using UnityEngine;
 
-public class AreaDamage : I_Effect
+public class AreaDamage : Effect
 {
-    public void Apply(Enemy enemy)
+    public AreaDamage(float duration) : base(duration)
     {
-        
+        this.duration = duration;
+    }
+    
+    public override bool Apply(Enemy enemy)
+    {
+        return true;
     }
 }

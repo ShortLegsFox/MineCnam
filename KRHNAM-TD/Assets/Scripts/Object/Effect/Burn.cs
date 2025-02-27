@@ -1,9 +1,14 @@
 using UnityEngine;
 
-public class Burn : I_Effect
+public class Burn : Effect
 {
-    public void Apply(Enemy enemy)
+    public Burn(float duration) : base(duration)
     {
-        
+        this.duration = duration;
+    }
+
+    public override bool Apply(Enemy enemy)
+    {
+        return true;
     }
 }

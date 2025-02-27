@@ -1,9 +1,14 @@
 using UnityEngine;
 
-public class Immobilize : I_Effect
+public class Immobilize : Effect
 {
-    public void Apply(Enemy enemy)
+    public Immobilize(float duration) : base(duration)
     {
-        
+        this.duration = duration;
+    }
+
+    public override bool Apply(Enemy enemy)
+    {
+        return true;
     }    
 }

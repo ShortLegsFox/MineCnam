@@ -27,4 +27,15 @@ public static class GetElementInfos
     {
         return 0.8f * damage;
     }
+
+    public static Effect GetEffect(Element element)
+    {
+        switch (element)
+        {
+            case Element.Water:
+                return new Slow(5.0f);
+            default:
+                return null;
+        }
+    }
 }
