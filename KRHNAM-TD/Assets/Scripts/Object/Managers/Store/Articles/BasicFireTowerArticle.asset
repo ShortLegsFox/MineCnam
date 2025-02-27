@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f39a467eb9ac74a4d8ba515687a9d3ef, type: 3}
   m_Name: BasicFireTowerArticle
   m_EditorClassIdentifier: 
-  Article: {fileID: 2944814160957290392, guid: 8ff5e1e8b9286924d98dfe65dd843921, type: 3}
+  Article: {fileID: 2716983840949366022, guid: 8ff5e1e8b9286924d98dfe65dd843921, type: 3}
   Name: Basic Fire Tower
   Price: 10
   Image: {fileID: 21300000, guid: 288e3094843e1194c9d4d287053668ad, type: 3}
   Element: 0
+  Level: 0

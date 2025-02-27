@@ -17,18 +17,18 @@ public class TowerHUD : MonoBehaviour, I_Observer
 
     void SetStrategyImage()
     {
-        if (tower.targetingStrategy == null)
+        if (tower.TowerData.targetingStrategy == null)
         {
             Debug.Log("No strategy");
             return;
         }
-        if (tower.targetingStrategy.strategySprite == null)
+        if (tower.TowerData.targetingStrategy.strategySprite == null)
         {
             Debug.Log("No image");
             return;
         }
-        Debug.Log(tower.targetingStrategy.strategySprite.ToString());
-        strategyImage.sprite = tower.targetingStrategy.strategySprite;
+        Debug.Log(tower.TowerData.targetingStrategy.strategySprite.ToString());
+        strategyImage.sprite = tower.TowerData.targetingStrategy.strategySprite;
     }
 
     public void UpdateNotify()

@@ -7,15 +7,11 @@ namespace Abstract
 {
     public abstract class Tower : Entity
     {
-        [SerializeField] protected List<Enemy> targetList = new();
-        [SerializeField] protected Enemy currentTarget;
-        [SerializeField] public TargetingStrategySO targetingStrategy;
+        protected List<Enemy> targetList = new();
+        protected Enemy currentTarget;
         private List<I_Observer> subscribersChangeStrategy = new List<I_Observer>();
-
-        public float shootHeat = 1f;
-
-
-        public TowerData towerData;
+        public TowerData TowerData;
+        public float shootHeat { get; private set; } = 1f;
 
         public int Hp { get; set; }
 
@@ -24,9 +20,9 @@ namespace Abstract
         private void Start()
         {
             SphereCollider sphereCollider = GetComponent<SphereCollider>();
-            sphereCollider.radius = towerData.Range;
-            if (targetingStrategy == null)
-                targetingStrategy = ScriptableObject.CreateInstance<FirstEnemyStrategySO>();
+            sphereCollider.radius = TowerData.Range;
+            if (TowerData.targetingStrategy == null)
+                TowerData.targetingStrategy = ScriptableObject.CreateInstance<FirstEnemyStrategySO>();
         }
 
         private void Update()
@@ -37,14 +33,14 @@ namespace Abstract
             targetList = targetList.Where(e => e != null).ToList();
 
             if (targetList.Count > 0)
-                currentTarget = targetingStrategy.SelectTarget(targetList, transform);
+                currentTarget = TowerData.targetingStrategy.SelectTarget(targetList, transform);
             else
                 currentTarget = null;
 
             if (currentTarget != null && shootHeat <= 0f)
             {
                 Attack(currentTarget.GetComponent<Collider>());
-                shootHeat = towerData.AttackSpeed;
+                shootHeat = TowerData.AttackSpeed;
             }
         }
 
@@ -84,7 +80,7 @@ namespace Abstract
 
         public void SetStrategy(TargetingStrategySO strategy)
         {
-            targetingStrategy = strategy;
+            TowerData.targetingStrategy = strategy;
             Notify();
         }
 

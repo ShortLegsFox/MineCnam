@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8772926705380069055}
-  - component: {fileID: 599203570220678702}
   - component: {fileID: 6939449793644313636}
   - component: {fileID: 8923989503608941351}
   - component: {fileID: 9112809062223821843}
+  - component: {fileID: 2387522421226754507}
   m_Layer: 0
   m_Name: UltimateWaterTower
   m_TagString: Tower
@@ -37,25 +37,6 @@ Transform:
   - {fileID: 2374381417205919972}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &599203570220678702
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1256814250574689019}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3a1819d9abafeb4493f9f2277fcd6b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isPlaced: 0
-  targetList: []
-  currentTarget: {fileID: 0}
-  targetingStrategy: {fileID: 0}
-  shootHeat: 1
-  towerData: {fileID: 11400000, guid: 507925228e7bc8448b26547204d0135c, type: 2}
-  projectilePrefab: {fileID: 1256814250574689019, guid: 5d7cf6143bbfcb74fab7014b6d79193e, type: 3}
 --- !u!208 &6939449793644313636
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -120,6 +101,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2387522421226754507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1256814250574689019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cd1d80a6dd0cb545bfd691d961aeac9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlaced: 0
+  TowerData: {fileID: 11400000, guid: 507925228e7bc8448b26547204d0135c, type: 2}
 --- !u!1001 &4078848135311272299
 PrefabInstance:
   m_ObjectHideFlags: 0

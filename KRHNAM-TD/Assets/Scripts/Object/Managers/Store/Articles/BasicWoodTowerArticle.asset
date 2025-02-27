@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f39a467eb9ac74a4d8ba515687a9d3ef, type: 3}
   m_Name: BasicWoodTowerArticle
   m_EditorClassIdentifier: 
-  Article: {fileID: 4050852825631245867, guid: 995ac0a1aa7dce34fbe3a9722abfce91, type: 3}
+  Article: {fileID: 1153845942602451739, guid: 995ac0a1aa7dce34fbe3a9722abfce91, type: 3}
   Name: Basic Wood Tower
   Price: 10
   Image: {fileID: 21300000, guid: 288e3094843e1194c9d4d287053668ad, type: 3}

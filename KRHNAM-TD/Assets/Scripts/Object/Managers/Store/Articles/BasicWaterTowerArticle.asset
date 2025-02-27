@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f39a467eb9ac74a4d8ba515687a9d3ef, type: 3}
   m_Name: BasicWaterTowerArticle
   m_EditorClassIdentifier: 
-  Article: {fileID: 2723739421155689525, guid: 8ef13af79817c8546addf528157fa56f, type: 3}
+  Article: {fileID: 1501288412391954358, guid: d4004a74a3bbcb24cb5a90ab957ffe54, type: 3}
   Name: Basic Water Tower
   Price: 10
   Image: {fileID: 21300000, guid: 288e3094843e1194c9d4d287053668ad, type: 3}

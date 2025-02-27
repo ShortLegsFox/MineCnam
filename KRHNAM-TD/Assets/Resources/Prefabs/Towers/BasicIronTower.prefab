@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8772926705380069055}
-  - component: {fileID: 968279051287318494}
   - component: {fileID: 34062080012696098}
   - component: {fileID: 8052336289732923280}
   - component: {fileID: 398884638746616137}
+  - component: {fileID: 2287535496787386268}
   m_Layer: 6
   m_Name: BasicIronTower
   m_TagString: Tower
@@ -37,25 +37,6 @@ Transform:
   - {fileID: 4656546503061278606}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &968279051287318494
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1256814250574689019}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0029a06a516502646bb0ba637f4c2c8d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isPlaced: 0
-  targetList: []
-  currentTarget: {fileID: 0}
-  targetingStrategy: {fileID: 0}
-  shootHeat: 1
-  towerData: {fileID: 11400000, guid: b2fa19122f3f9f44cbeccb4095b3ebd5, type: 2}
-  projectilePrefab: {fileID: 1256814250574689019, guid: 5d7cf6143bbfcb74fab7014b6d79193e, type: 3}
 --- !u!208 &34062080012696098
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -120,6 +101,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2287535496787386268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1256814250574689019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fbca13f72a335b49a1e1976bc8b9828, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlaced: 0
+  TowerData: {fileID: 11400000, guid: b2fa19122f3f9f44cbeccb4095b3ebd5, type: 2}
 --- !u!1001 &870925965728208552
 PrefabInstance:
   m_ObjectHideFlags: 0

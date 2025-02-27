@@ -27,19 +27,19 @@ public class ContextualHUD : MonoBehaviour
 
     void HighlightCurrentStrategy()
     {
-        if (EditorManager.Instance.contextualTower.targetingStrategy.GetType() == typeof(FirstEnemyStrategySO))
+        if (EditorManager.Instance.contextualTower.TowerData.targetingStrategy.GetType() == typeof(FirstEnemyStrategySO))
         {
             firstStrategyButton.interactable = false;
             closestStrategyButton.interactable = true;
             lowestStrategyButton.interactable = true;
         }
-        else if (EditorManager.Instance.contextualTower.targetingStrategy.GetType() == typeof(NearestEnemyStrategySO))
+        else if (EditorManager.Instance.contextualTower.TowerData.targetingStrategy.GetType() == typeof(NearestEnemyStrategySO))
         {
             firstStrategyButton.interactable = true;
             closestStrategyButton.interactable = false;
             lowestStrategyButton.interactable = true;
         }
-        else if (EditorManager.Instance.contextualTower.targetingStrategy.GetType() == typeof(LowestHealthStrategySO))
+        else if (EditorManager.Instance.contextualTower.TowerData.targetingStrategy.GetType() == typeof(LowestHealthStrategySO))
         {
             firstStrategyButton.interactable = true;
             closestStrategyButton.interactable = true;

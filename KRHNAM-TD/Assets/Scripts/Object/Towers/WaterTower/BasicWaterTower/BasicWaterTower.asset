@@ -19,3 +19,6 @@ MonoBehaviour:
   Damage: 10
   Range: 7
   AttackSpeed: 0.75
+  targetingStrategy: {fileID: 11400000, guid: 66ff528c49b22f540803abb1e51a0fae, type: 2}
+  projectilePrefab: {fileID: 1256814250574689019, guid: 5d7cf6143bbfcb74fab7014b6d79193e, type: 3}
+  TowerElement: {fileID: 11400000, guid: 687eaa76f3af9774db2c4a63ced3c8b4, type: 2}

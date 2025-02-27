@@ -10,4 +10,7 @@ public class TowerData : ScriptableObject
     public int Damage;
     public int Range;
     public float AttackSpeed;
+    public TargetingStrategySO targetingStrategy;
+    public GameObject projectilePrefab;
+    public ElementSO TowerElement;
 }

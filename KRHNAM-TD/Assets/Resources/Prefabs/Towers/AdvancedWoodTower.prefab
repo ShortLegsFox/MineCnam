@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8772926705380069055}
-  - component: {fileID: 6864424165492972615}
   - component: {fileID: 15284220483125396}
   - component: {fileID: 9205470912906896021}
   - component: {fileID: 2896572826653365365}
+  - component: {fileID: 2928064007656380845}
   m_Layer: 0
   m_Name: AdvancedWoodTower
   m_TagString: Tower
@@ -37,25 +37,6 @@ Transform:
   - {fileID: 2273931939392363926}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6864424165492972615
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1256814250574689019}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d97bc311b1c4bea4299a9b909f3edd33, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isPlaced: 0
-  targetList: []
-  currentTarget: {fileID: 0}
-  targetingStrategy: {fileID: 11400000, guid: e7cb1b0d01b21df4aa178cbe9feae4e9, type: 2}
-  shootHeat: 1
-  towerData: {fileID: 11400000, guid: de9c62ba408e0f548983b9f40dfcaa5e, type: 2}
-  projectilePrefab: {fileID: 1256814250574689019, guid: 5d7cf6143bbfcb74fab7014b6d79193e, type: 3}
 --- !u!208 &15284220483125396
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -120,6 +101,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2928064007656380845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1256814250574689019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5423c3add4a172c46839e0b7617bb31b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlaced: 0
+  TowerData: {fileID: 11400000, guid: de9c62ba408e0f548983b9f40dfcaa5e, type: 2}
 --- !u!1001 &1951142025702062289
 PrefabInstance:
   m_ObjectHideFlags: 0
