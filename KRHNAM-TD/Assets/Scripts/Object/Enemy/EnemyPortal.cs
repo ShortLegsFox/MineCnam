@@ -1,5 +1,7 @@
+
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class EnemyPortal : MonoBehaviour
@@ -8,7 +10,7 @@ public class EnemyPortal : MonoBehaviour
 
     [SerializeField] private float minimumSpawnTime;
     [SerializeField] private float maximumSpawnTime;
-    int waveNumber = 0;
+    int waveNumber = 1;
     private int listIndex = 0;
 
     public List<I_EnemyFactory> enemyFactoryList = new List<I_EnemyFactory>();
@@ -33,23 +35,23 @@ public class EnemyPortal : MonoBehaviour
             AdjustEnemiesSpawnTimeForWave();
             int randomType = GetRandomEnemyType();
 
-            SetDifficultyLevelOfWave(randomType,waveNumber,nbEnemy);
+            yield return StartCoroutine(SetDifficultyLevelOfWave(randomType, waveNumber, nbEnemy));
 
-            waveNumber ++;
-            WaitForNewWave();
+            waveNumber++;
+            yield return StartCoroutine(WaitForNewWave());
         }
     }
 
-    private void WaitForEnemiesToSpawn()
+    private IEnumerator WaitForEnemiesToSpawn()
     {
         float timeUntilSpawn = Random.Range(minimumSpawnTime, maximumSpawnTime);
-        new WaitForSeconds(timeUntilSpawn);
+        yield return new WaitForSeconds(timeUntilSpawn);
     }
 
     private void AdjustEnemiesSpawnTimeForWave()
     {
-        minimumSpawnTime /= waveNumber;
-        maximumSpawnTime /= waveNumber;
+
+        maximumSpawnTime = maximumSpawnTime/waveNumber < 0.5f ? 0.5f: maximumSpawnTime / waveNumber ;        
     }
 
     private int GetRandomEnemyType()
@@ -57,37 +59,37 @@ public class EnemyPortal : MonoBehaviour
         return Random.Range(0, enemyFactoryList.Count);
     }
 
-    private void SetDifficultyLevelOfWave(int randomType, int waveNumber,int nbEnemy)
+    private IEnumerator SetDifficultyLevelOfWave(int randomType, int waveNumber, int nbEnemy)
     {
-        if(waveNumber  < 3)
+        if (waveNumber < 3)
         {
-            CreateEasyWave(randomType, nbEnemy);
+            yield return StartCoroutine(CreateEasyWave(randomType, nbEnemy));
         }
         else if (waveNumber < 5)
         {
-            CreateIntermediateWave(randomType, nbEnemy);
+            yield return StartCoroutine(CreateIntermediateWave(randomType, nbEnemy));
         }
         else
         {
-            CreateHardWave(randomType, nbEnemy);
+            yield return StartCoroutine(CreateHardWave(randomType, nbEnemy));
         }
     }
 
-    private void CreateEasyWave(int randomType,int nbEnemy)
+    private IEnumerator CreateEasyWave(int randomType, int nbEnemy)
     {
-        for(int i = 0; i <= nbEnemy; i++)
+        for (int i = 0; i < nbEnemy; i++)
         {
             enemyFactoryList[randomType].CreateEnemy(EnemyType.Walking);
-            WaitForEnemiesToSpawn();
+            yield return WaitForEnemiesToSpawn();
         }
     }
 
-    private void CreateIntermediateWave(int randomType, int nbEnemy)
+    private IEnumerator CreateIntermediateWave(int randomType, int nbEnemy)
     {
         for (int i = 0; i <= nbEnemy; i++)
         {
             int temp = Random.Range(1, 3);
-            if(temp == 1)
+            if (temp == 1)
             {
                 enemyFactoryList[randomType].CreateEnemy(EnemyType.Walking);
             }
@@ -95,11 +97,11 @@ public class EnemyPortal : MonoBehaviour
             {
                 enemyFactoryList[randomType].CreateEnemy(EnemyType.Flying);
             }
-            WaitForEnemiesToSpawn();
+            yield return WaitForEnemiesToSpawn();
         }
     }
 
-    private void CreateHardWave(int randomType, int nbEnemy)
+    private IEnumerator CreateHardWave(int randomType, int nbEnemy)
     {
         for (int i = 0; i <= nbEnemy; i++)
         {
@@ -108,7 +110,7 @@ public class EnemyPortal : MonoBehaviour
             {
                 enemyFactoryList[randomType].CreateEnemy(EnemyType.Walking);
             }
-            else if (temp == 2) 
+            else if (temp == 2)
             {
                 enemyFactoryList[randomType].CreateEnemy(EnemyType.Flying);
             }
@@ -116,13 +118,21 @@ public class EnemyPortal : MonoBehaviour
             {
                 enemyFactoryList[randomType].CreateEnemy(EnemyType.Bulking);
             }
-            WaitForEnemiesToSpawn();
+            yield return WaitForEnemiesToSpawn();
         }
     }
 
-    private void WaitForNewWave()
+    private IEnumerator WaitForNewWave()
     {
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         int timeBetweenWavesInSeconds = 15;
-        new WaitForSeconds(timeBetweenWavesInSeconds);
+        int timeBetweenEmptyWaveCheck = 1;
+        
+        while (!enemies.All(element => element == null))
+        {         
+            yield return new WaitForSeconds(timeBetweenEmptyWaveCheck);
+        }
+        
+        yield return new WaitForSeconds(timeBetweenWavesInSeconds);
     }
 }
