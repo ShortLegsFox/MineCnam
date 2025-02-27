@@ -30,13 +30,13 @@ public class EnemyPortal : MonoBehaviour
         {
             int nbEnemy = waveNumber * 10;
 
-            WaitForEnemiesToSpawn();
             AdjustEnemiesSpawnTimeForWave();
             int randomType = GetRandomEnemyType();
 
-            CreateEnemyByTypeAndWave(randomType,waveNumber,nbEnemy);
+            SetDifficultyLevelOfWave(randomType,waveNumber,nbEnemy);
 
             waveNumber ++;
+            WaitForNewWave();
         }
     }
 
@@ -57,22 +57,72 @@ public class EnemyPortal : MonoBehaviour
         return Random.Range(0, enemyFactoryList.Count);
     }
 
-    private void CreateEnemyByTypeAndWave(int randomType, int waveNumber,int nbEnemy)
+    private void SetDifficultyLevelOfWave(int randomType, int waveNumber,int nbEnemy)
     {
         if(waveNumber  < 3)
         {
-
+            CreateEasyWave(randomType, nbEnemy);
         }
         else if (waveNumber < 5)
         {
-
+            CreateIntermediateWave(randomType, nbEnemy);
         }
         else
         {
-
+            CreateHardWave(randomType, nbEnemy);
         }
-        enemyFactoryList[randomType].CreateEnemy(EnemyType.Flying);
-        enemyFactoryList[randomType].CreateEnemy(EnemyType.Walking);
-        enemyFactoryList[randomType].CreateEnemy(EnemyType.Bulking);
+    }
+
+    private void CreateEasyWave(int randomType,int nbEnemy)
+    {
+        for(int i = 0; i <= nbEnemy; i++)
+        {
+            enemyFactoryList[randomType].CreateEnemy(EnemyType.Walking);
+            WaitForEnemiesToSpawn();
+        }
+    }
+
+    private void CreateIntermediateWave(int randomType, int nbEnemy)
+    {
+        for (int i = 0; i <= nbEnemy; i++)
+        {
+            int temp = Random.Range(1, 3);
+            if(temp == 1)
+            {
+                enemyFactoryList[randomType].CreateEnemy(EnemyType.Walking);
+            }
+            else
+            {
+                enemyFactoryList[randomType].CreateEnemy(EnemyType.Flying);
+            }
+            WaitForEnemiesToSpawn();
+        }
+    }
+
+    private void CreateHardWave(int randomType, int nbEnemy)
+    {
+        for (int i = 0; i <= nbEnemy; i++)
+        {
+            int temp = Random.Range(1, 4);
+            if (temp == 1)
+            {
+                enemyFactoryList[randomType].CreateEnemy(EnemyType.Walking);
+            }
+            else if (temp == 2) 
+            {
+                enemyFactoryList[randomType].CreateEnemy(EnemyType.Flying);
+            }
+            else
+            {
+                enemyFactoryList[randomType].CreateEnemy(EnemyType.Bulking);
+            }
+            WaitForEnemiesToSpawn();
+        }
+    }
+
+    private void WaitForNewWave()
+    {
+        int timeBetweenWavesInSeconds = 15;
+        new WaitForSeconds(timeBetweenWavesInSeconds);
     }
 }
