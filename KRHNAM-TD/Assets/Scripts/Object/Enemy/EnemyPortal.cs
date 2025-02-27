@@ -8,6 +8,7 @@ public class EnemyPortal : MonoBehaviour
 
     [SerializeField] private float minimumSpawnTime;
     [SerializeField] private float maximumSpawnTime;
+    int waveNumber = 0;
     private int listIndex = 0;
 
     public List<I_EnemyFactory> enemyFactoryList = new List<I_EnemyFactory>();
@@ -27,15 +28,51 @@ public class EnemyPortal : MonoBehaviour
     {
         while (true)
         {
-            float timeUntilSpawn = Random.Range(minimumSpawnTime, maximumSpawnTime);
-            yield return new WaitForSeconds(timeUntilSpawn);
+            int nbEnemy = waveNumber * 10;
 
-            enemyFactoryList[listIndex].CreateEnemy(EnemyType.Flying);
-            enemyFactoryList[listIndex].CreateEnemy(EnemyType.Walking);
-            enemyFactoryList[listIndex].CreateEnemy(EnemyType.Bulking);
+            WaitForEnemiesToSpawn();
+            AdjustEnemiesSpawnTimeForWave();
+            int randomType = GetRandomEnemyType();
 
-            listIndex = (listIndex + 1) % enemyFactoryList.Count;
+            CreateEnemyByTypeAndWave(randomType,waveNumber,nbEnemy);
+
+            waveNumber ++;
         }
     }
 
+    private void WaitForEnemiesToSpawn()
+    {
+        float timeUntilSpawn = Random.Range(minimumSpawnTime, maximumSpawnTime);
+        new WaitForSeconds(timeUntilSpawn);
+    }
+
+    private void AdjustEnemiesSpawnTimeForWave()
+    {
+        minimumSpawnTime /= waveNumber;
+        maximumSpawnTime /= waveNumber;
+    }
+
+    private int GetRandomEnemyType()
+    {
+        return Random.Range(0, enemyFactoryList.Count);
+    }
+
+    private void CreateEnemyByTypeAndWave(int randomType, int waveNumber,int nbEnemy)
+    {
+        if(waveNumber  < 3)
+        {
+
+        }
+        else if (waveNumber < 5)
+        {
+
+        }
+        else
+        {
+
+        }
+        enemyFactoryList[randomType].CreateEnemy(EnemyType.Flying);
+        enemyFactoryList[randomType].CreateEnemy(EnemyType.Walking);
+        enemyFactoryList[randomType].CreateEnemy(EnemyType.Bulking);
+    }
 }
