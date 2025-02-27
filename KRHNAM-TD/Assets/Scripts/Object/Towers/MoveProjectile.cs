@@ -14,7 +14,7 @@ public class MoveProjectile : MonoBehaviour
         //go to target
         if (target)
         {
-            Vector3 dir = target.position - transform.position;
+            Vector3 dir = target.GetComponent<Collider>().bounds.center - transform.position;
             GetComponent<Rigidbody>().linearVelocity = dir.normalized * speed;
         }
         else
