@@ -49,14 +49,14 @@ public class StoreManager : MonoBehaviour
         gold -= amount;
     }
 
-    public bool CanAfford(StoreArticle article)
+    public bool CanAfford(int price)
     {
-        return gold >= article.Price;
+        return gold >= price;
     }
 
     public bool Buy(StoreArticle article)
     {
-        if (CanAfford(article))
+        if (CanAfford(article.Price))
         {
             RemoveGold(article.Price);
             I_TowerFactory towerFactory = TowerFactory.GetTowerFactory(article.Element);

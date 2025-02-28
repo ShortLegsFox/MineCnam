@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class BasicTowerState : I_TowerUpgradeState
 {
+    private int _upgradeCost = 50;
     public void Upgrade(Tower tower)
     {
-        if (tower is BasicTower)
+        if (tower is BasicTower && StoreManager.Instance.CanAfford(_upgradeCost))
         {
+            StoreManager.Instance.RemoveGold(_upgradeCost);
             I_TowerFactory factory = TowerFactory.GetTowerFactory(tower.TowerData.Element);
             Vector3 position = tower.transform.position;
             Case caseTower = tower.Position;
