@@ -34,6 +34,8 @@ public static class GetElementInfos
         {
             case Element.Water:
                 return new Slow(5.0f);
+            case Element.Fire:
+                return new Burn(5.0f);
             default:
                 return null;
         }

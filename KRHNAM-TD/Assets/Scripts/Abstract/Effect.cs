@@ -14,4 +14,11 @@ public abstract class Effect
     {
         return true;
     }
+
+    public virtual void Refresh() { }
+
+    public virtual Element GetElement()
+    {
+        return Element.Earth; 
+    }
 }

@@ -36,7 +36,7 @@ public abstract class Enemy : Entity
 
     }
 
-    public bool TakeDamage(Element AttackElement, float AttackDamage)
+    public bool TakeDamage(Element AttackElement, float AttackDamage, bool fromEffect = false)
     {
         // If tower is strong VS enemy
         if (AttackElement == GetElementInfos.GetWeakness(element))
@@ -52,24 +52,30 @@ public abstract class Enemy : Entity
 
         Effect effect = GetElementInfos.GetEffect(AttackElement);
         
-        if (effect != null)
+        if (effect != null && fromEffect == false)
         {
             AddEffect(effect);
         }
 
-        this.Hp -= AttackDamage;
-        healthBar.TakeDamage(AttackDamage);
+        ApplyDamageOnHP(AttackDamage);
 
 
         return OnDeath();
+    }
+
+    private void ApplyDamageOnHP(float AttackDamage)
+    {
+        this.Hp -= AttackDamage;
+        healthBar.TakeDamage(AttackDamage);
     }
     
     private void AddEffect(Effect newEffect)
     {
         foreach (Effect effect in activeEffects)
         {
-            if (effect.GetType() == newEffect.GetType())
+            if (effect.GetElement() == newEffect.GetElement())
             {
+                effect.Refresh();
                 return;
             }
         }
@@ -80,7 +86,7 @@ public abstract class Enemy : Entity
     {
         if (Hp >= 0)
         {
-            for (int i = 0; i < activeEffects.Count; i++)
+            for (int i = activeEffects.Count - 1; i >= 0; i--)
             {
                 if (activeEffects[i].Apply(this) == false)
                 {
