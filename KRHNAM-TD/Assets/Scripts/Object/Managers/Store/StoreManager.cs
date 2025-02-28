@@ -1,4 +1,3 @@
-using Abstract;
 using Interface;
 using System.Collections;
 using UnityEngine;
@@ -50,18 +49,32 @@ public class StoreManager : MonoBehaviour
         gold -= amount;
     }
 
-    public bool CanAfford(StoreArticle article)
+    public bool CanAfford(int price)
     {
-        return gold >= article.Price;
+        return gold >= price;
     }
 
     public bool Buy(StoreArticle article)
     {
-        if (CanAfford(article))
+        if (CanAfford(article.Price))
         {
             RemoveGold(article.Price);
             I_TowerFactory towerFactory = TowerFactory.GetTowerFactory(article.Element);
-            Tower tower = towerFactory.CreateTower(article.Level);
+            Entity tower = null;
+
+            switch (article.Level)
+            {
+                case TowerLevel.Basic:
+                    tower = towerFactory.CreateBasicTower();
+                    break;
+                case TowerLevel.Advanced:
+                    tower = towerFactory.CreateAdvancedTower();
+                    break;
+                case TowerLevel.Ultimate:
+                    tower = towerFactory.CreateUltimateTower();
+                    break;
+            }
+
             EditorManager.Instance.selectedEntity = tower;
             return true;
         }

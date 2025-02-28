@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f39a467eb9ac74a4d8ba515687a9d3ef, type: 3}
   m_Name: BasicEarthTowerArticle
   m_EditorClassIdentifier: 
-  Article: {fileID: 2655806840371995369, guid: 83e1e0e158d32a94aa591f285c8e0a0f, type: 3}
+  Article: {fileID: -1877838910816620548, guid: 83e1e0e158d32a94aa591f285c8e0a0f, type: 3}
   Name: Basic Earth Tower
-  Price: 10
+  Price: 50
   Image: {fileID: 21300000, guid: 288e3094843e1194c9d4d287053668ad, type: 3}
   Element: 3
   Level: 0

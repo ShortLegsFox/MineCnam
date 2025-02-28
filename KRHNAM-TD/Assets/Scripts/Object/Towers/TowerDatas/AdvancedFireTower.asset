@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba94216fbe72b1d4ea39546c50ac3af9, type: 3}
+  m_Name: AdvancedFireTower
+  m_EditorClassIdentifier: 
+  Element: 0
+  Level: 1
+  Prefab: {fileID: 1256814250574689019, guid: c6f010dd3ad654b4eae6ce64d97da4a6, type: 3}
+  MaxHp: 100
+  Damage: 10
+  Range: 7
+  AttackSpeed: 1
+  targetingStrategy: {fileID: 11400000, guid: e7cb1b0d01b21df4aa178cbe9feae4e9, type: 2}
+  projectilePrefab: {fileID: 1256814250574689019, guid: 5d7cf6143bbfcb74fab7014b6d79193e, type: 3}
+  TowerElement: {fileID: 11400000, guid: aebba51eaccc71f4f8b4df659e2337c5, type: 2}
+  UpgradeCost: 300
