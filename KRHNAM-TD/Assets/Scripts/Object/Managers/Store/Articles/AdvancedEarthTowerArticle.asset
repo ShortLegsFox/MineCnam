@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Article: {fileID: 4377412762127630077, guid: 3fe86990386714a49981f38bb72e0eff, type: 3}
   Name: Advanced Earth Tower
-  Price: 30
+  Price: 100
   Image: {fileID: 21300000, guid: e60e0b9301ae3da47ba592c6c2ae4916, type: 3}
   Element: 3
   Level: 1

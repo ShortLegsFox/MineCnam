@@ -8,18 +8,18 @@ public class ContextualHUD : MonoBehaviour
     public Button firstStrategyButton;
     public Button closestStrategyButton;
     public Button lowestStrategyButton;
+    public Button upgradeButton;
 
     void Update()
     {
         if (EditorManager.Instance.contextualTower != null)
         {
-            //Debug.Log("Contextual Tower is null");
             ContextualPannel.SetActive(true);
             HighlightCurrentStrategy();
+            UpgradeAvailable();
         }
         else
         {
-            //Debug.Log("Contextual Tower is null");
             ContextualPannel.SetActive(false);
         }
     }
@@ -50,6 +50,21 @@ public class ContextualHUD : MonoBehaviour
             closestStrategyButton.interactable = true;
             lowestStrategyButton.interactable = false;
         }
+    }
+
+
+    void UpgradeAvailable()
+    {
+        if (EditorManager.Instance.contextualTower.TowerData.UpgradeCost != 0)
+        {
+            int upgradeCost = (int)EditorManager.Instance.contextualTower.TowerData.UpgradeCost;
+            if (StoreManager.Instance.CanAfford(upgradeCost))
+                upgradeButton.interactable = true;
+            else
+                upgradeButton.interactable = false;
+        }
+        else
+            upgradeButton.interactable = false;
     }
 
 }

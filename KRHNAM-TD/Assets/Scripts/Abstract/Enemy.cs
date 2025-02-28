@@ -46,12 +46,8 @@ public abstract class Enemy : Entity
         this.Hp -= AttackDamage;
         healthBar.TakeDamage(AttackDamage);
 
-        if (Hp <= 0)
-        {
-            Destroy(this.gameObject);
-            return true;
-        }
-        return false;
+
+        return OnDeath();
     }
 
 
@@ -94,5 +90,17 @@ public abstract class Enemy : Entity
         canAttack = false;
         yield return new WaitForSeconds(enemyData.TimeBetweenAttacks);
         canAttack = true;
+    }
+
+
+    private bool OnDeath()
+    {
+        if (Hp <= 0)
+        {
+            Destroy(this.gameObject);
+            StoreManager.Instance.AddGold(enemyData.GoldWon);
+            return true;
+        }
+        return false;
     }
 }

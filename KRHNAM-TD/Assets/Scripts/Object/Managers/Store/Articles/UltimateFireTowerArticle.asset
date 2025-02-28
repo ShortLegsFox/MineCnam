@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Article: {fileID: -4640716153432304772, guid: aa806dbc572c6ee4cb76c2b66429358f, type: 3}
   Name: Ultimate Fire Tower
-  Price: 50
+  Price: 300
   Image: {fileID: 21300000, guid: d123914bc2d5c544b9136bd001efe58a, type: 3}
   Element: 0
   Level: 2

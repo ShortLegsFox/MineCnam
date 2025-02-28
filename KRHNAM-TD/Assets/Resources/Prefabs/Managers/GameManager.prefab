@@ -392,6 +392,10 @@ PrefabInstance:
       value: ClosestBtn
       objectReference: {fileID: 0}
     - target: {fileID: 7543488476232634049, guid: f2a60d358ef398040903cc1ae7aaffea, type: 3}
+      propertyPath: upgradeButton
+      value: 
+      objectReference: {fileID: 874046691367251760}
+    - target: {fileID: 7543488476232634049, guid: f2a60d358ef398040903cc1ae7aaffea, type: 3}
       propertyPath: firstStrategyButton
       value: 
       objectReference: {fileID: 2328388914025955863}
@@ -441,6 +445,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 86a328cb93572a842b1394aec8657474, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &874046691367251760 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2051333183819700871, guid: f2a60d358ef398040903cc1ae7aaffea, type: 3}
+  m_PrefabInstance: {fileID: 1177392768868660663}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &2328388914025955863 stripped
@@ -693,6 +708,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6262546506975764758, guid: 5141d6044baad0e45b4113d57f712348, type: 3}
       propertyPath: gold
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6262546506975764758, guid: 5141d6044baad0e45b4113d57f712348, type: 3}
+      propertyPath: DefaultGoldAmount
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6262546506975764758, guid: 5141d6044baad0e45b4113d57f712348, type: 3}
+      propertyPath: IncrementGoldInterval
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7259434930612607231, guid: 5141d6044baad0e45b4113d57f712348, type: 3}

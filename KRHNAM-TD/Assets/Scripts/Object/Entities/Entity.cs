@@ -37,10 +37,8 @@ public abstract class Entity : MonoBehaviour
 
     public void SetEntityAsObstacle()
     {
-        Debug.Log("SetEntityAsObstacle");
         if (this.GetComponent<NavMeshObstacle>() != null)
         {
-            Debug.Log("SetEntityAsObstacle != null");
             this.GetComponent<NavMeshObstacle>().enabled = true;
         }
     }

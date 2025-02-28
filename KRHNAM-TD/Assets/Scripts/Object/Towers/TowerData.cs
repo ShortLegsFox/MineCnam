@@ -13,5 +13,5 @@ public class TowerData : ScriptableObject
     public TargetingStrategySO targetingStrategy;
     public GameObject projectilePrefab;
     public ElementSO TowerElement;
-
+    public int UpgradeCost;
 }

@@ -20,3 +20,4 @@ MonoBehaviour:
   TimeBetweenAttacks: 2
   element: 2
   type: 1
+  GoldWon: 5

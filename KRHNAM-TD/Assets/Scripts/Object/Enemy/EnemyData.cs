@@ -11,4 +11,5 @@ public class EnemyData : ScriptableObject
     public int TimeBetweenAttacks;
     public Element element;
     public EnemyType type;
+    public int GoldWon;
 }

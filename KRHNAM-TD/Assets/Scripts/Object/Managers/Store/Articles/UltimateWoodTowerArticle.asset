@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Article: {fileID: 7862394208835025555, guid: 57134816f9c26ac479e787678949db2f, type: 3}
   Name: Ultimate Wood Tower
-  Price: 50
+  Price: 300
   Image: {fileID: 21300000, guid: d123914bc2d5c544b9136bd001efe58a, type: 3}
   Element: 2
   Level: 2

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Article: {fileID: 2287535496787386268, guid: e45faa91127f15c4e85f82e5d8591a10, type: 3}
   Name: Basic Iron Tower
-  Price: 10
+  Price: 50
   Image: {fileID: 21300000, guid: 288e3094843e1194c9d4d287053668ad, type: 3}
   Element: 1
   Level: 0

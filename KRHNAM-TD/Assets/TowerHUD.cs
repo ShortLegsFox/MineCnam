@@ -27,7 +27,6 @@ public class TowerHUD : MonoBehaviour, I_Observer
             Debug.Log("No image");
             return;
         }
-        Debug.Log(tower.TowerData.targetingStrategy.strategySprite.ToString());
         strategyImage.sprite = tower.TowerData.targetingStrategy.strategySprite;
     }
 

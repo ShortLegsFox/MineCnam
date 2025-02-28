@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Article: {fileID: 1501288412391954358, guid: d4004a74a3bbcb24cb5a90ab957ffe54, type: 3}
   Name: Basic Water Tower
-  Price: 10
+  Price: 50
   Image: {fileID: 21300000, guid: 288e3094843e1194c9d4d287053668ad, type: 3}
   Element: 4
   Level: 0
