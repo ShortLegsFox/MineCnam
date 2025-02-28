@@ -1,3 +1,4 @@
+using Abstract;
 using UnityEngine;
 
 namespace Interface
@@ -5,7 +6,7 @@ namespace Interface
 
     public interface I_TowerElement
     {
-        void Shoot(GameObject projectilePrefab, Transform origin, Transform target);
+        void Shoot(GameObject projectilePrefab, Tower origin, Transform target);
     }
 
 }

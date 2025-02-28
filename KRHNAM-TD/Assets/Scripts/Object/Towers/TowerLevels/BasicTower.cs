@@ -7,7 +7,7 @@ public class BasicTower : Tower
     {
         if (isPlaced)
         {
-            TowerData.TowerElement.Shoot(TowerData.projectilePrefab, transform, co.transform);
+            TowerData.TowerElement.Shoot(TowerData.projectilePrefab, this, co.transform);
         }
     }
 }

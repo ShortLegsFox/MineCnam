@@ -13,6 +13,7 @@ namespace Abstract
         private I_TowerUpgradeState currentState;
         public TowerData TowerData;
         public float shootHeat { get; private set; } = 1f;
+        public Transform Shooter { get; private set; }
 
         public int Hp { get; set; }
 
@@ -26,6 +27,8 @@ namespace Abstract
                 TowerData.targetingStrategy = ScriptableObject.CreateInstance<FirstEnemyStrategySO>();
 
             InitState();
+            Shooter = transform.Find("shooter");
+            if (Shooter == null) throw new System.Exception("La tour n'a pas de shooter");
         }
 
         private void Update()
