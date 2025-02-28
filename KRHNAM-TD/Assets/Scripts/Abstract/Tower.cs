@@ -10,6 +10,7 @@ namespace Abstract
         protected List<Enemy> targetList = new();
         protected Enemy currentTarget;
         private List<I_Observer> subscribersChangeStrategy = new List<I_Observer>();
+        private I_TowerUpgradeState currentState;
         public TowerData TowerData;
         public float shootHeat { get; private set; } = 1f;
 
@@ -23,6 +24,8 @@ namespace Abstract
             sphereCollider.radius = TowerData.Range;
             if (TowerData.targetingStrategy == null)
                 TowerData.targetingStrategy = ScriptableObject.CreateInstance<FirstEnemyStrategySO>();
+
+            InitState();
         }
 
         private void Update()
@@ -100,6 +103,32 @@ namespace Abstract
         public void Unsubscribe(I_Observer observer)
         {
             subscribersChangeStrategy.Remove(observer);
+        }
+
+        public void Upgrade()
+        {
+            currentState.Upgrade(this);
+        }
+
+        private void InitState()
+        {
+            switch (TowerData.Level)
+            {
+                case TowerLevel.Basic:
+                    currentState = new BasicTowerState();
+                    break;
+                case TowerLevel.Advanced:
+                    currentState = new AdvancedTowerState();
+                    break;
+                case TowerLevel.Ultimate:
+                    currentState = new UltimateTowerState();
+                    break;
+            }
+        }
+
+        public void Destroy()
+        {
+            Destroy(gameObject);
         }
 
     }

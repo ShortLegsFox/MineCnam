@@ -24,6 +24,11 @@ public class ContextualHUD : MonoBehaviour
         }
     }
 
+    public void UpgradeTower()
+    {
+        EditorManager.Instance.contextualTower.Upgrade();
+    }
+
 
     void HighlightCurrentStrategy()
     {

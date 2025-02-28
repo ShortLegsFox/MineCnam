@@ -203,6 +203,22 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2051333183819700871, guid: f2a60d358ef398040903cc1ae7aaffea, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2051333183819700871, guid: f2a60d358ef398040903cc1ae7aaffea, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8717045495138024310}
+    - target: {fileID: 2051333183819700871, guid: f2a60d358ef398040903cc1ae7aaffea, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpgradeTower
+      objectReference: {fileID: 0}
+    - target: {fileID: 2051333183819700871, guid: f2a60d358ef398040903cc1ae7aaffea, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ContextualHUD, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 2328109281488816070, guid: f2a60d358ef398040903cc1ae7aaffea, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -479,6 +495,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8717045495138024310 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7543488476232634049, guid: f2a60d358ef398040903cc1ae7aaffea, type: 3}
+  m_PrefabInstance: {fileID: 1177392768868660663}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b66ec1296f6669046a893f763b3b6cad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &3812980014270368094
