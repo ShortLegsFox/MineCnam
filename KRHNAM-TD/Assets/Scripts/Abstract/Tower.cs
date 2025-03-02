@@ -1,3 +1,4 @@
+using System;
 using Interface;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,7 +37,7 @@ namespace Abstract
             if (shootHeat > 0)
                 shootHeat -= Time.deltaTime;
 
-            targetList = targetList.Where(e => e != null).ToList();
+            targetList = targetList.Where(e => e != null && e.isParasitized == false).ToList();
 
             if (targetList.Count > 0)
                 currentTarget = TowerData.targetingStrategy.SelectTarget(targetList, transform);
@@ -55,6 +56,18 @@ namespace Abstract
             if (enemy != null)
             {
                 targetList.Remove(enemy);
+            }
+        }
+
+        private void OnTriggerStay(Collider other)
+        {
+            Enemy enemyToCheck = other.GetComponent<Enemy>();
+            if (enemyToCheck != null)
+            {
+                if (enemyToCheck.isParasitized == false && !targetList.Contains(enemyToCheck))
+                {
+                    targetList.Add(enemyToCheck);
+                }
             }
         }
 

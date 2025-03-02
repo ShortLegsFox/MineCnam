@@ -19,6 +19,7 @@ public abstract class Enemy : Entity
     private Animator animator;
     
     private List<Effect> activeEffects = new List<Effect>();
+    public bool isParasitized;
     public Image debuffIcon;
 
 
@@ -32,6 +33,7 @@ public abstract class Enemy : Entity
         animator = GetComponent<Animator>();
         debuffIcon = transform.Find("DebuffCanva").Find("DebuffIcon").GetComponent<Image>();
         debuffIcon.enabled = false;
+        isParasitized = false;
     }
 
     public void Update()
