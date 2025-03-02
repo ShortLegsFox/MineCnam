@@ -3,11 +3,10 @@ using UnityEngine.AI;
 
 public class Parasite : Effect
 {
-    private EffectData effectData;
     private Enemy parasitizedTarget;
     private int counter;
     
-    public Parasite(float duration, EffectData effectData) : base(duration)
+    public Parasite(float duration, EffectData effectData) : base(duration, effectData)
     {
         this.duration = duration;
         this.effectData = effectData;

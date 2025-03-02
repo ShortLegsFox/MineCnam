@@ -2,13 +2,14 @@ using UnityEngine;
 
 public abstract class Effect
 {
-    //public EffectData effectData;
-    public float duration;
-    public float elapsedTime = 0f;
+    protected float duration;
+    protected float elapsedTime = 0f;
+    protected EffectData effectData;
 
-    public Effect(float _duration)
+    public Effect(float duration, EffectData effectData)
     {
-        duration = _duration;
+        this.duration = duration;
+        this.effectData = effectData;
     }
 
     public virtual bool Apply(Enemy enemy)
