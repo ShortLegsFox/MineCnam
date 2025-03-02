@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.Mime;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,7 +19,7 @@ public abstract class Enemy : Entity
     private Animator animator;
     
     private List<Effect> activeEffects = new List<Effect>();
-    [SerializeField] public Image debuffIcon;
+    public Image debuffIcon;
 
 
     public void Start()
@@ -29,7 +30,7 @@ public abstract class Enemy : Entity
         currentSpeed = enemyData.MoveSpeed;
         target = GameManager.Instance.Castle;
         animator = GetComponent<Animator>();
-        debuffIcon = transform.Find("DebuffCanva").Find("DebuffIcon").GetComponent<EffectImage>();
+        debuffIcon = transform.Find("DebuffCanva").Find("DebuffIcon").GetComponent<Image>();
         debuffIcon.enabled = false;
     }
 
