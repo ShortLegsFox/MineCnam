@@ -6,10 +6,12 @@ public class Burn : Effect
     private float burnTick = 1f;
     private float nextBurnTick;
     private Element element;
+    private EffectData effectData;
     
-    public Burn(float duration) : base(duration)
+    public Burn(float duration, EffectData effectData) : base(duration)
     {
         this.duration = duration;
+        this.effectData = effectData;
         this.nextBurnTick = 0f;
         this.element = Element.Fire;
     }
@@ -20,6 +22,7 @@ public class Burn : Effect
         
         if (elapsedTime >= duration)
         {
+            enemy.debuffIcon.enabled = false;
             return false;
         }
 
@@ -28,6 +31,9 @@ public class Burn : Effect
             enemy.TakeDamage(Element.Fire, 10.0f, true);
             nextBurnTick += burnTick;
         }
+        
+        enemy.debuffIcon.sprite = this.effectData.effectIcon;
+        enemy.debuffIcon.enabled = true;
 
         return true;
     }

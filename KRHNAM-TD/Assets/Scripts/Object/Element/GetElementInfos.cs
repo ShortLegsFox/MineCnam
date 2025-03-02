@@ -35,7 +35,7 @@ public static class GetElementInfos
             case Element.Water:
                 return new Slow(5.0f, effectData);
             case Element.Fire:
-                return new Burn(5.0f);
+                return new Burn(5.0f, effectData);
             default:
                 return null;
         }
