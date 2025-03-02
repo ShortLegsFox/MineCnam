@@ -121,7 +121,7 @@ PrefabInstance:
     - target: {fileID: -7536239271301860819, guid: c2457e02cac0f724babeed5a8f52919f, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 6a2b411c677207049bcaeb889904f72d, type: 2}
+      objectReference: {fileID: 2100000, guid: cd59ff80a6898c6d99bf1d8decab0691, type: 2}
     - target: {fileID: -5919265813508830380, guid: c2457e02cac0f724babeed5a8f52919f, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0
@@ -150,6 +150,30 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: c7f42b48590324c449c3023930150241, type: 2}
+    - target: {fileID: -4686210920687412739, guid: c2457e02cac0f724babeed5a8f52919f, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: cd59ff80a6898c6d99bf1d8decab0691, type: 2}
+    - target: {fileID: -315208782523504480, guid: c2457e02cac0f724babeed5a8f52919f, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: cd59ff80a6898c6d99bf1d8decab0691, type: 2}
+    - target: {fileID: 887264851391404149, guid: c2457e02cac0f724babeed5a8f52919f, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: cd59ff80a6898c6d99bf1d8decab0691, type: 2}
+    - target: {fileID: 4781333898294923579, guid: c2457e02cac0f724babeed5a8f52919f, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: cd59ff80a6898c6d99bf1d8decab0691, type: 2}
+    - target: {fileID: 5595641801548767299, guid: c2457e02cac0f724babeed5a8f52919f, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: cd59ff80a6898c6d99bf1d8decab0691, type: 2}
+    - target: {fileID: 6827891233291701463, guid: c2457e02cac0f724babeed5a8f52919f, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: cd59ff80a6898c6d99bf1d8decab0691, type: 2}
     - target: {fileID: 8128668236925612103, guid: c2457e02cac0f724babeed5a8f52919f, type: 3}
       propertyPath: m_Name
       value: WalkingEarthEnemy

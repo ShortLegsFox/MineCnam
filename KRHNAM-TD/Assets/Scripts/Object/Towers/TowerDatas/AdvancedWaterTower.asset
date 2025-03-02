@@ -20,6 +20,6 @@ MonoBehaviour:
   Range: 10
   AttackSpeed: 0.5
   targetingStrategy: {fileID: 11400000, guid: 137c55d419e65d74284a2844e89532d9, type: 2}
-  projectilePrefab: {fileID: 1256814250574689019, guid: 5d7cf6143bbfcb74fab7014b6d79193e, type: 3}
+  projectilePrefab: {fileID: 1256814250574689019, guid: 734399245aee245f9907498a5225f583, type: 3}
   TowerElement: {fileID: 11400000, guid: 687eaa76f3af9774db2c4a63ced3c8b4, type: 2}
   UpgradeCost: 300

@@ -28,12 +28,12 @@ public static class GetElementInfos
         return 0.8f * damage;
     }
 
-    public static Effect GetEffect(Element element)
+    public static Effect GetEffect(Element element, EffectData effectData)
     {
         switch (element)
         {
             case Element.Water:
-                return new Slow(5.0f);
+                return new Slow(5.0f, effectData);
             case Element.Fire:
                 return new Burn(5.0f);
             default:

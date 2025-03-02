@@ -2,6 +2,7 @@ using UnityEngine;
 
 public abstract class Effect
 {
+    //public EffectData effectData;
     public float duration;
     public float elapsedTime = 0f;
 

@@ -122,10 +122,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8528758857855408389, guid: b3bc47da9feb64e4fb816faae2dbaf46, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0e1d2c6840d2586be8d2119be71b9fcc, type: 2}
+    - target: {fileID: -8415982403878312378, guid: b3bc47da9feb64e4fb816faae2dbaf46, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0e1d2c6840d2586be8d2119be71b9fcc, type: 2}
+    - target: {fileID: -8345885496131248988, guid: b3bc47da9feb64e4fb816faae2dbaf46, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0e1d2c6840d2586be8d2119be71b9fcc, type: 2}
     - target: {fileID: -8228269276564757914, guid: b3bc47da9feb64e4fb816faae2dbaf46, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 6a2b411c677207049bcaeb889904f72d, type: 2}
+      objectReference: {fileID: 2100000, guid: 0e1d2c6840d2586be8d2119be71b9fcc, type: 2}
+    - target: {fileID: -7390236689826314228, guid: b3bc47da9feb64e4fb816faae2dbaf46, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0e1d2c6840d2586be8d2119be71b9fcc, type: 2}
     - target: {fileID: -5919265813508830380, guid: b3bc47da9feb64e4fb816faae2dbaf46, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0
@@ -154,6 +170,18 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 6a85a2ba0038b5e4591cf7ff2d96b207, type: 2}
+    - target: {fileID: -4822209714370524947, guid: b3bc47da9feb64e4fb816faae2dbaf46, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0e1d2c6840d2586be8d2119be71b9fcc, type: 2}
+    - target: {fileID: 5824603491644087997, guid: b3bc47da9feb64e4fb816faae2dbaf46, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0e1d2c6840d2586be8d2119be71b9fcc, type: 2}
+    - target: {fileID: 6507223193445994720, guid: b3bc47da9feb64e4fb816faae2dbaf46, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0e1d2c6840d2586be8d2119be71b9fcc, type: 2}
     - target: {fileID: 8128668236925612103, guid: b3bc47da9feb64e4fb816faae2dbaf46, type: 3}
       propertyPath: m_Name
       value: BulkingEarthEnemy

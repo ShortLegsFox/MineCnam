@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public abstract class Enemy : Entity
 {
@@ -17,6 +18,8 @@ public abstract class Enemy : Entity
     private Animator animator;
     
     private List<Effect> activeEffects = new List<Effect>();
+    [SerializeField] public Image debuffIcon;
+
 
     public void Start()
     {
@@ -26,6 +29,8 @@ public abstract class Enemy : Entity
         currentSpeed = enemyData.MoveSpeed;
         target = GameManager.Instance.Castle;
         animator = GetComponent<Animator>();
+        debuffIcon = transform.Find("DebuffCanva").Find("DebuffIcon").GetComponent<EffectImage>();
+        debuffIcon.enabled = false;
     }
 
     public void Update()
@@ -36,7 +41,7 @@ public abstract class Enemy : Entity
 
     }
 
-    public bool TakeDamage(Element AttackElement, float AttackDamage, bool fromEffect = false)
+    public bool TakeDamage(Element AttackElement, float AttackDamage, bool fromEffect = false, EffectData effectData = null)
     {
         // If tower is strong VS enemy
         if (AttackElement == GetElementInfos.GetWeakness(element))
@@ -50,7 +55,7 @@ public abstract class Enemy : Entity
             AttackDamage = GetElementInfos.RemoveWeakDamage(AttackDamage);
         }
 
-        Effect effect = GetElementInfos.GetEffect(AttackElement);
+        Effect effect = GetElementInfos.GetEffect(AttackElement, effectData);
         
         if (effect != null && fromEffect == false)
         {

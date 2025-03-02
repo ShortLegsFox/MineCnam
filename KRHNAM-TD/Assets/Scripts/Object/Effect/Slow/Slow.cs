@@ -1,14 +1,18 @@
 using System;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class Slow : Effect
 {
     private Element element; 
+    private EffectData effectData;
+
     
-    public Slow(float duration) : base(duration)
+    public Slow(float duration, EffectData effectData) : base(duration)
     {
         this.duration = duration;
+        this.effectData = effectData;
         this.element = Element.Water;
     }
     
@@ -24,6 +28,9 @@ public class Slow : Effect
         NavMeshAgent agent = enemy.GetComponent<NavMeshAgent>();
 
         agent.speed = (enemy.enemyData.MoveSpeed * 0.5f);
+
+        enemy.debuffIcon.sprite = this.effectData.effectIcon;
+        enemy.debuffIcon.enabled = true;
 
         return true;
     }
@@ -42,5 +49,6 @@ public class Slow : Effect
     {
         NavMeshAgent agent = enemy.GetComponent<NavMeshAgent>();
         agent.speed = enemy.enemyData.MoveSpeed;
+        enemy.debuffIcon.enabled = false;
     }
 }

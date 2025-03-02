@@ -6,7 +6,7 @@ public class MoveProjectile : MonoBehaviour
     public float speed = 10;
     public Transform target;
     public Tower tower;
-
+    public EffectData effect;
 
     // Update is called once per frame
     void FixedUpdate()
