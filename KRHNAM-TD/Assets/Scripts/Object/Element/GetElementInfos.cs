@@ -38,6 +38,8 @@ public static class GetElementInfos
                 return new Burn(5.0f, effectData);
             case Element.Wood:
                 return new Parasite(5.0f, effectData);
+            case Element.Metal:
+                return new PierceArmor(5.0f, effectData);
             default:
                 return null;
         }

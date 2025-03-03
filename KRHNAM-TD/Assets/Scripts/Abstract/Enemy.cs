@@ -12,6 +12,7 @@ public abstract class Enemy : Entity
     public Element element;
     private HealthBar healthBar;
     public float Hp { get; set; }
+    public int Armor;
     public int currentSpeed { get; set; }
 
     public GameObject target;
@@ -28,6 +29,7 @@ public abstract class Enemy : Entity
         healthBar = transform.Find("HealthbarCanva").Find("Healthbar").GetComponent<HealthBar>();
         healthBar.SetMaxHealth(enemyData.MaxHp);
         Hp = enemyData.MaxHp;
+        Armor = enemyData.Armor;
         currentSpeed = enemyData.MoveSpeed;
         target = GameManager.Instance.Castle;
         animator = GetComponent<Animator>();
@@ -70,8 +72,7 @@ public abstract class Enemy : Entity
 
     private float ReduceDamageWithArmor(float AttackDamage)
     {
-        int armor = enemyData.Armor;
-        float damageReducer = 1 - (armor / 200f);
+        float damageReducer = 1 - (Armor / 200f);
         return damageReducer * AttackDamage;
     }
 

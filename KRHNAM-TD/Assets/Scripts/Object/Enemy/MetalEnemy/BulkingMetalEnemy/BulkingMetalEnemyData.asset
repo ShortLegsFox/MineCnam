@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Prefab: {fileID: 7945166485059303283, guid: 68f8f6e0cde3f0049b037df50eec90fa, type: 3}
   MaxHp: 300
+  Armor: 100
   Damage: 10
   MoveSpeed: 1
   Range: 2
