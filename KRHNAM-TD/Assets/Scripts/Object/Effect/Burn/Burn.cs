@@ -6,9 +6,8 @@ public class Burn : Effect
     private float burnTick = 1f;
     private float nextBurnTick;
     private Element element;
-    private EffectData effectData;
     
-    public Burn(float duration, EffectData effectData) : base(duration)
+    public Burn(float duration, EffectData effectData) : base(duration, effectData)
     {
         this.duration = duration;
         this.effectData = effectData;

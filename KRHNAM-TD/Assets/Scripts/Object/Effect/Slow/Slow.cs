@@ -6,10 +6,9 @@ using UnityEngine.UI;
 public class Slow : Effect
 {
     private Element element; 
-    private EffectData effectData;
 
     
-    public Slow(float duration, EffectData effectData) : base(duration)
+    public Slow(float duration, EffectData effectData) : base(duration, effectData)
     {
         this.duration = duration;
         this.effectData = effectData;
