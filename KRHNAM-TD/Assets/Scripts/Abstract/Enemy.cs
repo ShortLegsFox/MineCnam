@@ -62,11 +62,17 @@ public abstract class Enemy : Entity
         {
             AddEffect(effect);
         }
-
-        ApplyDamageOnHP(AttackDamage);
-
+        
+        ApplyDamageOnHP(ReduceDamageWithArmor(AttackDamage));
 
         return OnDeath();
+    }
+
+    private float ReduceDamageWithArmor(float AttackDamage)
+    {
+        int armor = enemyData.Armor;
+        float damageReducer = 1 - (armor / 200f);
+        return damageReducer * AttackDamage;
     }
 
     private void ApplyDamageOnHP(float AttackDamage)

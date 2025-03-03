@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cace5c14496ec047f96b61228501f47b, type: 3}
   m_Name: ParasiteData
   m_EditorClassIdentifier: 
-  effectIcon: {fileID: 21300000, guid: 15f272266fda45742b52767178ea0b9b, type: 3}
+  effectIcon: {fileID: 21300000, guid: bec000395e8044441a64b676abf92b2b, type: 3}

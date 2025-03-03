@@ -5,6 +5,7 @@ public class EnemyData : ScriptableObject
 {
     public GameObject Prefab;
     public int MaxHp;
+    public int Armor;
     public int Damage;
     public int MoveSpeed;
     public int Range;
