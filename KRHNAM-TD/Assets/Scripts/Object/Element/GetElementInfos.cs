@@ -27,4 +27,21 @@ public static class GetElementInfos
     {
         return 0.8f * damage;
     }
+
+    public static Effect GetEffect(Element element, EffectData effectData)
+    {
+        switch (element)
+        {
+            case Element.Water:
+                return new Slow(5.0f, effectData);
+            case Element.Fire:
+                return new Burn(5.0f, effectData);
+            case Element.Wood:
+                return new Parasite(5.0f, effectData);
+            case Element.Metal:
+                return new PierceArmor(5.0f, effectData);
+            default:
+                return null;
+        }
+    }
 }

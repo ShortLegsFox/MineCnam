@@ -17,7 +17,7 @@ public class DisplayButton : MonoBehaviour
     {
         if (image != null)
         {
-            if (Item != null && !StoreManager.Instance.CanAfford(Item))
+            if (Item != null && !StoreManager.Instance.CanAfford(Item.Price))
             {
                 image.color = Color.red;
             }

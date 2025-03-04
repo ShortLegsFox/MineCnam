@@ -1,3 +1,4 @@
+using System;
 using Interface;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,15 +8,13 @@ namespace Abstract
 {
     public abstract class Tower : Entity
     {
-        [SerializeField] protected List<Enemy> targetList = new();
-        [SerializeField] protected Enemy currentTarget;
-        [SerializeField] public TargetingStrategySO targetingStrategy;
+        protected List<Enemy> targetList = new();
+        protected Enemy currentTarget;
         private List<I_Observer> subscribersChangeStrategy = new List<I_Observer>();
-
-        public float shootHeat = 1f;
-
-
-        public TowerData towerData;
+        private I_TowerUpgradeState currentState;
+        public TowerData TowerData;
+        public float shootHeat { get; private set; } = 1f;
+        public Transform Shooter { get; private set; }
 
         public int Hp { get; set; }
 
@@ -24,9 +23,13 @@ namespace Abstract
         private void Start()
         {
             SphereCollider sphereCollider = GetComponent<SphereCollider>();
-            sphereCollider.radius = towerData.Range;
-            if (targetingStrategy == null)
-                targetingStrategy = ScriptableObject.CreateInstance<FirstEnemyStrategySO>();
+            sphereCollider.radius = TowerData.Range;
+            if (TowerData.targetingStrategy == null)
+                TowerData.targetingStrategy = ScriptableObject.CreateInstance<FirstEnemyStrategySO>();
+
+            InitState();
+            Shooter = transform.Find("shooter");
+            if (Shooter == null) throw new System.Exception("La tour n'a pas de shooter");
         }
 
         private void Update()
@@ -34,17 +37,17 @@ namespace Abstract
             if (shootHeat > 0)
                 shootHeat -= Time.deltaTime;
 
-            targetList = targetList.Where(e => e != null).ToList();
+            targetList = targetList.Where(e => e != null && e.isParasitized == false).ToList();
 
             if (targetList.Count > 0)
-                currentTarget = targetingStrategy.SelectTarget(targetList, transform);
+                currentTarget = TowerData.targetingStrategy.SelectTarget(targetList, transform);
             else
                 currentTarget = null;
 
             if (currentTarget != null && shootHeat <= 0f)
             {
                 Attack(currentTarget.GetComponent<Collider>());
-                shootHeat = towerData.AttackSpeed;
+                shootHeat = TowerData.AttackSpeed;
             }
         }
 
@@ -53,6 +56,18 @@ namespace Abstract
             if (enemy != null)
             {
                 targetList.Remove(enemy);
+            }
+        }
+
+        private void OnTriggerStay(Collider other)
+        {
+            Enemy enemyToCheck = other.GetComponent<Enemy>();
+            if (enemyToCheck != null)
+            {
+                if (enemyToCheck.isParasitized == false && !targetList.Contains(enemyToCheck))
+                {
+                    targetList.Add(enemyToCheck);
+                }
             }
         }
 
@@ -84,7 +99,7 @@ namespace Abstract
 
         public void SetStrategy(TargetingStrategySO strategy)
         {
-            targetingStrategy = strategy;
+            TowerData.targetingStrategy = strategy;
             Notify();
         }
 
@@ -104,6 +119,32 @@ namespace Abstract
         public void Unsubscribe(I_Observer observer)
         {
             subscribersChangeStrategy.Remove(observer);
+        }
+
+        public void Upgrade()
+        {
+            currentState.Upgrade(this);
+        }
+
+        private void InitState()
+        {
+            switch (TowerData.Level)
+            {
+                case TowerLevel.Basic:
+                    currentState = new BasicTowerState();
+                    break;
+                case TowerLevel.Advanced:
+                    currentState = new AdvancedTowerState();
+                    break;
+                case TowerLevel.Ultimate:
+                    currentState = new UltimateTowerState();
+                    break;
+            }
+        }
+
+        public void Destroy()
+        {
+            Destroy(gameObject);
         }
 
     }

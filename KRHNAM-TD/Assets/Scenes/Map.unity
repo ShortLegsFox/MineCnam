@@ -143,9 +143,21 @@ PrefabInstance:
       value: Grid
       objectReference: {fileID: 0}
     - target: {fileID: 4848037773231025211, guid: ebd963798ddd69e4fb84a050cbaafdd1, type: 3}
+      propertyPath: nodeRadius
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4848037773231025211, guid: ebd963798ddd69e4fb84a050cbaafdd1, type: 3}
       propertyPath: navMeshSurface
       value: 
       objectReference: {fileID: 400418439}
+    - target: {fileID: 4848037773231025211, guid: ebd963798ddd69e4fb84a050cbaafdd1, type: 3}
+      propertyPath: gridWorldSize.x
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4848037773231025211, guid: ebd963798ddd69e4fb84a050cbaafdd1, type: 3}
+      propertyPath: gridWorldSize.y
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 8557631773362327021, guid: ebd963798ddd69e4fb84a050cbaafdd1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

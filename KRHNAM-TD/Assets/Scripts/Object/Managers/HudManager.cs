@@ -84,12 +84,12 @@ public class HudManager : MonoBehaviour
         if (entity is Tower tower)
         {
             float angleStep = 360f / 100; // Angle entre chaque point
-            Vector3 previousPoint = tower.Position.worldPosition + new Vector3(tower.towerData.Range, 0, 0); // Premier point sur le cercle
+            Vector3 previousPoint = tower.Position.worldPosition + new Vector3(tower.TowerData.Range, 0, 0); // Premier point sur le cercle
 
             for (int i = 1; i <= 100; i++)
             {
                 float angle = Mathf.Deg2Rad * (i * angleStep);
-                Vector3 nextPoint = tower.Position.worldPosition + new Vector3(Mathf.Cos(angle) * tower.towerData.Range, 0, Mathf.Sin(angle) * tower.towerData.Range);
+                Vector3 nextPoint = tower.Position.worldPosition + new Vector3(Mathf.Cos(angle) * tower.TowerData.Range, 0, Mathf.Sin(angle) * tower.TowerData.Range);
 
                 Debug.DrawLine(previousPoint, nextPoint, Color.gray); // Dessine une ligne entre les points
                 previousPoint = nextPoint;
