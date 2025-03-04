@@ -1,11 +1,12 @@
+using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 using UnityEngine.AI;
 
 public abstract class EnemyTypeAbs : MonoBehaviour
 {
-    protected GameObject castle;
+    public GameObject castle;
     protected float speed;
-    protected NavMeshAgent agent;
+    public NavMeshAgent agent;
 
     public void Start()
     {

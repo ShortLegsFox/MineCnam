@@ -1,3 +1,4 @@
+using Abstract;
 using UnityEngine;
 
 public class EditorManager : MonoBehaviour
@@ -7,6 +8,9 @@ public class EditorManager : MonoBehaviour
 
     public Entity selectedEntity;
     public bool IsEntitySelected => selectedEntity != null;
+
+    public Tower contextualTower;
+    [SerializeField] private TargetingStrategySO firstStrategy, nearestStrategy, lowestStrategy;
 
     private void Awake()
     {
@@ -28,9 +32,35 @@ public class EditorManager : MonoBehaviour
         selectTowerCommand.Execute();
     }
 
+    public void SetContextualTower(Tower tower)
+    {
+        contextualTower = tower;
+        Debug.Log("Contextual Tower Set");
+    }
+
+    public void ClearContextualTower()
+    {
+        contextualTower = null;
+    }
+
     public void PlaceEntity(Case selectedCell)
     {
         var command = new PlaceEntityCommand(selectedEntity, selectedCell);
         command.Execute();
+    }
+
+    public void SetFirstStategy()
+    {
+        contextualTower.SetStrategy(firstStrategy);
+    }
+
+    public void SetClosestStrategy()
+    {
+        contextualTower.SetStrategy(nearestStrategy);
+    }
+
+    public void SetLowHpStrategy()
+    {
+        contextualTower.SetStrategy(lowestStrategy);
     }
 }

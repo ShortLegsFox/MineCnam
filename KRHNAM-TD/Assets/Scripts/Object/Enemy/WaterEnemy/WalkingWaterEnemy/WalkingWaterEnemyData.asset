@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: WalkingWaterEnemyData
   m_EditorClassIdentifier: 
   Prefab: {fileID: 6042827550217726177, guid: de0d2ab2923cee540b260fcdeeefef5c, type: 3}
-  MaxHp: 50
+  MaxHp: 100
+  Armor: 50
   Damage: 2
   MoveSpeed: 2
   Range: 2
   TimeBetweenAttacks: 2
   element: 4
   type: 0
+  GoldWon: 10

@@ -6,7 +6,7 @@ public class MoveProjectile : MonoBehaviour
     public float speed = 10;
     public Transform target;
     public Tower tower;
-
+    public EffectData effect;
 
     // Update is called once per frame
     void FixedUpdate()
@@ -14,7 +14,7 @@ public class MoveProjectile : MonoBehaviour
         //go to target
         if (target)
         {
-            Vector3 dir = target.position - transform.position;
+            Vector3 dir = target.GetComponent<Collider>().bounds.center - transform.position;
             GetComponent<Rigidbody>().linearVelocity = dir.normalized * speed;
         }
         else
@@ -38,7 +38,7 @@ public class MoveProjectile : MonoBehaviour
             Enemy enemy = co.GetComponent<Enemy>();
             if (enemy != null)
             {
-                bool killed = enemy.TakeDamage(tower.towerData.Element, tower.towerData.Damage);
+                bool killed = enemy.TakeDamage(tower.TowerData.Element, tower.TowerData.Damage, false, effect);
                 if (killed)
                     tower.OnEnemyDead(enemy);
             }

@@ -12,7 +12,21 @@ public class SelectTowerCommand : I_Command
     public void Execute()
     {
         I_TowerFactory towerFactory = TowerFactory.GetTowerFactory(towerData.Element);
-        Entity tower = towerFactory.CreateTower(towerData.Level);
+        Entity tower = null;
+
+        switch (towerData.Level)
+        {
+            case TowerLevel.Basic:
+                tower = towerFactory.CreateBasicTower();
+                break;
+            case TowerLevel.Advanced:
+                tower = towerFactory.CreateAdvancedTower();
+                break;
+            case TowerLevel.Ultimate:
+                tower = towerFactory.CreateUltimateTower();
+                break;
+        }
+
         EditorManager.Instance.selectedEntity = tower;
         ErrorManager.DebugLog($"Entity selected for placement.");
     }

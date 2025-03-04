@@ -1,3 +1,5 @@
+using System;
+using Interface;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -6,13 +8,13 @@ namespace Abstract
 {
     public abstract class Tower : Entity
     {
-        [SerializeField] protected List<Enemy> targetList = new();
-        [SerializeField] protected Enemy currentTarget;
-
-        public float shootHeat = 1f;
-
-
-        public TowerData towerData;
+        protected List<Enemy> targetList = new();
+        protected Enemy currentTarget;
+        private List<I_Observer> subscribersChangeStrategy = new List<I_Observer>();
+        private I_TowerUpgradeState currentState;
+        public TowerData TowerData;
+        public float shootHeat { get; private set; } = 1f;
+        public Transform Shooter { get; private set; }
 
         public int Hp { get; set; }
 
@@ -21,35 +23,32 @@ namespace Abstract
         private void Start()
         {
             SphereCollider sphereCollider = GetComponent<SphereCollider>();
-            sphereCollider.radius = towerData.Range;
+            sphereCollider.radius = TowerData.Range;
+            if (TowerData.targetingStrategy == null)
+                TowerData.targetingStrategy = ScriptableObject.CreateInstance<FirstEnemyStrategySO>();
+
+            InitState();
+            Shooter = transform.Find("shooter");
+            if (Shooter == null) throw new System.Exception("La tour n'a pas de shooter");
         }
 
         private void Update()
         {
             if (shootHeat > 0)
-            {
                 shootHeat -= Time.deltaTime;
-            }
 
-            targetList = targetList.Where(enemy => enemy != null).ToList();
+            targetList = targetList.Where(e => e != null && e.isParasitized == false).ToList();
 
-            if (targetList.Count > 0 && currentTarget != null && shootHeat <= 0f)
-            {
-                Debug.DrawLine(transform.position, currentTarget.transform.position, Color.red);
-                Attack(currentTarget.GetComponent<Collider>());
-                shootHeat = towerData.AttackSpeed;
-            }
-        }
-
-        private void GetCurrentTarget()
-        {
-            if (targetList.Count <= 0)
-            {
+            if (targetList.Count > 0)
+                currentTarget = TowerData.targetingStrategy.SelectTarget(targetList, transform);
+            else
                 currentTarget = null;
-                return;
-            }
 
-            currentTarget = targetList.First();
+            if (currentTarget != null && shootHeat <= 0f)
+            {
+                Attack(currentTarget.GetComponent<Collider>());
+                shootHeat = TowerData.AttackSpeed;
+            }
         }
 
         public void OnEnemyDead(Enemy enemy)
@@ -57,7 +56,18 @@ namespace Abstract
             if (enemy != null)
             {
                 targetList.Remove(enemy);
-                GetCurrentTarget();
+            }
+        }
+
+        private void OnTriggerStay(Collider other)
+        {
+            Enemy enemyToCheck = other.GetComponent<Enemy>();
+            if (enemyToCheck != null)
+            {
+                if (enemyToCheck.isParasitized == false && !targetList.Contains(enemyToCheck))
+                {
+                    targetList.Add(enemyToCheck);
+                }
             }
         }
 
@@ -65,13 +75,11 @@ namespace Abstract
         {
             if (other.CompareTag("Enemy"))
             {
-                Debug.Log("Enemy spotted");
+                //Debug.Log("Enemy spotted");
                 var enemy = other.GetComponent<Enemy>();
                 if (enemy != null)
                 {
                     targetList.Add(enemy);
-                    GetCurrentTarget();
-                    //Debug.Log("Enemy spotted");
                 }
             }
         }
@@ -80,14 +88,63 @@ namespace Abstract
         {
             if (other.CompareTag("Enemy"))
             {
-                Debug.Log("Enemy left");
+                //Debug.Log("Enemy left");
                 var enemy = other.GetComponent<Enemy>();
                 if (enemy != null)
                 {
                     targetList.Remove(enemy);
-                    GetCurrentTarget();
                 }
             }
+        }
+
+        public void SetStrategy(TargetingStrategySO strategy)
+        {
+            TowerData.targetingStrategy = strategy;
+            Notify();
+        }
+
+        private void Notify()
+        {
+            foreach (var observer in subscribersChangeStrategy)
+            {
+                observer.UpdateNotify();
+            }
+        }
+
+        public void Subscribe(I_Observer observer)
+        {
+            subscribersChangeStrategy.Add(observer);
+        }
+
+        public void Unsubscribe(I_Observer observer)
+        {
+            subscribersChangeStrategy.Remove(observer);
+        }
+
+        public void Upgrade()
+        {
+            currentState.Upgrade(this);
+        }
+
+        private void InitState()
+        {
+            switch (TowerData.Level)
+            {
+                case TowerLevel.Basic:
+                    currentState = new BasicTowerState();
+                    break;
+                case TowerLevel.Advanced:
+                    currentState = new AdvancedTowerState();
+                    break;
+                case TowerLevel.Ultimate:
+                    currentState = new UltimateTowerState();
+                    break;
+            }
+        }
+
+        public void Destroy()
+        {
+            Destroy(gameObject);
         }
 
     }
