@@ -2,37 +2,34 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Net.Mime;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public abstract class Enemy : Entity
 {
 
     public EnemyData enemyData;
-
     public Element element;
-    private HealthBar healthBar;
-    public float Hp { get; set; }
-    public int Armor;
-    public int currentSpeed { get; set; }
-
+    public float hp;
+    public int armor;
     public GameObject target;
-    private bool canAttack = true;
-    private Animator animator;
-    
-    private List<Effect> activeEffects = new List<Effect>();
     public bool isParasitized;
     public Image debuffIcon;
+
+    private HealthBar _healthBar;
+    private bool _canAttack = true;
+    private Animator _animator;
+    private List<Effect> _activeEffects = new List<Effect>();
 
 
     public void Start()
     {
-        healthBar = transform.Find("HealthbarCanva").Find("Healthbar").GetComponent<HealthBar>();
-        healthBar.SetMaxHealth(enemyData.MaxHp);
-        Hp = enemyData.MaxHp;
-        Armor = enemyData.Armor;
-        currentSpeed = enemyData.MoveSpeed;
+        _healthBar = transform.Find("HealthbarCanva").Find("Healthbar").GetComponent<HealthBar>();
+        _healthBar.SetMaxHealth(enemyData.MaxHp);
+        hp = enemyData.MaxHp;
+        armor = enemyData.Armor;
         target = GameManager.Instance.Castle;
-        animator = GetComponent<Animator>();
+        _animator = GetComponent<Animator>();
         debuffIcon = transform.Find("DebuffCanva").Find("DebuffIcon").GetComponent<Image>();
         debuffIcon.enabled = false;
         isParasitized = false;
@@ -72,19 +69,19 @@ public abstract class Enemy : Entity
 
     private float ReduceDamageWithArmor(float AttackDamage)
     {
-        float damageReducer = 1 - (Armor / 200f);
+        float damageReducer = 1 - (armor / 200f);
         return damageReducer * AttackDamage;
     }
 
     private void ApplyDamageOnHP(float AttackDamage)
     {
-        this.Hp -= AttackDamage;
-        healthBar.TakeDamage(AttackDamage);
+        this.hp -= AttackDamage;
+        _healthBar.TakeDamage(AttackDamage);
     }
     
     private void AddEffect(Effect newEffect)
     {
-        foreach (Effect effect in activeEffects)
+        foreach (Effect effect in _activeEffects)
         {
             if (effect.GetElement() == newEffect.GetElement())
             {
@@ -92,18 +89,18 @@ public abstract class Enemy : Entity
                 return;
             }
         }
-        activeEffects.Add(newEffect);
+        _activeEffects.Add(newEffect);
     }
 
     private void ApplyEffects()
     {
-        if (Hp >= 0)
+        if (hp >= 0)
         {
-            for (int i = activeEffects.Count - 1; i >= 0; i--)
+            for (int i = _activeEffects.Count - 1; i >= 0; i--)
             {
-                if (activeEffects[i].Apply(this) == false)
+                if (_activeEffects[i].Apply(this) == false)
                 {
-                    activeEffects.RemoveAt(i);   
+                    _activeEffects.RemoveAt(i);   
                 }
             }
         }
@@ -123,10 +120,10 @@ public abstract class Enemy : Entity
     //Methode pour verifier si l'ennemi est a port�e d'attaque
     private void IsTheTargetInRange()
     {
-        if (canAttack && GetDistanceFromTarget() < enemyData.Range)
+        if (_canAttack && GetDistanceFromTarget() < enemyData.Range)
         {
-            canAttack = false;
-            animator.SetTrigger("Attack");
+            _canAttack = false;
+            _animator.SetTrigger("Attack");
         }
     }
 
@@ -152,9 +149,9 @@ public abstract class Enemy : Entity
 
     private IEnumerator AttackCooldown()
     {
-        canAttack = false;
+        _canAttack = false;
         yield return new WaitForSeconds(enemyData.TimeBetweenAttacks);
-        canAttack = true;
+        _canAttack = true;
     }
     
     public Enemy FindClosestEnemy()
@@ -180,7 +177,7 @@ public abstract class Enemy : Entity
 
     private bool OnDeath()
     {
-        if (Hp <= 0)
+        if (hp <= 0)
         {
             Destroy(this.gameObject);
             StoreManager.Instance.AddGold(enemyData.GoldWon);

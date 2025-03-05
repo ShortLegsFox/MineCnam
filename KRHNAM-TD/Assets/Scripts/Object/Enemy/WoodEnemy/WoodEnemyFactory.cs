@@ -11,4 +11,9 @@ public class WoodEnemyFactory : I_EnemyFactory
         instance.transform.parent = Grid.Instance.transform;
         return instance.GetComponent<Enemy>();
     }
+    
+    public Enemy CreateEnemy(EnemyType type, Transform spawnPoint)
+    {
+        return null;
+    }
 }

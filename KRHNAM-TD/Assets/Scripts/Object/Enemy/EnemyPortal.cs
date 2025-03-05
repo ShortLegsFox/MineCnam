@@ -17,7 +17,7 @@ public class EnemyPortal : MonoBehaviour
 
     void Awake()
     {
-        enemyFactoryList.Add(new FireEnemyFactory());
+        enemyFactoryList.Add(new FireEnemyFactory(GameManager.Instance, Grid.Instance));
         enemyFactoryList.Add(new WaterEnemyFactory());
         enemyFactoryList.Add(new MetalEnemyFactory());
         enemyFactoryList.Add(new WoodEnemyFactory());
@@ -79,7 +79,9 @@ public class EnemyPortal : MonoBehaviour
     {
         for (int i = 0; i < nbEnemy; i++)
         {
-            enemyFactoryList[randomType].CreateEnemy(EnemyType.Walking);
+            var facto = new FireEnemyFactory(GameManager.Instance, Grid.Instance);
+            //enemyFactoryList[randomType].CreateEnemy(EnemyType.Walking);
+            facto.CreateEnemy(EnemyType.Walking, this.transform);
             yield return WaitForEnemiesToSpawn();
         }
     }

@@ -10,15 +10,15 @@ public class LowestHealthStrategySO : TargetingStrategySO
             return null;
 
         Enemy weakest = enemies[0];
-        float minHealth = weakest.Hp;
+        float minHealth = weakest.hp;
 
         for (int i = 1; i < enemies.Count; i++)
         {
             Enemy e = enemies[i];
-            if (e != null && e.Hp < minHealth)
+            if (e != null && e.hp < minHealth)
             {
                 weakest = e;
-                minHealth = e.Hp;
+                minHealth = e.hp;
             }
         }
 
