@@ -60,7 +60,7 @@ public abstract class Enemy : Entity
         target = GameManager.Instance.Castle;
     }
 
-    public bool TakeDamage(Element attackElement, float attackDamage, bool fromEffect = false, EffectData effectData = null)
+    public bool TakeDamage(Element attackElement, float attackDamage, EffectData effectData = null)
     {
         float finalDamage = CalculateElementalDamage(attackElement, attackDamage);
         
@@ -71,22 +71,22 @@ public abstract class Enemy : Entity
 
         ApplyDamageOnHP(ReduceDamageWithArmor(finalDamage));
 
-        return OnDeath();
+        return CheckDeath();
     }
 
-    private float CalculateElementalDamage(Element AttackElement, float AttackDamage)
+    private float CalculateElementalDamage(Element attackElement, float attackDamage)
     {
-        if (AttackElement == GetElementInfos.GetWeakness(element))
+        if (attackElement == GetElementInfos.GetWeakness(element))
         {
-            AttackDamage = GetElementInfos.AddStrongDamage(AttackDamage);
+            attackDamage = GetElementInfos.AddStrongDamage(attackDamage);
         }
 
-        if (AttackElement == GetElementInfos.GetStrength(element))
+        if (attackElement == GetElementInfos.GetStrength(element))
         {
-            AttackDamage = GetElementInfos.RemoveWeakDamage(AttackDamage);
+            attackDamage = GetElementInfos.RemoveWeakDamage(attackDamage);
         }
 
-        return AttackDamage;
+        return attackDamage;
     }
 
     private void ApplyStatusEffect(Element attackElement, EffectData effectData)
@@ -170,7 +170,7 @@ public abstract class Enemy : Entity
             Enemy enemy = target.GetComponent<Enemy>();
             if (enemy != null)
             {
-                enemy.TakeDamage(element, enemyData.Damage, true);
+                enemy.TakeDamage(element, enemyData.Damage);
                 StartCoroutine(AttackCooldown());
             }
         }
@@ -204,14 +204,19 @@ public abstract class Enemy : Entity
         return closestEnemy;
     }
 
-    private bool OnDeath()
+    private bool CheckDeath()
     {
         if (hp <= 0)
         {
-            Destroy(this.gameObject);
-            StoreManager.Instance.AddGold(enemyData.GoldWon);
+            OnDeath();
             return true;
         }
         return false;
+    }
+
+    private void OnDeath()
+    {
+        Destroy(this.gameObject);
+        StoreManager.Instance.AddGold(enemyData.GoldWon);
     }
 }
