@@ -12,8 +12,6 @@ public abstract class BaseEnemyFactory : I_EnemyFactory
         _gameManager = gameManager;
         _grid = grid;
     }
-
-    public abstract Enemy CreateEnemy(EnemyType type);
     
     public abstract Enemy CreateEnemy(EnemyType type, Transform spawnPoint);
 
