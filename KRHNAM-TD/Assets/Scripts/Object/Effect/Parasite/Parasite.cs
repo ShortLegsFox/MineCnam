@@ -28,7 +28,7 @@ public class Parasite : Effect
         if (parasitizedTarget == null && counter >= 4)
         {
             enemy.isParasitized = true;
-            parasitizedTarget = enemy.FindClosestEnemy();
+            parasitizedTarget = enemy.FindNearestEnemy();
             if (parasitizedTarget != null)
             {
                 enemy.target = parasitizedTarget.gameObject;

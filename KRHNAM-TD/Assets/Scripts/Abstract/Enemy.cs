@@ -183,10 +183,10 @@ public abstract class Enemy : Entity
         _canAttack = true;
     }
     
-    public Enemy FindClosestEnemy()
+    public Enemy FindNearestEnemy()
     {
         Enemy[] allEnemies = FindObjectsByType<Enemy>(FindObjectsSortMode.None);
-        Enemy closestEnemy = null;
+        Enemy nearestEnemy = null;
         float minDistance = Mathf.Infinity;
 
         foreach (Enemy e in allEnemies)
@@ -197,11 +197,11 @@ public abstract class Enemy : Entity
             if (distance < minDistance)
             {
                 minDistance = distance;
-                closestEnemy = e;
+                nearestEnemy = e;
             }
         }
         
-        return closestEnemy;
+        return nearestEnemy;
     }
 
     private bool CheckDeath()
