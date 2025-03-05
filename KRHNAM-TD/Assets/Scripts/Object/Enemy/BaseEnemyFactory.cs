@@ -4,29 +4,29 @@ using Object = UnityEngine.Object;
 
 public abstract class BaseEnemyFactory : I_EnemyFactory
 {
-    protected GameManager _gameManager;
-    protected Grid _grid;
+    protected readonly GameManager GameManager;
+    protected readonly Grid Grid;
 
     protected BaseEnemyFactory(GameManager gameManager, Grid grid)
     {
-        _gameManager = gameManager;
-        _grid = grid;
+        GameManager = gameManager;
+        Grid = grid;
     }
     
     public abstract Enemy CreateEnemy(EnemyType type, Transform spawnPoint);
 
     protected Enemy CreateEnemyInternal(Element element, EnemyType type, Transform spawnPoint)
     {
-        if (spawnPoint == null)
-            throw new System.ArgumentNullException("spawnPoint");
+        if (!spawnPoint)
+            throw new ArgumentNullException(nameof(spawnPoint));
 
-        var enemyData = _gameManager.GetEnemyData(element, type);
-        if (enemyData?.Prefab == null)
+        var enemyData = GameManager.GetEnemyData(element, type);
+        if (!enemyData?.Prefab)
             throw new InvalidOperationException("Invalid enemy data or prefab");
         
         GameObject instance = Object.Instantiate(enemyData.Prefab, spawnPoint.position, Quaternion.Euler(0, 90, 0));
         
-        instance.transform.SetParent(_grid.transform);
+        instance.transform.SetParent(Grid.transform);
 
         var enemy = instance.GetComponent<Enemy>();
 
