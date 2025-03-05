@@ -8,15 +8,16 @@ using UnityEngine.UI;
 public abstract class Enemy : Entity
 {
 
-    public EnemyData enemyData;
-    public Element element;
+    [SerializeField] public EnemyData enemyData;
+    [SerializeField] public Element element;
+    [SerializeField] public Image debuffIcon;
+    [SerializeField] protected HealthBar healthBar;
+    
     public float hp;
     public int armor;
-    public GameObject target;
     public bool isParasitized;
-    public Image debuffIcon;
+    public GameObject target;
 
-    private HealthBar _healthBar;
     private bool _canAttack = true;
     private Animator _animator;
     private List<Effect> _activeEffects = new List<Effect>();
@@ -24,21 +25,39 @@ public abstract class Enemy : Entity
 
     public void Start()
     {
-        _healthBar = transform.Find("HealthbarCanva").Find("Healthbar").GetComponent<HealthBar>();
-        _healthBar.SetMaxHealth(enemyData.MaxHp);
-        hp = enemyData.MaxHp;
-        armor = enemyData.Armor;
-        target = GameManager.Instance.Castle;
-        _animator = GetComponent<Animator>();
+        healthBar = transform.Find("HealthbarCanva").Find("Healthbar").GetComponent<HealthBar>();
         debuffIcon = transform.Find("DebuffCanva").Find("DebuffIcon").GetComponent<Image>();
-        debuffIcon.enabled = false;
-        isParasitized = false;
+        InitializeStats();
+        InitializeReference();
     }
 
     public void Update()
     {
         IsTheTargetInRange();
         ApplyEffects();
+    }
+
+    private void InitializeStats()
+    {
+        hp = enemyData.MaxHp;
+        armor = enemyData.Armor;
+        isParasitized = false;
+
+        if (healthBar != null)
+        {
+            healthBar.SetMaxHealth(enemyData.MaxHp);
+        }
+
+        if (debuffIcon != null)
+        {
+            debuffIcon.enabled = false;
+        }
+    }
+
+    private void InitializeReference()
+    {
+        _animator = GetComponent<Animator>();
+        target = GameManager.Instance.Castle;
     }
 
     public bool TakeDamage(Element AttackElement, float AttackDamage, bool fromEffect = false, EffectData effectData = null)
@@ -76,7 +95,7 @@ public abstract class Enemy : Entity
     private void ApplyDamageOnHP(float AttackDamage)
     {
         this.hp -= AttackDamage;
-        _healthBar.TakeDamage(AttackDamage);
+        healthBar.TakeDamage(AttackDamage);
     }
     
     private void AddEffect(Effect newEffect)
