@@ -23,6 +23,11 @@ public abstract class Enemy : Entity
     private List<Effect> _activeEffects = new List<Effect>();
 
 
+    public void Awake()
+    {
+        ValidateComponents();
+    }
+
     public void Start()
     {
         healthBar = transform.Find("HealthbarCanva").Find("Healthbar").GetComponent<HealthBar>();
@@ -35,6 +40,18 @@ public abstract class Enemy : Entity
     {
         IsTheTargetInRange();
         ApplyEffects();
+    }
+
+    private void ValidateComponents()
+    {
+        if (!enemyData)
+            Debug.Log($"Enemy {gameObject.name} is missing EnemyData !");
+        
+        if (!healthBar)
+            Debug.Log($"Enemy {gameObject.name} is missing HealthBar !");
+        
+        if (!debuffIcon)
+            Debug.Log($"Enemy {gameObject.name} is missing DebuffIcon !");
     }
 
     private void InitializeStats()
