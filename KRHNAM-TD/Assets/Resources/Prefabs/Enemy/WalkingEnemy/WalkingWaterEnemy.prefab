@@ -333,10 +333,10 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8128668236925612103, guid: c2457e02cac0f724babeed5a8f52919f, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4704361540004901782}
+      addedObject: {fileID: -331097676786195850}
     - targetCorrespondingSourceObject: {fileID: 8128668236925612103, guid: c2457e02cac0f724babeed5a8f52919f, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2837895146993802603}
+      addedObject: {fileID: 4704361540004901782}
     - targetCorrespondingSourceObject: {fileID: 8128668236925612103, guid: c2457e02cac0f724babeed5a8f52919f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5498094004632992564}
@@ -349,6 +349,26 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8128668236925612103, guid: c2457e02cac0f724babeed5a8f52919f, type: 3}
   m_PrefabInstance: {fileID: 2527288042584561830}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &-331097676786195850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6042827550217726177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf38a5751ed09b54b97b823adaac7ff6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlaced: 0
+  enemyData: {fileID: 11400000, guid: 3bd060f4774987a4e8f9fd9cfff65192, type: 2}
+  element: 4
+  debuffIcon: {fileID: 0}
+  hp: 0
+  armor: 0
+  isParasitized: 0
+  target: {fileID: 0}
 --- !u!114 &4704361540004901782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -361,22 +381,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66e7c6bdcc7185941bbcaf78a8305bb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2837895146993802603
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6042827550217726177}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c30f325973176642a7a68f79acbdb69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isPlaced: 0
-  enemyData: {fileID: 11400000, guid: 3bd060f4774987a4e8f9fd9cfff65192, type: 2}
-  element: 4
-  debuffIcon: {fileID: 0}
+  castle: {fileID: 0}
+  agent: {fileID: 0}
 --- !u!195 &5498094004632992564
 NavMeshAgent:
   m_ObjectHideFlags: 0

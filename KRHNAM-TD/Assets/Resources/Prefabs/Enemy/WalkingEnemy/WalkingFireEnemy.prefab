@@ -333,7 +333,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8128668236925612103, guid: c2457e02cac0f724babeed5a8f52919f, type: 3}
       insertIndex: -1
-      addedObject: {fileID: -8837046404667975003}
+      addedObject: {fileID: 2060578545218112630}
     - targetCorrespondingSourceObject: {fileID: 8128668236925612103, guid: c2457e02cac0f724babeed5a8f52919f, type: 3}
       insertIndex: -1
       addedObject: {fileID: -8402420974849563181}
@@ -354,7 +354,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8128668236925612103, guid: c2457e02cac0f724babeed5a8f52919f, type: 3}
   m_PrefabInstance: {fileID: 4511198942243286071}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &-8837046404667975003
+--- !u!114 &2060578545218112630
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -363,13 +363,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 5644183756705422448}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f8241848fd8ac142a557f22d1c622f0, type: 3}
+  m_Script: {fileID: 11500000, guid: cf38a5751ed09b54b97b823adaac7ff6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isPlaced: 0
   enemyData: {fileID: 11400000, guid: 40119b4c755ab4c48867d8af6584924a, type: 2}
   element: 0
   debuffIcon: {fileID: 0}
+  hp: 0
+  armor: 0
+  isParasitized: 0
+  target: {fileID: 0}
 --- !u!114 &-8402420974849563181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -382,6 +386,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66e7c6bdcc7185941bbcaf78a8305bb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  castle: {fileID: 0}
+  agent: {fileID: 0}
 --- !u!195 &5512672329712664971
 NavMeshAgent:
   m_ObjectHideFlags: 0
