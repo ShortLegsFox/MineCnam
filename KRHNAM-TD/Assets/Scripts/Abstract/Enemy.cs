@@ -10,8 +10,8 @@ public abstract class Enemy : Entity
 
     [SerializeField] public EnemyData enemyData;
     [SerializeField] public Element element;
-    [SerializeField] public Image debuffIcon;
-    [SerializeField] protected HealthBar healthBar;
+    public Image debuffIcon;
+    private HealthBar healthBar;
     
     public float hp;
     public int armor;
@@ -21,12 +21,7 @@ public abstract class Enemy : Entity
     private bool _canAttack = true;
     private Animator _animator;
     private List<Effect> _activeEffects = new List<Effect>();
-
-
-    public void Awake()
-    {
-        ValidateComponents();
-    }
+    
 
     public void Start()
     {
@@ -40,18 +35,6 @@ public abstract class Enemy : Entity
     {
         IsTheTargetInRange();
         ApplyEffects();
-    }
-
-    private void ValidateComponents()
-    {
-        if (!enemyData)
-            Debug.Log($"Enemy {gameObject.name} is missing EnemyData !");
-        
-        if (!healthBar)
-            Debug.Log($"Enemy {gameObject.name} is missing HealthBar !");
-        
-        if (!debuffIcon)
-            Debug.Log($"Enemy {gameObject.name} is missing DebuffIcon !");
     }
 
     private void InitializeStats()
@@ -77,30 +60,42 @@ public abstract class Enemy : Entity
         target = GameManager.Instance.Castle;
     }
 
-    public bool TakeDamage(Element AttackElement, float AttackDamage, bool fromEffect = false, EffectData effectData = null)
+    public bool TakeDamage(Element attackElement, float attackDamage, bool fromEffect = false, EffectData effectData = null)
     {
-        // If tower is strong VS enemy
+        float finalDamage = CalculateElementalDamage(attackElement, attackDamage);
+        
+        if (effectData)
+        {
+            ApplyStatusEffect(attackElement, effectData);
+        }
+
+        ApplyDamageOnHP(ReduceDamageWithArmor(finalDamage));
+
+        return OnDeath();
+    }
+
+    private float CalculateElementalDamage(Element AttackElement, float AttackDamage)
+    {
         if (AttackElement == GetElementInfos.GetWeakness(element))
         {
             AttackDamage = GetElementInfos.AddStrongDamage(AttackDamage);
         }
 
-        // If tower is weak vs enemy
         if (AttackElement == GetElementInfos.GetStrength(element))
         {
             AttackDamage = GetElementInfos.RemoveWeakDamage(AttackDamage);
         }
 
-        Effect effect = GetElementInfos.GetEffect(AttackElement, effectData);
-        
-        if (effect != null && fromEffect == false)
+        return AttackDamage;
+    }
+
+    private void ApplyStatusEffect(Element attackElement, EffectData effectData)
+    {
+        Effect effect = GetElementInfos.GetEffect(attackElement, effectData);
+        if (effect != null)
         {
             AddEffect(effect);
         }
-        
-        ApplyDamageOnHP(ReduceDamageWithArmor(AttackDamage));
-
-        return OnDeath();
     }
 
     private float ReduceDamageWithArmor(float AttackDamage)
@@ -144,7 +139,6 @@ public abstract class Enemy : Entity
     
     private float GetDistanceFromTarget()
     {
-        // Get distance from target
         if (target != null)
         {
             float distance = Vector3.Distance(target.transform.position, transform.position);
@@ -153,7 +147,6 @@ public abstract class Enemy : Entity
         return 1000;
     }
 
-    //Methode pour verifier si l'ennemi est a port�e d'attaque
     private void IsTheTargetInRange()
     {
         if (_canAttack && GetDistanceFromTarget() < enemyData.Range)
