@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TDObject.HUD;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -19,6 +20,7 @@ public class GameManager : MonoBehaviour
     public GameObject Castle { get; private set; }
     public GameObject CastlePrefab;
     public GameObject casteSpawn;
+    public EnemyPortal enemyPortal;
 
     public bool DebugMode { get; private set; } = false;
 
@@ -41,6 +43,7 @@ public class GameManager : MonoBehaviour
     {
         SpawnCastle();
         StoreManager.SetDefaultGold();
+        enemyPortal.ResetWaveNumber();
         Time.timeScale = 1;
     }
 
@@ -51,6 +54,8 @@ public class GameManager : MonoBehaviour
         if (HudManager.Instance.PauseMenu.activeSelf)
             HudManager.Instance.TogglePauseMenu();
 
+
+        SaveScore();
         KillAllEnemies();
         KillAllTowers();
         Destroy(Castle);
@@ -110,6 +115,31 @@ public class GameManager : MonoBehaviour
         }
         return null;
     }
+
+
+    public void SaveScore()
+    {
+        Debug.Log("Score saved with wave: " + enemyPortal.waveNumber + "(" + HudManager.Instance.playerName + ")");
+        Score score = new Score(HudManager.Instance.playerName, enemyPortal.waveNumber);
+
+
+        ScoreList scoreList = PlayerPrefs.HasKey("Scores") ?
+        JsonUtility.FromJson<ScoreList>(PlayerPrefs.GetString("Scores")) :
+        new ScoreList();
+
+
+        scoreList.scores.Add(score);
+        string json = JsonUtility.ToJson(scoreList);
+        PlayerPrefs.SetString("Scores", json);
+        PlayerPrefs.Save();
+    }
+
+
+    public void AccelereGame()
+    {
+        Time.timeScale = 10;
+    }
+
 }
 
 

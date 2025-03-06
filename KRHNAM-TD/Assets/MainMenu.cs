@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using System.Linq;
 using TDObject.HUD;
 using UnityEditor;
@@ -67,21 +66,23 @@ public class MainMenu : MonoBehaviour
 
     private Score[] GetTop5Scores()
     {
-        List<Score> allScores = new List<Score>()
-        {
-            new Score("Player1", 500),
-            new Score("Player2", 100),
-            new Score("Player3", 100),
-            new Score("Player4", 400),
-            new Score("Player5", 100),
-            new Score("Player6", 600),
-            new Score("Player7", 800),
-            new Score("Player8", 100),
-            new Score("Player9", 4000),
-            new Score("Player10", 40),
-        };
+        //List<Score> allScores = new List<Score>()
+        //{
+        //    new Score("Player1", 500),
+        //    new Score("Player2", 100),
+        //    new Score("Player3", 100),
+        //    new Score("Player4", 400),
+        //    new Score("Player5", 100),
+        //    new Score("Player6", 600),
+        //    new Score("Player7", 800),
+        //    new Score("Player8", 100),
+        //    new Score("Player9", 4000),
+        //    new Score("Player10", 40),
+        //};
 
-        return allScores.OrderByDescending(score => score.Points).Take(5).ToArray();
+        ScoreList scoreList = JsonUtility.FromJson<ScoreList>(PlayerPrefs.GetString("Scores"));
+
+        return scoreList.scores.OrderByDescending(score => score.Points).Take(5).ToArray();
     }
 
 

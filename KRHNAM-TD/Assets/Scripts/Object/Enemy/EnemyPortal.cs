@@ -6,12 +6,9 @@ using UnityEngine;
 
 public class EnemyPortal : MonoBehaviour
 {
-    private List<GameObject> enemyPrefabList;
-
     [SerializeField] private float minimumSpawnTime;
     [SerializeField] private float maximumSpawnTime;
-    int waveNumber = 1;
-    private int listIndex = 0;
+    public int waveNumber { get; private set; } = 1;
 
     public List<I_EnemyFactory> enemyFactoryList = new List<I_EnemyFactory>();
 
@@ -37,9 +34,20 @@ public class EnemyPortal : MonoBehaviour
 
             yield return StartCoroutine(SetDifficultyLevelOfWave(randomType, waveNumber, nbEnemy));
 
-            waveNumber++;
+            NextWave();
             yield return StartCoroutine(WaitForNewWave());
         }
+    }
+
+    public void ResetWaveNumber()
+    {
+        waveNumber = 1;
+    }
+
+    private void NextWave()
+    {
+        waveNumber++;
+        HudManager.Instance.UpdateWaveText(waveNumber);
     }
 
     private IEnumerator WaitForEnemiesToSpawn()

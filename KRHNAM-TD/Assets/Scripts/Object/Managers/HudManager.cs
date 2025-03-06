@@ -8,6 +8,8 @@ public class HudManager : MonoBehaviour
     public static HudManager Instance => instance;
     public static Entity selectedEntity;
     public TextMeshProUGUI Money;
+    [SerializeField] private TextMeshProUGUI waveText;
+    [SerializeField] private TMP_InputField inputPlayerName;
     public HealthBar CastleHealthbar;
 
     public GameObject StorePannel;
@@ -19,6 +21,7 @@ public class HudManager : MonoBehaviour
     private I_Command pauseCommand;
     private I_Command gameOverCommand;
     private I_Command quitCommand;
+    public string playerName;
 
     private void Awake()
     {
@@ -73,6 +76,11 @@ public class HudManager : MonoBehaviour
         Money.text = StoreManager.Instance.gold.ToString();
     }
 
+    public void UpdateWaveText(int wave)
+    {
+        waveText.text = wave.ToString();
+    }
+
     public void SelectTower(TowerData towerData)
     {
         EditorManager.Instance.SelectTower(towerData);
@@ -106,5 +114,12 @@ public class HudManager : MonoBehaviour
         else
             selectedEntity = null;
     }
+
+    public void OnPlayerNameChange()
+    {
+        playerName = inputPlayerName.text;
+        Debug.Log("Player name changed to: " + playerName);
+    }
+
 
 }

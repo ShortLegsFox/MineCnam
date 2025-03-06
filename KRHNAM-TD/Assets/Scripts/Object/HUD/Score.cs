@@ -1,5 +1,6 @@
 namespace TDObject.HUD
 {
+    [System.Serializable]
     public class Score
     {
         public string PlayerName;
