@@ -25,10 +25,10 @@ public class Parasite : Effect
         if (parasitizedTarget == null && counter >= 4)
         {
             enemy.isParasitized = true;
-            parasitizedTarget = enemy.FindClosestEnemy();
+            parasitizedTarget = enemy.FindNearestEnemy();
             if (parasitizedTarget != null)
             {
-                enemy.Target = parasitizedTarget.gameObject;
+                enemy.target = parasitizedTarget.gameObject;
                 enemy.debuffIcon.sprite = this.effectData.effectIcon;
                 enemy.debuffIcon.enabled = true;
             }
@@ -40,7 +40,7 @@ public class Parasite : Effect
     public void RemoveEffect(Enemy enemy)
     {
         enemy.isParasitized = false;
-        enemy.Target = GameManager.Instance.Castle;
+        enemy.target = GameManager.Instance.Castle;
 
         // Réinitialiser l'état du parasite
         parasitizedTarget = null;

@@ -22,7 +22,6 @@ public class EditorManager : MonoBehaviour
         else
             instance = this;
 
-        DontDestroyOnLoad(this.gameObject);
     }
 
 

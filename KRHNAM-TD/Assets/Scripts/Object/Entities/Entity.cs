@@ -3,7 +3,7 @@ using UnityEngine.AI;
 
 public abstract class Entity : MonoBehaviour
 {
-    public bool isPlaced = false;
+    public bool isPlaced { get; set; } = false;
 
     public Case Position
     {

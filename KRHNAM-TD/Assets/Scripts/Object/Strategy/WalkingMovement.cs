@@ -14,7 +14,6 @@ public class WalkingMovement : MovementStrategy
 
         agent = enemy.GetComponent<NavMeshAgent>();
         agent.speed = enemy.enemyData.MoveSpeed;
-        agent.baseOffset = 0.5f;
         animator = enemy.GetComponent<Animator>();
         this.enemy = enemy;
 
@@ -24,9 +23,9 @@ public class WalkingMovement : MovementStrategy
 
     public override void Move()
     {
-        if (enemy.Target != null)
+        if (enemy.target != null)
         {
-            agent.SetDestination(enemy.Target.transform.position);
+            agent.SetDestination(enemy.target.transform.position);
             bool isMoving = agent.velocity.magnitude > 0.5f;
             animator.SetBool("IsWalking", isMoving);
         }

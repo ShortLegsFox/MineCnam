@@ -325,7 +325,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8128668236925612103, guid: c2457e02cac0f724babeed5a8f52919f, type: 3}
       insertIndex: -1
-      addedObject: {fileID: -8922309708176097733}
+      addedObject: {fileID: -327431657544217688}
     - targetCorrespondingSourceObject: {fileID: 8128668236925612103, guid: c2457e02cac0f724babeed5a8f52919f, type: 3}
       insertIndex: -1
       addedObject: {fileID: -4587719413875940463}
@@ -343,7 +343,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8128668236925612103, guid: c2457e02cac0f724babeed5a8f52919f, type: 3}
   m_PrefabInstance: {fileID: 4511198942243286071}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &-8922309708176097733
+--- !u!114 &-327431657544217688
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -352,13 +352,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5644183756705422448}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fcd0d149db5b03428c3744e9dad8a58, type: 3}
+  m_Script: {fileID: 11500000, guid: cf38a5751ed09b54b97b823adaac7ff6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPlaced: 0
   enemyData: {fileID: 11400000, guid: f490c2522c5699f4ba40197c4b307e53, type: 2}
-  isParasitized: 0
-  debuffIcon: {fileID: 0}
 --- !u!195 &-4587719413875940463
 NavMeshAgent:
   m_ObjectHideFlags: 0

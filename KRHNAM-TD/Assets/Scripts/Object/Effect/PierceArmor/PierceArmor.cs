@@ -17,7 +17,7 @@ public class PierceArmor : Effect
             return false;
         }
 
-        enemy.Armor = Mathf.RoundToInt(enemy.enemyData.Armor * 0.5f);
+        enemy.armor = Mathf.RoundToInt(enemy.enemyData.Armor * 0.5f);
         enemy.debuffIcon.sprite = this.effectData.effectIcon;
         enemy.debuffIcon.enabled = true;
         

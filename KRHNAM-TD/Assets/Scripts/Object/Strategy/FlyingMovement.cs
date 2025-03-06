@@ -25,9 +25,9 @@ public class FlyingMovement : MovementStrategy
     public override void Move()
     {
         enemy.transform.position = new Vector3(enemy.transform.position.x, 5, enemy.transform.position.z);
-        if (enemy.Target != null)
+        if (enemy.target != null)
         {
-            agent.SetDestination(enemy.Target.transform.position);
+            agent.SetDestination(enemy.target.transform.position);
         }
     }
 }

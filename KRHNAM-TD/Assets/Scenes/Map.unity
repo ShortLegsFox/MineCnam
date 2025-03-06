@@ -173,15 +173,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3186881813749786448, guid: 1bd07157fa14d954ca6080c62a3511b4, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3907702171820697559, guid: 1bd07157fa14d954ca6080c62a3511b4, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3907702171820697559, guid: 1bd07157fa14d954ca6080c62a3511b4, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -368,6 +368,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlyingFireEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 6514110181681661227, guid: d95755c8657866a48bdd0fb494b91742, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6903177304744103776, guid: d95755c8657866a48bdd0fb494b91742, type: 3}
       propertyPath: m_LocalPosition.x
       value: -19.15163
@@ -429,6 +433,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1776578202582583502, guid: 8c5ba4e8f7e183a409d1af93afec885f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1776578202582583502, guid: 8c5ba4e8f7e183a409d1af93afec885f, type: 3}
       propertyPath: maximumSpawnTime
       value: 3
@@ -550,6 +558,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BulkingFireEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 4446306119501481743, guid: 330051e7ede3d85479b603294eee7fe1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -569,15 +581,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2315837681590389153, guid: 2541f63bae1816b4e8359a007e710537, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3128162606465378318, guid: 2541f63bae1816b4e8359a007e710537, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3128162606465378318, guid: 2541f63bae1816b4e8359a007e710537, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3140563158307639592, guid: 2541f63bae1816b4e8359a007e710537, type: 3}
       propertyPath: m_LocalPosition.x
@@ -733,6 +745,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlyingEarthEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 827444177250659746, guid: 5f3aa7c6454f1f44ab2d45b44ef8ac30, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1067471330935711721, guid: 5f3aa7c6454f1f44ab2d45b44ef8ac30, type: 3}
       propertyPath: m_LocalPosition.x
       value: -15.895697
@@ -796,11 +812,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2510874089200887675, guid: 0ff2f5679b38d664f8fa74bb3f6f718c, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2510874089200887675, guid: 0ff2f5679b38d664f8fa74bb3f6f718c, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4973953126212094777, guid: 0ff2f5679b38d664f8fa74bb3f6f718c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -848,7 +864,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5670330536118391728, guid: 0ff2f5679b38d664f8fa74bb3f6f718c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
