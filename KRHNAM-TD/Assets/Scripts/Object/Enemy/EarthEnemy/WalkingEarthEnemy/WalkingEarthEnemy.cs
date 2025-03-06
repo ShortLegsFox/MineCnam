@@ -1,7 +1,4 @@
-using Abstract;
-using UnityEngine;
-
-public class WalkingEarthEnemy : Enemy 
+public class WalkingEarthEnemy : Enemy
 {
-    
+
 }

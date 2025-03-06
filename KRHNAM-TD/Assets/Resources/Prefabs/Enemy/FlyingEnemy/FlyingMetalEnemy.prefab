@@ -463,6 +463,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d19debc1f5bbc98408245f301148de20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  castle: {fileID: 0}
+  agent: {fileID: 0}
 --- !u!114 &2226493299838548181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -478,6 +480,9 @@ MonoBehaviour:
   isPlaced: 1
   enemyData: {fileID: 11400000, guid: 1430573212a30a44fb962b68177d65de, type: 2}
   element: 1
+  Armor: 0
+  target: {fileID: 0}
+  isParasitized: 0
   debuffIcon: {fileID: 0}
 --- !u!195 &2602994316487686049
 NavMeshAgent:
@@ -498,7 +503,7 @@ NavMeshAgent:
   m_AutoBraking: 0
   m_AutoRepath: 1
   m_Height: 2
-  m_BaseOffset: 0
+  m_BaseOffset: 5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!65 &8738689087765808127

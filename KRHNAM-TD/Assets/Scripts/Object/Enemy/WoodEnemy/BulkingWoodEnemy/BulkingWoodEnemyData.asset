@@ -22,3 +22,4 @@ MonoBehaviour:
   element: 2
   type: 2
   GoldWon: 30
+  movementStrategy: {fileID: 11400000, guid: a8dcf3e8bf3551940b83d1d8e4e52dfd, type: 2}

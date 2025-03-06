@@ -17,8 +17,9 @@ MonoBehaviour:
   Armor: 50
   Damage: 2
   MoveSpeed: 2
-  Range: 2
+  Range: 5
   TimeBetweenAttacks: 2
   element: 2
   type: 0
   GoldWon: 10
+  movementStrategy: {fileID: 11400000, guid: a8dcf3e8bf3551940b83d1d8e4e52dfd, type: 2}

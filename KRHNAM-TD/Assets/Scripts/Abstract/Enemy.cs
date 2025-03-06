@@ -1,27 +1,26 @@
+using Abstract;
 using System.Collections;
 using System.Collections.Generic;
-using System.Net.Mime;
 using UnityEngine;
 using UnityEngine.UI;
 
-public abstract class Enemy : Entity
+public class Enemy : Entity
 {
 
     public EnemyData enemyData;
-
-    public Element element;
-    private HealthBar healthBar;
     public float Hp { get; set; }
-    public int Armor;
+    public int Armor { get; set; }
     public int currentSpeed { get; set; }
+    public GameObject Target { get; set; }
+    public bool isParasitized = false;
+    public Image debuffIcon;
 
-    public GameObject target;
+    private HealthBar healthBar;
     private bool canAttack = true;
     private Animator animator;
-    
     private List<Effect> activeEffects = new List<Effect>();
-    public bool isParasitized;
-    public Image debuffIcon;
+    private MovementStrategy movementStrategy;
+
 
 
     public void Start()
@@ -31,40 +30,50 @@ public abstract class Enemy : Entity
         Hp = enemyData.MaxHp;
         Armor = enemyData.Armor;
         currentSpeed = enemyData.MoveSpeed;
-        target = GameManager.Instance.Castle;
         animator = GetComponent<Animator>();
         debuffIcon = transform.Find("DebuffCanva").Find("DebuffIcon").GetComponent<Image>();
         debuffIcon.enabled = false;
-        isParasitized = false;
+        Target = GameManager.Instance.Castle;
+        movementStrategy = Instantiate(enemyData.movementStrategy);
+        movementStrategy.Initialize(this);
     }
 
     public void Update()
     {
         IsTheTargetInRange();
         ApplyEffects();
+        Move();
+    }
+
+    private void Move()
+    {
+        if (movementStrategy != null)
+        {
+            movementStrategy.Move();
+        }
     }
 
     public bool TakeDamage(Element AttackElement, float AttackDamage, bool fromEffect = false, EffectData effectData = null)
     {
         // If tower is strong VS enemy
-        if (AttackElement == GetElementInfos.GetWeakness(element))
+        if (AttackElement == GetElementInfos.GetWeakness(enemyData.element))
         {
             AttackDamage = GetElementInfos.AddStrongDamage(AttackDamage);
         }
 
         // If tower is weak vs enemy
-        if (AttackElement == GetElementInfos.GetStrength(element))
+        if (AttackElement == GetElementInfos.GetStrength(enemyData.element))
         {
             AttackDamage = GetElementInfos.RemoveWeakDamage(AttackDamage);
         }
 
         Effect effect = GetElementInfos.GetEffect(AttackElement, effectData);
-        
+
         if (effect != null && fromEffect == false)
         {
             AddEffect(effect);
         }
-        
+
         ApplyDamageOnHP(ReduceDamageWithArmor(AttackDamage));
 
         return OnDeath();
@@ -81,7 +90,7 @@ public abstract class Enemy : Entity
         this.Hp -= AttackDamage;
         healthBar.TakeDamage(AttackDamage);
     }
-    
+
     private void AddEffect(Effect newEffect)
     {
         foreach (Effect effect in activeEffects)
@@ -103,18 +112,18 @@ public abstract class Enemy : Entity
             {
                 if (activeEffects[i].Apply(this) == false)
                 {
-                    activeEffects.RemoveAt(i);   
+                    activeEffects.RemoveAt(i);
                 }
             }
         }
     }
-    
+
     private float GetDistanceFromTarget()
     {
         // Get distance from target
-        if (target != null)
+        if (Target != null)
         {
-            float distance = Vector3.Distance(target.transform.position, transform.position);
+            float distance = Vector3.Distance(Target.transform.position, transform.position);
             return distance;
         }
         return 1000;
@@ -132,19 +141,19 @@ public abstract class Enemy : Entity
 
     public void Attack()
     {
-        if (target != null)
+        if (Target != null)
         {
-            Castle castle = target.GetComponent<Castle>();
+            Castle castle = Target.GetComponent<Castle>();
             if (castle != null)
             {
                 castle.TakeDamage(enemyData.Damage);
                 StartCoroutine(AttackCooldown());
             }
 
-            Enemy enemy = target.GetComponent<Enemy>();
+            Enemy enemy = Target.GetComponent<Enemy>();
             if (enemy != null)
             {
-                enemy.TakeDamage(element, enemyData.Damage, true);
+                enemy.TakeDamage(enemyData.element, enemyData.Damage, true);
                 StartCoroutine(AttackCooldown());
             }
         }
@@ -156,7 +165,7 @@ public abstract class Enemy : Entity
         yield return new WaitForSeconds(enemyData.TimeBetweenAttacks);
         canAttack = true;
     }
-    
+
     public Enemy FindClosestEnemy()
     {
         Enemy[] allEnemies = FindObjectsByType<Enemy>(FindObjectsSortMode.None);
@@ -174,7 +183,7 @@ public abstract class Enemy : Entity
                 closestEnemy = e;
             }
         }
-        
+
         return closestEnemy;
     }
 
