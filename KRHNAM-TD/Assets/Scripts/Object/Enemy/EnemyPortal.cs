@@ -15,13 +15,13 @@ public class EnemyPortal : MonoBehaviour
 
     public List<I_EnemyFactory> enemyFactoryList = new List<I_EnemyFactory>();
 
-    void Awake()
+    void Start()
     {
-        enemyFactoryList.Add(new FireEnemyFactory());
-        enemyFactoryList.Add(new WaterEnemyFactory());
-        enemyFactoryList.Add(new MetalEnemyFactory());
-        enemyFactoryList.Add(new WoodEnemyFactory());
-        enemyFactoryList.Add(new EarthEnemyFactory());
+        enemyFactoryList.Add(new FireEnemyFactory(GameManager.Instance, Grid.Instance));
+        enemyFactoryList.Add(new WaterEnemyFactory(GameManager.Instance, Grid.Instance));
+        enemyFactoryList.Add(new MetalEnemyFactory(GameManager.Instance, Grid.Instance));
+        enemyFactoryList.Add(new WoodEnemyFactory(GameManager.Instance, Grid.Instance));
+        enemyFactoryList.Add(new EarthEnemyFactory(GameManager.Instance, Grid.Instance));
 
         StartCoroutine(SpawnEnemies());
     }
@@ -51,7 +51,7 @@ public class EnemyPortal : MonoBehaviour
     private void AdjustEnemiesSpawnTimeForWave()
     {
 
-        maximumSpawnTime = maximumSpawnTime/waveNumber < 0.5f ? 0.5f: maximumSpawnTime / waveNumber ;        
+        maximumSpawnTime = maximumSpawnTime / waveNumber < 0.5f ? 0.5f : maximumSpawnTime / waveNumber;
     }
 
     private int GetRandomEnemyType()
@@ -79,7 +79,7 @@ public class EnemyPortal : MonoBehaviour
     {
         for (int i = 0; i < nbEnemy; i++)
         {
-            enemyFactoryList[randomType].CreateEnemy(EnemyType.Walking);
+            enemyFactoryList[randomType].CreateEnemy(EnemyType.Walking, this.transform);
             yield return WaitForEnemiesToSpawn();
         }
     }
@@ -91,11 +91,11 @@ public class EnemyPortal : MonoBehaviour
             int temp = Random.Range(1, 3);
             if (temp == 1)
             {
-                enemyFactoryList[randomType].CreateEnemy(EnemyType.Walking);
+                enemyFactoryList[randomType].CreateEnemy(EnemyType.Walking, this.transform);
             }
             else
             {
-                enemyFactoryList[randomType].CreateEnemy(EnemyType.Flying);
+                enemyFactoryList[randomType].CreateEnemy(EnemyType.Flying, this.transform);
             }
             yield return WaitForEnemiesToSpawn();
         }
@@ -108,15 +108,15 @@ public class EnemyPortal : MonoBehaviour
             int temp = Random.Range(1, 4);
             if (temp == 1)
             {
-                enemyFactoryList[randomType].CreateEnemy(EnemyType.Walking);
+                enemyFactoryList[randomType].CreateEnemy(EnemyType.Walking, this.transform);
             }
             else if (temp == 2)
             {
-                enemyFactoryList[randomType].CreateEnemy(EnemyType.Flying);
+                enemyFactoryList[randomType].CreateEnemy(EnemyType.Flying, this.transform);
             }
             else
             {
-                enemyFactoryList[randomType].CreateEnemy(EnemyType.Bulking);
+                enemyFactoryList[randomType].CreateEnemy(EnemyType.Bulking, this.transform);
             }
             yield return WaitForEnemiesToSpawn();
         }
@@ -127,12 +127,12 @@ public class EnemyPortal : MonoBehaviour
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         int timeBetweenWavesInSeconds = 15;
         int timeBetweenEmptyWaveCheck = 1;
-        
+
         while (!enemies.All(element => element == null))
-        {         
+        {
             yield return new WaitForSeconds(timeBetweenEmptyWaveCheck);
         }
-        
+
         yield return new WaitForSeconds(timeBetweenWavesInSeconds);
     }
 }

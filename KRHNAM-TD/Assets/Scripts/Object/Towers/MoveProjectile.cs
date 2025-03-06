@@ -38,7 +38,7 @@ public class MoveProjectile : MonoBehaviour
             Enemy enemy = co.GetComponent<Enemy>();
             if (enemy != null)
             {
-                bool killed = enemy.TakeDamage(tower.TowerData.Element, tower.TowerData.Damage, false, effect);
+                bool killed = enemy.TakeDamage(tower.TowerData.Element, tower.TowerData.Damage, effect);
                 if (killed)
                     tower.OnEnemyDead(enemy);
             }
