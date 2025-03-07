@@ -37,7 +37,6 @@ public class EnemyPortal : MonoBehaviour
 
             yield return StartCoroutine(SetDifficultyLevelOfWave(randomType, waveNumber, nbEnemy));
 
-            waveNumber++;
             yield return StartCoroutine(WaitForNewWave());
         }
     }
@@ -132,7 +131,8 @@ public class EnemyPortal : MonoBehaviour
         {         
             yield return new WaitForSeconds(timeBetweenEmptyWaveCheck);
         }
-        
+
+        waveNumber++;
         yield return new WaitForSeconds(timeBetweenWavesInSeconds);
     }
 }
