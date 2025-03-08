@@ -21,9 +21,8 @@ public class EditorManager : MonoBehaviour
             Destroy(this.gameObject);
             return;
         }
-        else
-            instance = this;
-
+        
+        instance = this;
     }
 
 
@@ -36,7 +35,6 @@ public class EditorManager : MonoBehaviour
     public void SetContextualTower(Tower tower)
     {
         contextualTower = tower;
-        Debug.Log("Contextual Tower Set");
     }
 
     public void ClearContextualTower()
