@@ -24,6 +24,8 @@ public class Enemy : Entity
 
     public void Start()
     {
+        healthBar = transform.Find("HealthbarCanva").Find("Healthbar").GetComponent<HealthBar>();
+        debuffIcon = transform.Find("DebuffCanva").Find("DebuffIcon").GetComponent<Image>();
         InitializeStats();
         InitializeReference();
     }
@@ -119,8 +121,8 @@ public class Enemy : Entity
         target = GameManager.Instance.Castle;
         movementStrategy = Instantiate(enemyData.movementStrategy);
         movementStrategy.Initialize(this);
-        healthBar = transform.Find("HealthbarCanva").Find("Healthbar").GetComponent<HealthBar>();
-        debuffIcon = transform.Find("DebuffCanva").Find("DebuffIcon").GetComponent<Image>();
+        //healthBar = transform.Find("HealthbarCanva").Find("Healthbar").GetComponent<HealthBar>();
+        //debuffIcon = transform.Find("DebuffCanva").Find("DebuffIcon").GetComponent<Image>();
     }
 
     private void Move()
