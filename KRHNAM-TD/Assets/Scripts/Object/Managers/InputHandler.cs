@@ -1,5 +1,6 @@
 using Abstract;
 using UnityEngine;
+using Interface;
 
 public class InputHandler : MonoBehaviour
 {

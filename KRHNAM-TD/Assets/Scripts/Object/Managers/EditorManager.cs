@@ -1,5 +1,7 @@
 using Abstract;
 using UnityEngine;
+using Interface;
+
 
 public class EditorManager : MonoBehaviour
 {

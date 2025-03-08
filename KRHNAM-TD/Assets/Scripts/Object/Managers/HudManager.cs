@@ -1,6 +1,7 @@
 using Abstract;
 using TMPro;
 using UnityEngine;
+using Interface;
 
 public class HudManager : MonoBehaviour
 {
