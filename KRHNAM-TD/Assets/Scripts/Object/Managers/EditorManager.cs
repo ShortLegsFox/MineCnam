@@ -21,8 +21,8 @@ public class EditorManager : MonoBehaviour
             Destroy(this.gameObject);
             return;
         }
-        
-        instance = this;
+        else
+            instance = this;
     }
 
 

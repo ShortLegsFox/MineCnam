@@ -43,10 +43,7 @@ public class InputHandler : MonoBehaviour
         {
             EditorManager.Instance.ClearContextualTower();
         }
-
-
     }
-
 
     public void PlaceEntity()
     {

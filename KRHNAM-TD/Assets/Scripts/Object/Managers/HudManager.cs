@@ -82,11 +82,6 @@ public class HudManager : MonoBehaviour
         waveText.text = wave.ToString();
     }
 
-    public void SelectTower(TowerData towerData)
-    {
-        EditorManager.Instance.SelectTower(towerData);
-    }
-
     public void DrawScope()
     {
         Entity entity = EditorManager.Instance.selectedEntity != null ? EditorManager.Instance.selectedEntity : selectedEntity;
