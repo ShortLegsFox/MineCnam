@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using Object = UnityEngine.Object;
+using Interface;
 
 public abstract class BaseEnemyFactory : I_EnemyFactory
 {
