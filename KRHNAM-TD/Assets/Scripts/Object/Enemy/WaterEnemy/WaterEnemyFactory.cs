@@ -1,14 +1,11 @@
 using UnityEngine;
 
-public class WaterEnemyFactory : I_EnemyFactory
+public class WaterEnemyFactory : BaseEnemyFactory
 {
-    public GameObject portal;
-    public Enemy CreateEnemy(EnemyType type)
+    public WaterEnemyFactory(GameManager gameManager, Grid grid) : base(gameManager, grid) { }
+    
+    public override Enemy CreateEnemy(EnemyType type, Transform spawnPoint)
     {
-        portal = GameObject.Find("Portal");
-        GameObject prefab = GameManager.Instance.GetEnemyData(Element.Water, type).Prefab;
-        GameObject instance = Object.Instantiate(prefab, portal.transform.position, Quaternion.Euler(0, 90, 0));
-        instance.transform.parent = Grid.Instance.transform;
-        return instance.GetComponent<Enemy>();
+        return CreateEnemyInternal(Element.Water, type, spawnPoint);
     }
 }

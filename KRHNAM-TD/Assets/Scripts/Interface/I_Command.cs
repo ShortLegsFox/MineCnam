@@ -1,4 +1,7 @@
-public interface I_Command
+namespace Interface
 {
-    public void Execute();
+    public interface I_Command
+    {
+        public void Execute();
+    }
 }

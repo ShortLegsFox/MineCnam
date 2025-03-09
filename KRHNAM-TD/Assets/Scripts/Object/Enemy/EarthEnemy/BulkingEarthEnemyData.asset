@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f14ef1f447936b448a6f394a1045ff2, type: 3}
+  m_Name: BulkingEarthEnemyData
+  m_EditorClassIdentifier: 
+  Prefab: {fileID: 5670330536118391728, guid: 0ff2f5679b38d664f8fa74bb3f6f718c, type: 3}
+  MaxHp: 300
+  Armor: 100
+  Damage: 10
+  MoveSpeed: 1
+  Range: 2
+  TimeBetweenAttacks: 3
+  element: 3
+  type: 2
+  GoldWon: 30
+  movementStrategy: {fileID: 11400000, guid: a8dcf3e8bf3551940b83d1d8e4e52dfd, type: 2}

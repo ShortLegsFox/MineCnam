@@ -27,7 +27,7 @@ public class Burn : Effect
 
         if (elapsedTime >= nextBurnTick)
         {
-            enemy.TakeDamage(Element.Fire, 10.0f, true);
+            enemy.TakeDamage(Element.Fire, 20.0f);
             nextBurnTick += burnTick;
         }
         

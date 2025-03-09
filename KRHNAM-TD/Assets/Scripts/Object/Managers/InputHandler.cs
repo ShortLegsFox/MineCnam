@@ -1,5 +1,6 @@
 using Abstract;
 using UnityEngine;
+using Interface;
 
 public class InputHandler : MonoBehaviour
 {
@@ -22,6 +23,10 @@ public class InputHandler : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Tab))
             storeCommand.Execute();
 
+        if (Input.GetKeyDown(KeyCode.F10))
+            GameManager.Instance.AccelereGame();
+
+
         //Mouse Inputs
 
         if (Input.GetMouseButtonDown(0) && !HudManager.Instance.StorePannel.activeSelf)
@@ -38,10 +43,7 @@ public class InputHandler : MonoBehaviour
         {
             EditorManager.Instance.ClearContextualTower();
         }
-
-
     }
-
 
     public void PlaceEntity()
     {

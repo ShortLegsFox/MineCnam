@@ -15,8 +15,7 @@ namespace Abstract
         public TowerData TowerData;
         public float shootHeat { get; private set; } = 1f;
         public Transform Shooter { get; private set; }
-
-        public int Hp { get; set; }
+        
 
         public abstract void Attack(Collider co);
 
@@ -114,11 +113,6 @@ namespace Abstract
         public void Subscribe(I_Observer observer)
         {
             subscribersChangeStrategy.Add(observer);
-        }
-
-        public void Unsubscribe(I_Observer observer)
-        {
-            subscribersChangeStrategy.Remove(observer);
         }
 
         public void Upgrade()
