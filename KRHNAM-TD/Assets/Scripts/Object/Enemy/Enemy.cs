@@ -93,6 +93,26 @@ public class Enemy : Entity
 
         return nearestEnemy;
     }
+    
+    public List<Enemy> FindEnemiesInTheArea()
+    {
+        Enemy[] allEnemies = FindObjectsByType<Enemy>(FindObjectsSortMode.None);
+        List<Enemy> nearEnemies = new List<Enemy>();
+        float minDistance = 4.0f;
+
+        foreach (Enemy e in allEnemies)
+        {
+            if (e == this) continue;
+
+            float distance = Vector3.Distance(transform.position, e.transform.position);
+            if (distance < minDistance)
+            {
+                nearEnemies.Add(e);
+            }
+        }
+
+        return nearEnemies;
+    }
 
     #endregion Public Methods
 

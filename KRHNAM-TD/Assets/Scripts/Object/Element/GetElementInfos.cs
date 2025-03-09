@@ -40,6 +40,8 @@ public static class GetElementInfos
                 return new Parasite(5.0f, effectData);
             case Element.Metal:
                 return new PierceArmor(5.0f, effectData);
+            case Element.Earth:
+                return new AreaDamage(5.0f, effectData);
             default:
                 return null;
         }

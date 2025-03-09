@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3502601667745918775}
   - component: {fileID: 4904491657372339314}
   m_Layer: 0
-  m_Name: WoodProjectile
+  m_Name: EarthProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50,7 +50,7 @@ MonoBehaviour:
   speed: 10
   target: {fileID: 0}
   tower: {fileID: 0}
-  effect: {fileID: 11400000, guid: ed6565d4124ab7941b3c3c13d066ef9b, type: 2}
+  effect: {fileID: 11400000, guid: 3c0759ff754292683bbb6f3607dcb084, type: 2}
 --- !u!54 &3502601667745918775
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -164,7 +164,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4726032795a553e4080dc5afb9fee768, type: 2}
+  - {fileID: 2100000, guid: 6a2b411c677207049bcaeb889904f72d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
