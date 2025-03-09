@@ -3,8 +3,6 @@ using UnityEngine;
 
 public class AreaDamage : Effect
 {
-    private float burnTick = 1f;
-    private float nextBurnTick;
     private Element element;
     private Enemy thisEnemy = null;
     
@@ -12,7 +10,6 @@ public class AreaDamage : Effect
     {
         this.duration = duration;
         this.effectData = effectData;
-        this.nextBurnTick = 0f;
         this.element = Element.Earth;
     }
 
@@ -45,7 +42,6 @@ public class AreaDamage : Effect
     public override void Refresh()
     {
         elapsedTime = 0;
-        nextBurnTick = burnTick;
         DamageArea(thisEnemy);
     }
 
