@@ -1,5 +1,7 @@
 using Abstract;
 using UnityEngine;
+using Interface;
+
 
 public class EditorManager : MonoBehaviour
 {
@@ -21,7 +23,6 @@ public class EditorManager : MonoBehaviour
         }
         else
             instance = this;
-
     }
 
 
@@ -34,7 +35,6 @@ public class EditorManager : MonoBehaviour
     public void SetContextualTower(Tower tower)
     {
         contextualTower = tower;
-        Debug.Log("Contextual Tower Set");
     }
 
     public void ClearContextualTower()

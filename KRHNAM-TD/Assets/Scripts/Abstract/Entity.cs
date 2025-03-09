@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 
+
 public abstract class Entity : MonoBehaviour
 {
     public bool isPlaced { get; set; } = false;

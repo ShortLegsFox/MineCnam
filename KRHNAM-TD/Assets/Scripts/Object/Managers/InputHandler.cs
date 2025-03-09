@@ -1,5 +1,6 @@
 using Abstract;
 using UnityEngine;
+using Interface;
 
 public class InputHandler : MonoBehaviour
 {
@@ -42,10 +43,7 @@ public class InputHandler : MonoBehaviour
         {
             EditorManager.Instance.ClearContextualTower();
         }
-
-
     }
-
 
     public void PlaceEntity()
     {

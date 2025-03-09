@@ -69,7 +69,6 @@ public class ItemListUI : MonoBehaviour
 
     void OnPointerEnter(StoreArticle item)
     {
-        //Debug.Log("Pointer enter");
         if (!StoreManager.Instance.CanAfford(item.Price))
         {
             CursorManager.Instance.SetBlockedCursor();

@@ -6,13 +6,7 @@ public class GameManager : MonoBehaviour
 {
     private static GameManager instance = null;
     public static GameManager Instance => instance;
-
-    public HudManager HudManager => HudManager.Instance;
-    public WaveManager WaveManager => WaveManager.Instance;
-    public SoundManager SoundManager => SoundManager.Instance;
     public StoreManager StoreManager => StoreManager.Instance;
-    public Grid Grid => Grid.Instance;
-    public TowerFactory TowerFactory => TowerFactory.Instance;
 
     [SerializeField] private List<TowerData> towerDataList;
     [SerializeField] private List<EnemyData> enemyDataList;

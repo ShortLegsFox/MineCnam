@@ -1,6 +1,7 @@
 using Abstract;
 using TMPro;
 using UnityEngine;
+using Interface;
 
 public class HudManager : MonoBehaviour
 {
@@ -79,11 +80,6 @@ public class HudManager : MonoBehaviour
     public void UpdateWaveText(int wave)
     {
         waveText.text = wave.ToString();
-    }
-
-    public void SelectTower(TowerData towerData)
-    {
-        EditorManager.Instance.SelectTower(towerData);
     }
 
     public void DrawScope()
