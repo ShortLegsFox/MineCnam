@@ -28,7 +28,7 @@ public class EnemyPortal : MonoBehaviour
     {
         while (true)
         {
-            int nbEnemy = waveNumber * 10;
+            int nbEnemy = waveNumber * 4;
 
             AdjustEnemiesSpawnTimeForWave();
             int randomType = GetRandomEnemyType();
