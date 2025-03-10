@@ -563,6 +563,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1617406334549175112, guid: 65ea7828802ffdf478218ed57b98583e, type: 3}
+      propertyPath: DefaultGoldAmount
+      value: 150
+      objectReference: {fileID: 0}
     - target: {fileID: 1843998773558082466, guid: 65ea7828802ffdf478218ed57b98583e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
