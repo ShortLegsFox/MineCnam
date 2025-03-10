@@ -22,4 +22,4 @@ MonoBehaviour:
   targetingStrategy: {fileID: 11400000, guid: e7cb1b0d01b21df4aa178cbe9feae4e9, type: 2}
   projectilePrefab: {fileID: 1256814250574689019, guid: 734399245aee245f9907498a5225f583, type: 3}
   TowerElement: {fileID: 11400000, guid: 687eaa76f3af9774db2c4a63ced3c8b4, type: 2}
-  UpgradeCost: 100
+  UpgradeCost: 150

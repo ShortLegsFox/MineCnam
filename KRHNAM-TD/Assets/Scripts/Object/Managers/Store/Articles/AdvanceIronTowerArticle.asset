@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Article: {fileID: 3525177281727383355, guid: 4970a0f665012fd478161e73facba47e, type: 3}
   Name: Advanced Iron Tower
-  Price: 100
+  Price: 200
   Image: {fileID: 21300000, guid: e60e0b9301ae3da47ba592c6c2ae4916, type: 3}
   Element: 1
   Level: 1

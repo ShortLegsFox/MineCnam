@@ -18,7 +18,7 @@ MonoBehaviour:
   MaxHp: 100
   Damage: 10
   Range: 10
-  AttackSpeed: 0.5
+  AttackSpeed: 1
   targetingStrategy: {fileID: 11400000, guid: e7cb1b0d01b21df4aa178cbe9feae4e9, type: 2}
   projectilePrefab: {fileID: 1256814250574689019, guid: 900c9a177b1a5ff4d81328a8d49d876a, type: 3}
   TowerElement: {fileID: 11400000, guid: 25d8fe57b8fed6d47937807f9f946c49, type: 2}
